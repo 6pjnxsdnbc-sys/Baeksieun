@@ -5,16 +5,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap');
 *{box-sizing:border-box;margin:0}
 body{min-height:100vh;color:#ece6dd;font-family:'IBM Plex Sans KR',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;
-  background:radial-gradient(820px 480px at 50% 0%,rgba(224,168,92,.08),transparent 60%),#0f0b10;padding:28px 18px 52px}
+  background:radial-gradient(820px 480px at 50% 0%,rgba(224,168,92,.08),transparent 60%),#0f0b10;padding:26px 18px 52px}
 .wrap{max-width:460px;margin:0 auto}
 .lbl{font-size:9.5px;letter-spacing:2.6px;color:#7a7280;text-transform:uppercase;font-weight:500}
 .hair{height:1px;background:rgba(236,230,221,.08);margin:22px 0}
-.hd{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
 .clk{font-family:'DM Mono',monospace;font-weight:300;font-size:34px;letter-spacing:.5px;line-height:1;margin-top:8px}
 .dt{font-size:11.5px;color:#8b8390;margin-top:8px}
-.hr2{text-align:right;display:flex;flex-direction:column;gap:8px;margin-top:2px;flex-shrink:0}
-.hr2 div{font-size:11px;color:#8b8390}.hr2 b{font-weight:500;font-family:'DM Mono',monospace}
-.hero{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:1/1;margin-top:20px;background:#0c0810;cursor:pointer;
+.hero{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:1/1;margin-top:18px;background:#0c0810;cursor:pointer;
   box-shadow:0 30px 70px -28px rgba(0,0,0,.85);outline:1px solid rgba(236,230,221,.07);outline-offset:-1px}
 .vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .7s ease}
 .glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(220px 170px at 52% 64%,rgba(255,206,140,.10),transparent 72%);mix-blend-mode:screen;transition:opacity .8s;z-index:2}
@@ -42,44 +39,129 @@ body{min-height:100vh;color:#ece6dd;font-family:'IBM Plex Sans KR',sans-serif;fo
 .stl{height:5px;border-radius:99px;overflow:hidden;display:flex;position:relative;background:rgba(236,230,221,.05);margin-top:11px}
 .stlmk{position:absolute;top:-4px;width:1px;height:13px;background:#fff;box-shadow:0 0 5px rgba(255,255,255,.8)}
 .stlx{display:flex;justify-content:space-between;font-size:9px;color:#6a6270;margin-top:7px;font-family:'DM Mono',monospace}
-.scrow{display:flex;align-items:center;gap:12px;font-size:11px;margin-bottom:11px}
-.scsub{width:62px;flex-shrink:0;color:#bdb2bc}.scbar{flex:1;min-width:0;height:4px;border-radius:99px;background:rgba(236,230,221,.06);position:relative;overflow:hidden}
-.scme{position:absolute;height:100%;background:#8fc7bc;border-radius:99px}.scsi{position:absolute;height:100%;width:1px;background:#e0a85c}
-.scv{width:80px;flex-shrink:0;text-align:right;color:#857b88;font-family:'DM Mono',monospace;font-size:10px;white-space:nowrap}
 .wk{display:flex;align-items:center;margin-top:13px}.wkc{flex:1;text-align:center}.wkv{font-family:'DM Mono',monospace;font-size:21px;font-weight:300;margin-top:6px}
 .wkd{width:1px;align-self:stretch;background:rgba(236,230,221,.08);margin:0 6px}
 .ft{text-align:center;font-size:9px;color:#564f5e;margin-top:28px;line-height:1.8}
+.mind{font-family:'Gowun Batang',serif;font-size:13.5px;color:#cabfc9;font-style:italic;line-height:1.6;margin:11px 0 3px;padding-left:11px;border-left:2px solid rgba(224,168,92,.45)}
+.pgwrap{display:flex;flex-direction:column;gap:11px;margin-top:13px}
+.pgcard{background:rgba(236,230,221,.03);border:1px solid rgba(236,230,221,.06);border-radius:12px;padding:12px 13px}
+.pgtop{display:flex;justify-content:space-between;align-items:baseline}
+.pgsubj{font-size:12.5px;font-weight:500;color:#ddd4cb;letter-spacing:.2px}
+.pgsubj b{color:#8b8390;font-weight:400;font-size:10px}
+.pgpct{font-family:'DM Mono',monospace;font-size:13px;color:#f0b465}
+.pgnow{font-size:11px;color:#b9aeb8;margin:7px 0 9px;line-height:1.5}
+.pgtoday{color:#8fd6a8;font-size:9px;letter-spacing:.6px;margin-left:6px;white-space:nowrap}
+.pgseg{display:flex;gap:3px;height:7px}
+.pgs{position:relative;border-radius:3px;background:rgba(236,230,221,.07);overflow:hidden;min-width:8px}
+.pgsf{position:absolute;left:0;top:0;bottom:0;background:#e0a85c;border-radius:3px}
+.pgsl{display:flex;gap:3px;margin-top:5px}
+.pgsl span{text-align:center;font-size:8px;color:#6a6270;letter-spacing:.2px;overflow:hidden;white-space:nowrap}
+.pgmeta{font-size:9.5px;color:#857b88;margin-top:8px;font-family:'DM Mono',monospace;letter-spacing:.2px}
+.udgroup{margin-top:15px}
+.udhead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}
+.udh1{font-size:12px;font-weight:500;color:#ddd4cb}
+.udh1 b{color:#8b8390;font-weight:400;font-size:10px}
+.udov{font-family:'DM Mono',monospace;font-size:11px;color:#a9d6ca}
+.udrow{display:flex;align-items:center;gap:9px;font-size:10.5px;margin-bottom:6px}
+.udlbl{width:120px;flex-shrink:0;color:#b9aeb8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.udbar{flex:1;min-width:0;height:4px;border-radius:99px;background:rgba(236,230,221,.07);overflow:hidden}
+.udf{height:100%;border-radius:99px}
+.udval{width:23px;flex-shrink:0;text-align:right;color:#9a909c;font-family:'DM Mono',monospace;font-size:10px}
+.udwk{color:#c9756a}
+/* ---- v2: header chip, tabs, comparison ---- */
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;color:#cdab63;background:rgba(224,168,92,.10);border:1px solid rgba(224,168,92,.22);border-radius:99px;padding:4px 10px;white-space:nowrap}
+.chip b{font-weight:500}.chip .dot{width:6px;height:6px;border-radius:50%;background:#e0a85c}
+.dchip{font-size:11px;color:#8b8390}.dchip b{font-family:'DM Mono',monospace;color:#cabfc9;font-weight:500}
+.tabbar{display:flex;gap:4px;background:rgba(236,230,221,.05);border:1px solid rgba(236,230,221,.07);border-radius:13px;padding:4px;margin:20px 0 2px}
+.tab{flex:1;text-align:center;font-size:11.5px;font-weight:500;letter-spacing:.2px;color:#8b8390;padding:9px 5px;border-radius:10px;cursor:pointer;transition:all .15s;border:none;background:none;font-family:inherit}
+.tab.on{background:rgba(224,168,92,.16);color:#f0d4a6}
+.tabsec{display:none}.tabsec.on{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.sct{margin-top:24px}
+.cmpsum{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin-top:15px}
+.cmpcard{background:rgba(236,230,221,.03);border:1px solid rgba(236,230,221,.06);border-radius:12px;padding:12px 8px;text-align:center}
+.cmpcl{font-size:8px;letter-spacing:1.2px;color:#7a7280;text-transform:uppercase}
+.cmpcv{margin-top:9px;font-family:'DM Mono',monospace;font-size:12.5px;display:flex;flex-direction:column;gap:5px}
+.cmpcv .me{color:#8fc7bc}.cmpcv .si{color:#e0a85c}
+.cmprow{margin-top:16px}
+.cmphd{display:flex;justify-content:space-between;align-items:baseline;font-size:12.5px;margin-bottom:7px}
+.cmphd .nm{font-weight:500;color:#ddd4cb}
+.cmphd .gp{font-size:9.5px;font-family:'DM Mono',monospace}
+.cmpbar{display:flex;height:9px;border-radius:99px;overflow:hidden;background:rgba(236,230,221,.06);position:relative}
+.cmpbar::before{content:"";position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:rgba(236,230,221,.28);z-index:1}
+.cmpL{width:50%;display:flex;justify-content:flex-end}.cmpR{width:50%}
+.cmpme{height:100%;background:linear-gradient(90deg,#6fb3a7,#8fc7bc)}
+.cmpsi{height:100%;background:linear-gradient(90deg,#e0a85c,#caa05a)}
+.cmpfoot{display:flex;justify-content:space-between;font-size:9.5px;margin-top:6px;font-family:'DM Mono',monospace}
+.cmpfoot .me{color:#9cc7bf}.cmpfoot .si{color:#cdab63;text-align:right}
+.myedit{font-size:10px;color:#7a7280;margin-top:20px;line-height:2.2}
+.myedit label{margin-right:9px;white-space:nowrap}
+.myin{width:44px;background:rgba(143,199,188,.10);border:1px solid rgba(143,199,188,.3);color:#a9d6ca;border-radius:6px;padding:2px 4px;font-family:'DM Mono',monospace;font-size:11px;text-align:center}
+.examrow{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(236,230,221,.06);font-size:12.5px}
+.examrow:last-child{border:none}
+.examn{color:#ddd4cb;font-weight:500}.examn s{display:block;font-size:9.5px;color:#857b88;font-weight:300;font-family:'DM Mono',monospace;margin-top:4px;text-decoration:none;letter-spacing:.3px}
+.examd{font-family:'DM Mono',monospace;font-size:13px;color:#e0a85c;text-align:right;line-height:1.5}
+.scchip{font-size:9px;color:#7a7280}
 </style></head>
 <body><div class="wrap">
-  <div class="hd"><div><div class="lbl">지금</div><div class="clk" id="clk">00:00:00</div><div class="dt" id="dt"></div></div>
-    <div class="hr2"><div>시은 컨디션 <b id="cond"></b></div><div>수능 <b id="dday"></b></div></div></div>
-  <div class="hero" id="hero">
-    <video class="vid" id="vidA" muted loop autoplay playsinline preload="auto"></video>
-    <video class="vid" id="vidB" muted loop autoplay playsinline preload="auto"></video>
-    <div class="glow" id="glow"></div>
-    <div class="playhint" id="playhint">▶ 탭하여 재생</div>
-    <div class="stt" id="stt"></div>
-    <div class="cap"><div><div class="who">백시은<span class="whosub"> · 재수생 · 의대 지망</span></div>
-      <div class="now"><span id="nowlabel"></span><span id="nowtype"></span><span class="cur" id="cur"></span></div></div>
-      <div class="clive"><div class="clivev" id="siHero"></div><div class="clivel">오늘 순공</div></div></div>
+  <div class="top"><div><div class="lbl">지금</div><div class="clk" id="clk">00:00:00</div><div class="dt" id="dt"></div></div>
+    <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;flex-shrink:0;margin-top:2px">
+      <div class="chip"><span class="dot" id="conddot"></span>시은 <b id="cond"></b><span id="condst" style="color:#857b88;font-weight:300"></span></div>
+      <div class="dchip">수능 <b id="dday"></b></div></div></div>
+
+  <div class="tabbar">
+    <button class="tab on" data-tab="live">라이브</button>
+    <button class="tab" data-tab="cmp">나 vs 시은</button>
+    <button class="tab" data-tab="ana">시은 분석</button></div>
+
+  <!-- ===== TAB: 라이브 ===== -->
+  <div class="tabsec on" data-tab="live">
+    <div class="hero" id="hero">
+      <video class="vid" id="vidA" muted loop autoplay playsinline preload="auto"></video>
+      <video class="vid" id="vidB" muted loop autoplay playsinline preload="auto"></video>
+      <div class="glow" id="glow"></div>
+      <div class="playhint" id="playhint">▶ 탭하여 재생</div>
+      <div class="stt" id="stt"></div>
+      <div class="cap"><div><div class="who">백시은<span class="whosub"> · 재수생 · 의대 지망</span></div>
+        <div class="now"><span id="nowlabel"></span><span id="nowtype"></span><span class="cur" id="cur"></span></div></div>
+        <div class="clive"><div class="clivev" id="siHero"></div><div class="clivel">오늘 순공</div></div></div>
+    </div>
+    <div class="me"><div><div class="lbl" id="melbl">나의 오늘 순공</div><div class="mev" id="mev">0h 00m</div>
+      <div class="strk" id="strk"></div><div class="acts"><button class="rst" id="reset">기록 초기화</button><button class="rst" id="sync">동기화 설정</button><span class="synced" id="synced"></span></div></div>
+      <button class="btn start" id="btn">공부 시작</button></div>
+    <div class="hair"></div>
+    <div><div class="lbl">오늘의 맞대결</div>
+      <div class="h2hrow"><span>시은 <b style="color:#e0a85c" id="siH2"></b></span><span><b style="color:#8fc7bc" id="meH2"></b> 나</span></div>
+      <div class="track"><div class="tA" id="tA" style="width:0%"></div><div class="tB"></div></div>
+      <div class="quote" id="quote"></div></div>
+    <div class="hair"></div>
+    <div><div class="lbl">시은이의 하루 · 실시간 위치</div><div class="stl" id="stl"></div>
+      <div class="stlx"><span>00</span><span>06</span><span>12</span><span>18</span><span>24</span></div></div>
+    <div class="hair"></div>
+    <div><div class="lbl">이번 주 누적</div><div class="wk"><div class="wkc"><div class="lbl">나</div><div class="wkv" style="color:#8fc7bc" id="wkMe"></div></div>
+      <div class="wkd"></div><div class="wkc"><div class="lbl">시은</div><div class="wkv" style="color:#e0a85c" id="wkSi"></div></div></div></div>
   </div>
-  <div class="me"><div><div class="lbl" id="melbl">나의 오늘 순공</div><div class="mev" id="mev">0h 00m</div>
-    <div class="strk" id="strk"></div><div class="acts"><button class="rst" id="reset">기록 초기화</button><button class="rst" id="sync">동기화 설정</button><span class="synced" id="synced"></span></div></div>
-    <button class="btn start" id="btn">공부 시작</button></div>
-  <div class="hair"></div>
-  <div><div class="lbl">오늘의 맞대결</div>
-    <div class="h2hrow"><span>시은 <b style="color:#e0a85c" id="siH2"></b></span><span><b style="color:#8fc7bc" id="meH2"></b> 나</span></div>
-    <div class="track"><div class="tA" id="tA" style="width:0%"></div><div class="tB"></div></div>
-    <div class="quote" id="quote"></div></div>
-  <div class="hair"></div>
-  <div><div class="lbl">시은이의 하루 · 실시간 위치</div><div class="stl" id="stl"></div>
-    <div class="stlx"><span>00</span><span>06</span><span>12</span><span>18</span><span>24</span></div></div>
-  <div class="hair"></div>
-  <div><div class="lbl">성적 격차 · 시은 6모(목표) → 내 현재</div><div id="scores" style="margin-top:13px"></div></div>
-  <div class="hair"></div>
-  <div><div class="lbl">이번 주 누적</div><div class="wk"><div class="wkc"><div class="lbl">나</div><div class="wkv" style="color:#8fc7bc" id="wkMe"></div></div>
-    <div class="wkd"></div><div class="wkc"><div class="lbl">시은</div><div class="wkv" style="color:#e0a85c" id="wkSi"></div></div></div></div>
-  <div class="ft">백시은은 실존 인물이 아닙니다 · 데이터는 고정 루틴과 오늘 컨디션으로 현재 시각에 맞춰 자동 계산됩니다 · 같은 동기화 키를 넣은 기기끼리 기록이 합쳐집니다</div>
+
+  <!-- ===== TAB: 나 vs 시은 ===== -->
+  <div class="tabsec" data-tab="cmp">
+    <div id="cmpwrap"></div>
+  </div>
+
+  <!-- ===== TAB: 시은 분석 ===== -->
+  <div class="tabsec" data-tab="ana">
+    <div><div class="lbl">진도판 · 강사 커리큘럼</div>
+      <div class="mind" id="mind"></div>
+      <div class="pgwrap" id="pgwrap"></div></div>
+    <div class="hair"></div>
+    <div><div class="lbl">이해도 · 과목 / 세부 파트별</div>
+      <div id="udwrap" style="margin-top:6px"></div></div>
+    <div class="hair"></div>
+    <div><div class="lbl">모의고사 일정 · 시은 예상 등급</div>
+      <div id="examwrap" style="margin-top:8px"></div></div>
+  </div>
+
+  <div class="ft">백시은은 실존 인물이 아닙니다 · 진도·이해도·예상등급은 강사 커리큘럼과 오늘 컨디션으로 자동 계산된 추정치입니다 · 공부시간은 같은 동기화 키 기기끼리 합쳐집니다</div>
 </div>
 <script>
 
@@ -104,20 +186,151 @@ const SCHEDULE = [
 const isStudy=x=>x.state==="study";
 const RAW=SCHEDULE.filter(isStudy).reduce((a,x)=>a+(x.e-x.s),0);
 function hashStr(s){let h=1779033703^s.length;for(let i=0;i<s.length;i++){h=Math.imul(h^s.charCodeAt(i),3432918353);h=(h<<13)|(h>>>19);}return (h^=h>>>16)>>>0;}
-function dayTypeFor(k){const r=(hashStr(k)%1000)/1000;
-  if(r<0.10)return{key:"번아웃",mult:0.32,color:"#b79fc0"};
-  if(r<0.35)return{key:"그럭저럭",mult:0.52,color:"#cf9f6a"};
-  if(r<0.82)return{key:"평범",mult:0.64,color:"#e0a85c"};
-  return{key:"불꽃",mult:0.80,color:"#ec7a4a"};}
+const SUNUNG=new Date("2026-11-19T08:40:00+09:00");
+const Y0=new Date(2026,1,1);            // 재수 본격 시작점
+const WK=["일","월","화","수","목","금","토"];
+const parseDate=k=>{const p=k.split("-");return new Date(+p[0],(+p[1])-1,+p[2]);};
+const ld=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+/* 컨디션: 단일 해시가 아니라 며칠씩 이어지는 슬럼프/정점 파동 */
+function dayTypeFor(k){
+  const h=(hashStr(k)%1000)/1000;
+  const di=Math.round((parseDate(k)-Y0)/86400000);
+  const wave=0.5+0.27*Math.sin(di/4.3)+0.17*Math.sin(di/10.7+1.1);
+  const r=Math.max(0,Math.min(1, wave*0.68+h*0.32));
+  if(r<0.12)return{key:"번아웃",mult:0.34,color:"#b79fc0",r};
+  if(r<0.33)return{key:"슬럼프",mult:0.50,color:"#cf9f6a",r};
+  if(r<0.79)return{key:"평범",mult:0.66,color:"#e0a85c",r};
+  return{key:"불꽃",mult:0.82,color:"#ec7a4a",r};
+}
+function condStreak(k){let n=1,key=dayTypeFor(k).key,p=parseDate(k);for(let i=1;i<21;i++){p.setDate(p.getDate()-1);if(dayTypeFor(ld(p)).key===key)n++;else break;}return n;}
 const segAt=m=>SCHEDULE.find(x=>m>=x.s&&m<x.e)||SCHEDULE[0];
 const studiedMin=m=>SCHEDULE.filter(isStudy).reduce((a,x)=>a+Math.max(0,Math.min(m,x.e)-x.s),0);
 const hm=s=>Math.floor(s/3600)+"h "+String(Math.floor((s%3600)/60)).padStart(2,"0")+"m";
 const fmtC=s=>{const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),x=Math.floor(s%60);return[h,m,x].map(v=>String(v).padStart(2,"0")).join(":");};
-const ld=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
 const fullDay=k=>RAW/60*dayTypeFor(k).mult;
 const SI=[{s:"국어",v:"96",p:96,me:"89",mp:89},{s:"수학",v:"98",p:98,me:"50",mp:50},{s:"영어",v:"1등급",p:96,me:"2후반",mp:78},{s:"생명Ⅰ",v:"1등급",p:96,me:"5등급",mp:40},{s:"생활과윤리",v:"1등급",p:96,me:"6등급",mp:30}];
-const SUNUNG=new Date("2026-11-19T08:40:00+09:00");
-const WK=["일","월","화","수","목","금","토"];
+function yT(){const n=new Date();let t=(n-Y0)/(SUNUNG-Y0);return t<0?0:(t>1?1:t);}
+
+/* ===== 백시은 학습 자아 모델 ===== */
+const CURRIC=[
+ {key:"math",subj:"수학",tc:"이미지",pf:"대성마이맥",sel:"미적분",off:0.00,
+  stg:["개념","기출","N제","파이널"],course:["세젤쉬 미적","기출분석","실전 N제","실전모의"],
+  mod:[{s:0,l:"공통(수Ⅰ·수Ⅱ) 개념",lec:22,d:.12},{s:0,l:"미적 · 수열의 극한",lec:6,d:.16},{s:0,l:"미적 · 미분법",lec:9,d:.22},{s:0,l:"미적 · 적분법",lec:9,d:.27},{s:1,l:"공통 기출",lec:14,d:.40},{s:1,l:"미적분 기출",lec:10,d:.50},{s:1,l:"고난도(킬러) 기출",lec:8,d:.58},{s:2,l:"실전 N제",lec:12,d:.76},{s:3,l:"실전 모의고사",lec:10,d:.93}],
+  part:[{l:"공통(수Ⅰ·Ⅱ)",c:95},{l:"수열의 극한",c:94},{l:"미분법",c:94},{l:"적분법",c:90},{l:"고난도 4점(킬러)",c:86,w:1}]},
+ {key:"kor",subj:"국어",tc:"김동욱",pf:"메가스터디",sel:"화작",off:-0.05,
+  stg:["개념","기출","실완","파이널"],course:["김동욱+화작","기출 MEET","CHECKMATE","파이널"],
+  mod:[{s:0,l:"독서 이론·인문/사회",lec:10,d:.16},{s:0,l:"독서 과학·기술",lec:6,d:.22},{s:0,l:"문학 고전",lec:8,d:.27},{s:0,l:"문학 현대",lec:7,d:.31},{s:0,l:"화법과작문",lec:8,d:.36},{s:1,l:"독서 기출",lec:10,d:.52},{s:1,l:"문학 기출",lec:8,d:.60},{s:2,l:"CHECKMATE 독서",lec:9,d:.74},{s:3,l:"실전 파이널",lec:10,d:.93}],
+  part:[{l:"독서 인문·사회",c:92},{l:"독서 과학·기술",c:86,w:1},{l:"문학 고전",c:93},{l:"문학 현대",c:95},{l:"화법과작문",c:97}]},
+ {key:"eng",subj:"영어",tc:"션티",pf:"메가스터디",sel:"",off:0.06,
+  stg:["독해논리","키스로직","Weekly","파이널"],course:["KISS Schema","KISS Logic","Weekly KISS","실모"],
+  mod:[{s:0,l:"독해논리(기저개념/AB)",lec:12,d:.20},{s:1,l:"KISS Logic · 빈칸",lec:8,d:.34},{s:1,l:"KISS Logic · 순서/삽입",lec:8,d:.44},{s:2,l:"Weekly KISS 유형훈련",lec:16,d:.74},{s:3,l:"실전 모의",lec:10,d:.93}],
+  part:[{l:"듣기",c:96},{l:"어법",c:95},{l:"어휘",c:93},{l:"대의파악",c:94},{l:"빈칸추론",c:87,w:1},{l:"순서·삽입",c:90}]},
+ {key:"bio",subj:"생명Ⅰ",tc:"백호",pf:"메가스터디",sel:"",off:0.03,
+  stg:["개념","스킬","N제","파이널"],course:["섬개완","크리티컬 스킬","All Bio in One","FINAL 100제"],
+  mod:[{s:0,l:"Ⅰ 생명과학의 이해",lec:4,d:.09},{s:0,l:"Ⅱ 사람의 물질대사",lec:6,d:.15},{s:0,l:"Ⅲ 항상성과 몸의 조절",lec:10,d:.23},{s:0,l:"Ⅳ 유전",lec:12,d:.31},{s:0,l:"Ⅴ 생태계와 상호작용",lec:6,d:.35},{s:1,l:"크리티컬 · 항상성 추론",lec:8,d:.45},{s:1,l:"크리티컬 · 유전 추론(고난도)",lec:10,d:.55},{s:2,l:"All Bio in One",lec:12,d:.75},{s:3,l:"FINAL 100제",lec:10,d:.92}],
+  part:[{l:"Ⅰ 생명과학의 이해",c:95},{l:"Ⅱ 물질대사",c:93},{l:"Ⅲ 항상성·신경",c:90},{l:"Ⅳ 유전(가계도·추론)",c:87,w:1},{l:"Ⅴ 생태계",c:95}]},
+ {key:"eth",subj:"생윤",tc:"임정환",pf:"대성마이맥",sel:"",off:0.07,
+  stg:["개념","심화","실전","파이널"],course:["LIM IT","IMPACT","올림픽","끝.날.끝"],
+  mod:[{s:0,l:"LIM IT Ⅰ 실천윤리",lec:5,d:.10},{s:0,l:"LIM IT Ⅱ 생명윤리",lec:5,d:.15},{s:0,l:"LIM IT Ⅲ 사회윤리",lec:5,d:.20},{s:0,l:"LIM IT Ⅳ 과학윤리",lec:4,d:.24},{s:0,l:"LIM IT Ⅴ 문화윤리",lec:4,d:.28},{s:0,l:"LIM IT Ⅵ 평화윤리",lec:3,d:.31},{s:1,l:"IMPACT 18테마 심화",lec:18,d:.50},{s:2,l:"올림픽 실전",lec:12,d:.74},{s:3,l:"끝.날.끝 FINAL",lec:8,d:.95}],
+  part:[{l:"Ⅰ 실천윤리",c:95},{l:"Ⅱ 생명윤리",c:96},{l:"Ⅲ 사회윤리",c:94},{l:"Ⅳ 과학윤리",c:95},{l:"Ⅴ 문화윤리",c:96},{l:"Ⅵ 평화윤리",c:95},{l:"동서양 사상가 비교",c:90,w:1}]}
+];
+/* ===== 연쇄 엔진: 컨디션 → 페이스 → 진도 → 이해도 → 점수 ===== */
+var DTOT=Math.round((SUNUNG-Y0)/86400000);                 // 재수 시작~수능 일수
+function recentPace(k){var p=parseDate(k),sum=0,i;for(i=0;i<21;i++){var d=new Date(p);d.setDate(d.getDate()-i);sum+=dayTypeFor(ld(d)).mult;}return (sum/21)/0.66;} // ~1.0 기준, >1 상승세 <1 슬럼프
+function pace(){if(window._pace==null)window._pace=recentPace(ld(new Date()));return window._pace;}
+function effT(off){var e=yT()+(pace()-1)*0.06;if(e<0)e=0;if(e>1)e=1;e+=off;return e<0?0:(e>1?1:e);} // 최근 페이스가 계획 대비 진도를 ±당김
+var MOCKS=[new Date(2026,5,4),new Date(2026,8,3)];          // 6/4, 9/3 모평
+function mockBoost(k){var d=parseDate(k),best=0,i;for(i=0;i<MOCKS.length;i++){var diff=(d-MOCKS[i])/86400000;if(diff>=0&&diff<=21){var f=1-diff/21;if(f>best)best=f;}}return best;} // 모평 직후 오답 복기 효과(21일 감쇠)
+function preMockDip(k){var d=parseDate(k),i;for(i=0;i<MOCKS.length;i++){var diff=(MOCKS[i]-d)/86400000;if(diff>=0&&diff<=2)return (3-diff)/3;}return 0;} // 시험 직전 긴장
+function prog(s){var t=effT(s.off),total=0,done=0,cur=null,prev=0,f=0;var sl=[0,0,0,0],sd=[0,0,0,0],i,m;
+ for(i=0;i<s.mod.length;i++){total+=s.mod[i].lec;sl[s.mod[i].s]+=s.mod[i].lec;}
+ for(i=0;i<s.mod.length;i++){m=s.mod[i];if(t>=m.d){done+=m.lec;sd[m.s]+=m.lec;}else if(!cur){f=(t-prev)/(m.d-prev);f=f<0?0:(f>1?1:f);cur=m;done+=m.lec*f;sd[m.s]+=m.lec*f;}prev=m.d;}
+ var cd=true;for(i=0;i<s.mod.length;i++){if(s.mod[i].s===0&&t<s.mod[i].d)cd=false;}
+ var curLecTot=cur?cur.lec:0,curLecIdx=cur?Math.max(1,Math.round(f*cur.lec)):0;
+ return{t:t,total:total,done:Math.round(done),pct:Math.round(done/total*100),cur:cur,curSt:cur?cur.s:3,sl:sl,sd:sd,conceptDone:cd,curLecIdx:curLecIdx,curLecTot:curLecTot};}
+/* 이해도: 성숙곡선 + 진도 + 최신성(이번주 판 파트) + 컨디션 + 모평 복기 + 시험전 긴장 + 일별 변동 */
+function subjMastery(s){var t=effT(s.off),p=prog(s),adv=p.pct/100,today=ld(new Date());
+ var pc=pace(),mb=mockBoost(today),dip=preMockDip(today),di=Math.round((parseDate(today)-Y0)/86400000),parts=[],sum=0,i;
+ for(i=0;i<s.part.length;i++){var pt=s.part[i];
+  var b=pt.c*(0.50+0.30*Math.pow(Math.max(t,0.001),0.7)+0.20*adv);
+  var rec=Math.sin(di/3.5+(hashStr(pt.l)%100)/16)*2.4;     // 이번 주 어느 파트를 집중적으로 팠나
+  var cnd=(pc-1)*9;                                         // 최근 컨디션 결합
+  var mk=(pt.w?6:2)*mb;                                     // 모평 직후 복기(약점일수록 크게)
+  var nv=-dip*2.5;                                          // 시험 직전 긴장
+  var wob=((hashStr(today+pt.l)%100)/100-0.5)*1.6;          // 일별 미세변동
+  var v=b+rec+cnd+mk+nv+wob;if(v>pt.c)v=pt.c;if(v<0)v=0;v=Math.round(v);
+  parts.push({l:pt.l,w:pt.w,v:v});sum+=v;}
+ var ov=Math.round(sum/parts.length);return{parts:parts,ov:ov,p:p,pace:pc};}
+/* ===== 점수 엔진: 약점 가중 + 실전 디스카운트 + 시험별 변동 (등급컷은 근사치) ===== */
+function gradeFor(max,raw){if(max===100){var c=[92,85,77,67,55,42,28,16];for(var i=0;i<c.length;i++)if(raw>=c[i])return i+1;return 9;}var d=[45,42,38,33,27,21,15,10];for(var j=0;j<d.length;j++)if(raw>=d[j])return j+1;return 9;}
+function effMastery(parts){var sum=0,wsum=0,mn=101,i;for(i=0;i<parts.length;i++){var pt=parts[i],wt=pt.w?1.6:1;sum+=pt.v*wt;wsum+=wt;if(pt.v<mn)mn=pt.v;}return 0.78*(sum/wsum)+0.22*mn;} // 약점이 발목을 잡음
+function realScore(eff,max){var r=max*Math.pow(Math.max(eff,0)/100,1.18)*1.02;return r<0?0:(r>max?max:r);} // 이해도→실전 원점수(상위권일수록 격차 작게)
+function gradeFromMastery(key,m){if(key==="eng")return m>=90?1:m>=80?2:m>=70?3:m>=60?4:m>=50?5:m>=40?6:m>=30?7:8;var max=(key==="bio"||key==="eth")?50:100;return gradeFor(max,Math.round(realScore(m,max)));}
+function siScore(s){var M=subjMastery(s),eff=effMastery(M.parts),today=ld(new Date()),vc=((hashStr(today+"v"+s.key)%100)/100-0.5)*3.0; // 시험마다 ±변동
+ if(s.key==="eng"){var lvl=eff+vc,g=lvl>=90?1:lvl>=80?2:lvl>=70?3:lvl>=60?4:lvl>=50?5:lvl>=40?6:lvl>=30?7:8;return{raw:null,max:100,grade:g,ov:M.ov,eff:Math.round(eff),disp:g+"등급"};}
+ var max=(s.key==="bio"||s.key==="eth")?50:100,raw=Math.round(Math.min(max,Math.max(0,realScore(eff,max)+vc*(max/100)))),g=gradeFor(max,raw);
+ return{raw:raw,max:max,grade:g,ov:M.ov,eff:Math.round(eff),disp:raw+"/"+max+" "+g+"등급"};}
+function projScore(s,T){var t=Math.max(0,Math.min(1,T+s.off)),adv=Math.max(0,Math.min(1,Math.pow(Math.max(t,0.001),0.95))),parts=[],i;
+ for(i=0;i<s.part.length;i++){var pt=s.part[i],v=pt.c*(0.50+0.30*Math.pow(Math.max(t,0.001),0.7)+0.20*adv);if(v>pt.c)v=pt.c;parts.push({v:v,w:pt.w});}
+ var eff=effMastery(parts);if(s.key==="eng")return eff>=90?1:eff>=80?2:eff>=70?3:eff>=60?4:eff>=50?5:eff>=40?6:eff>=30?7:8;
+ var max=(s.key==="bio"||s.key==="eth")?50:100;return gradeFor(max,Math.round(realScore(eff,max)));}
+function mcol(v){return v>=85?"#8fc7bc":(v>=70?"#cdab63":"#c9756a");}
+function subjKey(label){if(label.indexOf("생명")>=0||label.indexOf("과탐")>=0)return"bio";if(label.indexOf("생활과윤리")>=0||label.indexOf("사탐")>=0)return"eth";if(label.indexOf("수학")>=0)return"math";if(label.indexOf("국어")>=0)return"kor";if(label.indexOf("영")>=0)return"eng";return null;}
+var MIND={
+ math:["미적 30번… 손은 기억하는데 머리가 못 따라가. 한 번 더.","계산 실수만 줄여도 1등급인데. 검산 습관 들이는 중.","개념은 잡았어. 이제 킬러에서 안 무너지면 돼."],
+ kor:["과학·기술 지문, 또 두 번 읽었다. 남들 한 번 읽을 때.","문학은 자신 있어. 비문학이 발목을 잡네.","독해 속도는 끈기로 메운다. 매일 한 지문씩."],
+ eng:["빈칸은 감으로 풀면 안 돼. 논리로 끊어야 해.","듣기·어법은 안정권. 빈칸 하나만 잡자.","단어는 그냥 매일. 변명 없이."],
+ bio:["유전 가계도, 또 틀렸어. 근데 왜 틀렸는진 알겠어. 그게 다음 단계지.","비유전은 거의 다 왔다. 유전만 넘으면 1등급.","추론이 막히면 개념으로 돌아간다. 백 번이라도."],
+ eth:["사상가 입장만 안 헷갈리면 만점인데. 표로 다시 정리.","생윤은 효자 과목. 여기서 1등급 못 받으면 안 돼.","시사 문제는 자신 있어. 사상사만 완벽하게."],
+ rest:["잠깐 쉬어도 머릿속은 아직 30번에 가 있어.","눈 감고 방금 본 거 떠올리는 중.","딱 10분만. 그리고 다시 책상으로."],
+ sleep:["내일은 유전부터. 그 생각하다 잠들어.","오늘 못 끝낸 분량이 자꾸 떠올라.","꿈에서도 문제 푸는 기분이야."]
+};
+function curSubjKey(){var n=new Date(),mn=n.getHours()*60+n.getMinutes(),seg=segAt(mn);if(seg.state==="sleep")return"sleep";if(seg.state!=="study")return"rest";return subjKey(seg.label)||"rest";}
+function renderMind(){var k=curSubjKey(),n=new Date(),mn=n.getHours()*60+n.getMinutes();var b=document.querySelectorAll(".pgtoday");for(var i=0;i<b.length;i++){b[i].style.display=(b[i].getAttribute("data-k")===k)?"inline":"none";}var pool=MIND[k]||MIND.rest;var m=$("mind");if(m)m.textContent="시은의 지금 속마음 — "+pool[Math.floor(mn/11)%pool.length];}
+function buildProgress(){var pc=pace(),dev=Math.round((pc-1)*0.06*DTOT);var h='<div style="font-size:10px;color:#857b88;font-family:DM Mono,monospace;margin-bottom:4px;letter-spacing:.3px">최근 21일 페이스 '+(pc>=1?"+":"")+Math.round((pc-1)*100)+'% · 계획 대비 '+(dev>=0?"+":"")+dev+'일</div>',j,i;for(j=0;j<CURRIC.length;j++){var s=CURRIC[j],p=prog(s),segs="",labs="";
+ for(i=0;i<4;i++){var ff=p.sl[i]?(p.sd[i]/p.sl[i]*100):0;segs+='<div class="pgs" style="flex:'+p.sl[i]+'"><div class="pgsf" style="width:'+ff.toFixed(0)+'%"></div></div>';labs+='<span style="flex:'+p.sl[i]+'">'+s.stg[i]+'</span>';}
+ var cur=p.cur||s.mod[s.mod.length-1];var lecpos=p.cur?(" · "+p.curLecIdx+"/"+p.curLecTot+"강"):" · 완강";
+ var reading=p.conceptDone?("개념 ✓2회독 · "+s.stg[p.curSt]+" ▶ "+(p.cur?p.curLecIdx+"/"+p.curLecTot+"강":"완료")):("개념 ▶ "+(p.cur?p.curLecIdx+"/"+p.curLecTot+"강":""));
+ h+='<div class="pgcard"><div class="pgtop"><span class="pgsubj">'+s.subj+' <b>· '+s.tc+' · '+s.pf+'</b></span><span class="pgpct">'+p.pct+'%</span></div><div class="pgnow">'+s.stg[p.curSt]+' · 「'+s.course[p.curSt]+'」 → '+cur.l+lecpos+'<span class="pgtoday" data-k="'+s.key+'" style="display:none">● 지금 공부 중</span></div><div class="pgseg">'+segs+'</div><div class="pgsl">'+labs+'</div><div class="pgmeta">'+reading+' · 총 '+p.total+'강 중 '+p.done+'강</div></div>';}
+ var el=$("pgwrap");if(el)el.innerHTML=h;}
+function buildMastery(){var h="",j,i;for(j=0;j<CURRIC.length;j++){var s=CURRIC[j],M=subjMastery(s),rows="";
+ for(i=0;i<M.parts.length;i++){var pt=M.parts[i];rows+='<div class="udrow"><span class="udlbl'+(pt.w?' udwk':'')+'">'+pt.l+(pt.w?' ·약점':'')+'</span><div class="udbar"><div class="udf" style="width:'+pt.v+'%;background:'+mcol(pt.v)+'"></div></div><span class="udval">'+pt.v+'</span></div>';}
+ var sc=siScore(s);h+='<div class="udgroup"><div class="udhead"><span class="udh1">'+s.subj+' <b>· '+s.tc+'</b></span><span class="udov">이해도 '+M.ov+' · 예상 '+sc.disp+'</span></div>'+rows+'</div>';}
+ var el=$("udwrap");if(el)el.innerHTML=h;}
+/* ===== 나 vs 시은 비교 ===== */
+let mystats={}; try{mystats=JSON.parse(localStorage.getItem("mystats")||"{}")||{};}catch(e){mystats={};}
+const MYDEF={math:50,kor:89,eng:78,bio:40,eth:30};
+function myLevel(key){return (mystats[key]!=null)?Number(mystats[key]):MYDEF[key];}
+function setMyLevel(key,v){v=Math.max(0,Math.min(100,Math.round(Number(v)||0)));mystats[key]=v;try{localStorage.setItem("mystats",JSON.stringify(mystats));}catch(e){}buildCompare();}
+function buildCompare(){
+ var meLvSum=0,siOvSum=0,meGsum=0,siGsum=0,rows="",j;
+ var meCum=0;for(var kk in log){meCum+=Number(log[kk]||0);}
+ var siCum=0,d=new Date(Y0),now=new Date(),cnt=0;while(d<=now&&cnt<400){siCum+=fullDay(ld(d))*3600;d.setDate(d.getDate()+1);cnt++;}
+ for(j=0;j<CURRIC.length;j++){var s=CURRIC[j],M=subjMastery(s),lv=myLevel(s.key);
+  meLvSum+=lv;siOvSum+=M.ov;
+  var meG=gradeFromMastery(s.key,lv),siSc=siScore(s),gap=M.ov-lv;meGsum+=meG;siGsum+=siSc.grade;
+  var gtxt=gap>0?("시은 +"+gap):(gap<0?("내가 +"+(-gap)):"동률"),gcol=gap>0?"#cdab63":(gap<0?"#9cc7bf":"#857b88");
+  rows+='<div class="cmprow"><div class="cmphd"><span class="nm">'+s.subj+'</span><span class="gp" style="color:'+gcol+'">'+gtxt+'</span></div>'
+   +'<div class="cmpbar"><div class="cmpL"><div class="cmpme" style="width:'+lv+'%"></div></div><div class="cmpR"><div class="cmpsi" style="width:'+M.ov+'%"></div></div></div>'
+   +'<div class="cmpfoot"><span class="me">나 '+lv+' · '+meG+'등급</span><span class="si">시은 '+M.ov+' · 예상 '+siSc.grade+'등급 · 진도 '+M.p.pct+'%</span></div></div>';}
+ var liveU=window._liveU||0,siSec=window._siSec||0;
+ var sum='<div class="cmpsum">'
+  +'<div class="cmpcard"><div class="cmpcl">오늘 순공</div><div class="cmpcv"><span class="me" id="cmpMeToday">'+hm(liveU)+'</span><span class="si" id="cmpSiToday">'+hm(siSec)+'</span></div></div>'
+  +'<div class="cmpcard"><div class="cmpcl">누적 순공</div><div class="cmpcv"><span class="me">'+hm(meCum)+'</span><span class="si">'+hm(Math.round(siCum))+'</span></div></div>'
+  +'<div class="cmpcard"><div class="cmpcl">예상 등급합</div><div class="cmpcv"><span class="me">'+meGsum+'</span><span class="si">'+siGsum+'</span></div></div></div>';
+ var edit='<div class="myedit"><span style="letter-spacing:.5px">내 현재 실력 입력 (0~100, 점수처럼)</span><br>';
+ for(j=0;j<CURRIC.length;j++){var s2=CURRIC[j];edit+='<label>'+s2.subj+' <input class="myin" type="number" min="0" max="100" value="'+myLevel(s2.key)+'" onchange="setMyLevel(\''+s2.key+'\',this.value)"></label>';}
+ edit+='</div>';
+ var el=$("cmpwrap");if(el)el.innerHTML=sum+'<div class="sct"><div class="lbl">과목별 실력 격차 · 나(파랑) vs 시은(노랑)</div>'+rows+'</div>'+edit;
+}
+/* ===== 모의고사 일정 + 시은 예상 등급 투영 ===== */
+var EXAMS=[{d:"2026-06-04",n:"6월 모의평가"},{d:"2026-09-03",n:"9월 모의평가"},{d:"2026-11-19",n:"수능"}];
+function projAt(dstr){var de=parseDate(dstr),T=(de-Y0)/(SUNUNG-Y0),codes={math:"수",kor:"국",eng:"영",bio:"생",eth:"윤"},out=[],j;
+ for(j=0;j<CURRIC.length;j++){out.push(codes[CURRIC[j].key]+projScore(CURRIC[j],T));}
+ return out.join("  ");}
+function buildExams(){var h="",n=new Date(),i;for(i=0;i<EXAMS.length;i++){var e=EXAMS[i],de=parseDate(e.d),dd=Math.ceil((de-n)/86400000),ddtxt=dd>0?("D-"+dd):(dd===0?"D-DAY":"종료");
+ h+='<div class="examrow"><div class="examn">'+e.n+'<s>시은 예상 등급 · '+projAt(e.d)+'</s></div><div class="examd">'+ddtxt+'<br><span class="scchip">'+e.d.slice(5).replace("-",".")+'</span></div></div>';}
+ var el=$("examwrap");if(el)el.innerHTML=h;}
 function mediaKey(seg){
   if(seg.state==="sleep")return "sleep";
   if(seg.state==="eat")return "coffee";
@@ -130,7 +343,7 @@ let running=false, startTs=null, dk=ld(new Date()), saveCtr=0, lastDetail="", ty
 const base=()=>log[dk]||0;
 const save=()=>{try{localStorage.setItem("studylog",JSON.stringify(log));}catch(e){}};
 function $(id){return document.getElementById(id);}
-// ---- server sync ----
+// ---- server sync (공부시간만 동기화) ----
 async function loadServer(){ if(!syncKey)return;
   try{ const r=await fetch("/api/sync?key="+encodeURIComponent(syncKey)); const srv=await r.json();
     if(srv&&typeof srv==="object"){for(const k in srv){log[k]=Math.max(Number(log[k]||0),Number(srv[k]||0));} save(); tick();}
@@ -140,7 +353,7 @@ async function loadServer(){ if(!syncKey)return;
 async function saveServer(){ if(!syncKey)return;
   try{ await fetch("/api/sync?key="+encodeURIComponent(syncKey),{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(log)}); }catch(e){}
 }
-function setupSync(){ const k=window.prompt("동기화 키를 입력하세요.\n모든 기기에서 같은 키를 넣으면 기록이 자동으로 동기화됩니다.\n(비우면 동기화 끔)", syncKey||"");
+function setupSync(){ const k=window.prompt("동기화 키를 입력하세요.\n모든 기기에서 같은 키를 넣으면 공부시간이 자동으로 동기화됩니다.\n(비우면 동기화 끔)", syncKey||"");
   if(k===null)return; syncKey=k.trim(); localStorage.setItem("synckey",syncKey);
   if(syncKey){ $("synced").textContent="● 동기화: "+syncKey; loadServer(); } else { $("synced").textContent="○ 동기화 꺼짐"; } }
 function playCur(){ if(window.curVid){var p=window.curVid.play(); if(p&&p.catch)p.catch(function(){});} }
@@ -155,15 +368,17 @@ function setMedia(key){
 }
 function tick(){
   const now=new Date(); const cur=ld(now);
-  if(cur!==dk){dk=cur; if(running)startTs=Date.now();}
+  if(cur!==dk){dk=cur; window._pace=recentPace(cur); if(running)startTs=Date.now(); buildProgress(); buildMastery(); buildCompare();}
   const minNow=now.getHours()*60+now.getMinutes();
   const seg=segAt(minNow), dt=dayTypeFor(dk), st=seg.state;
   if(running&&startTs!=null){const el=(Date.now()-startTs)/1000; if(++saveCtr>=15){log[dk]=(log[dk]||0)+el; startTs=Date.now(); saveCtr=0; save(); saveServer();}}
   const siSec=Math.round(studiedMin(minNow)*60*dt.mult);
   const liveU=base()+(running&&startTs!=null?(Date.now()-startTs)/1000:0);
+  window._liveU=liveU; window._siSec=siSec;
   $("clk").textContent=fmtC(minNow*60+now.getSeconds());
   $("dt").textContent=ld(now).replace(/-/g,". ")+" · "+WK[now.getDay()]+"요일";
-  $("cond").textContent=dt.key; $("cond").style.color=dt.color;
+  $("cond").textContent=dt.key; $("conddot").style.background=dt.color;
+  if($("condst")){var stn=condStreak(dk); $("condst").textContent=" · "+stn+"일째";}
   $("dday").textContent="D-"+Math.ceil((SUNUNG-now)/86400000);
   setMedia(mediaKey(seg));
   const sleeping=st==="sleep";
@@ -177,7 +392,7 @@ function tick(){
   $("siHero").textContent=hm(siSec);
   $("mev").textContent=hm(liveU);
   $("melbl").textContent="나의 오늘 순공"+(liveU>siSec&&!sleeping?" · 리드 중":"");
-  let streak=0; for(let i=0;i<60;i++){const d=new Date(now); d.setDate(d.getDate()-i); const k=ld(d); const v=i===0?liveU:(log[k]||0); if(v>=600)streak++; else break;}
+  let streak=0; for(let i=0;i<60;i++){const dd=new Date(now); dd.setDate(dd.getDate()-i); const k=ld(dd); const v=i===0?liveU:(log[k]||0); if(v>=600)streak++; else break;}
   $("strk").textContent="연속 "+streak+"일 기록 · 목표 8시간";
   $("btn").textContent=running?"멈춤":"공부 시작"; $("btn").className="btn "+(running?"pause":"start");
   const total=Math.max(liveU+siSec,1), siPct=Math.round(siSec/total*100);
@@ -192,8 +407,11 @@ function tick(){
   else rival="완패네요 오늘은. 분해요. 내일은 안 봐줍니다.";
   $("quote").textContent=rival;
   $("stlmk").style.left=(minNow/1440*100)+"%";
-  let week=0,siWeek=0; for(let i=0;i<7;i++){const d=new Date(now); d.setDate(d.getDate()-i); const k=ld(d); week+=i===0?liveU:(log[k]||0); siWeek+=i===0?siSec:fullDay(k)*3600;}
+  let week=0,siWeek=0; for(let i=0;i<7;i++){const dd=new Date(now); dd.setDate(dd.getDate()-i); const k=ld(dd); week+=i===0?liveU:(log[k]||0); siWeek+=i===0?siSec:fullDay(k)*3600;}
   $("wkMe").textContent=hm(week); $("wkSi").textContent=hm(siWeek);
+  if($("cmpMeToday"))$("cmpMeToday").textContent=hm(liveU);
+  if($("cmpSiToday"))$("cmpSiToday").textContent=hm(siSec);
+  renderMind();
 }
 function toggle(){
   if(running){const el=startTs!=null?(Date.now()-startTs)/1000:0; log[dk]=(log[dk]||0)+el; startTs=null; running=false; saveCtr=0; save(); saveServer();}
@@ -202,16 +420,20 @@ function toggle(){
 }
 function resetDay(){if(!confirm("오늘 기록을 0으로 초기화할까요?"))return; log[dk]=0; startTs=running?Date.now():null; saveCtr=0; save(); saveServer(); tick();}
 function buildStatic(){
-  const stl=$("stl");
+  const stl=$("stl"); if(!stl)return;
   SCHEDULE.forEach(function(x){const d=document.createElement("div"); d.style.width=((x.e-x.s)/1440*100)+"%";
     d.style.background=x.state==="sleep"?"#1c1722":x.state==="study"?"rgba(224,168,92,.30)":"rgba(150,140,155,.16)"; stl.appendChild(d);});
   const mk=document.createElement("div"); mk.id="stlmk"; mk.className="stlmk"; stl.appendChild(mk);
-  const sc=$("scores");
-  SI.forEach(function(s){const row=document.createElement("div"); row.className="scrow";
-    row.innerHTML='<span class="scsub">'+s.s+'</span><div class="scbar"><div class="scme" style="width:'+s.mp+'%"></div><div class="scsi" style="left:'+s.p+'%"></div></div><span class="scv">'+s.me+' → '+s.v+'</span>';
-    sc.appendChild(row);});
 }
-window.addEventListener("DOMContentLoaded",function(){buildStatic(); $("btn").onclick=toggle; $("reset").onclick=resetDay; $("sync").onclick=setupSync;
+function showTab(name){var ss=document.querySelectorAll(".tabsec"),bs=document.querySelectorAll(".tab"),i;
+  for(i=0;i<ss.length;i++)ss[i].classList.toggle("on",ss[i].getAttribute("data-tab")===name);
+  for(i=0;i<bs.length;i++)bs[i].classList.toggle("on",bs[i].getAttribute("data-tab")===name);
+  if(name==="cmp")buildCompare();
+  if(name==="ana"){buildProgress();buildMastery();buildExams();}
+  if(name==="live")playCur();}
+window.addEventListener("DOMContentLoaded",function(){buildStatic(); buildProgress(); buildMastery(); buildCompare(); buildExams(); renderMind();
+  $("btn").onclick=toggle; $("reset").onclick=resetDay; $("sync").onclick=setupSync;
+  var tb=document.querySelectorAll(".tab"); for(var i=0;i<tb.length;i++){tb[i].addEventListener("click",function(){showTab(this.getAttribute("data-tab"));});}
   ["vidA","vidB"].forEach(function(id){$(id).addEventListener("playing",function(){$("playhint").style.display="none";});});
   $("hero").addEventListener("click",function(){playCur(); $("playhint").style.display="none";});
   document.addEventListener("click",playCur,{once:true});
