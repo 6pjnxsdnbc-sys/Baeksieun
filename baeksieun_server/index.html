@@ -1345,13 +1345,24 @@ function setupSync(){ const k=window.prompt("동기화 키를 입력하세요.\n
   if(syncKey){ $("synced").textContent="● 동기화: "+syncKey; loadServer(); } else { $("synced").textContent="○ 동기화 꺼짐"; } }
 function playCur(){ if(window.curVid){var p=window.curVid.play(); if(p&&p.catch)p.catch(function(){});} }
 function setMedia(file){
-  if(file===curKey)return; curKey=file;
+  if(file===curKey)return;            // 이미 그 클립이면 무시
+  if(window._vidPending)return;        // 전환 진행 중이면 다음 tick에서
+  curKey=file; window._vidPending=true;
   const showId=active==="A"?"vidB":"vidA", hideId=active==="A"?"vidA":"vidB";
   const show=$(showId), hide=$(hideId);
-  show.removeAttribute("poster"); show.src=file; show.load(); window.curVid=show;
-  const p=show.play(); if(p&&p.catch)p.catch(function(){});
-  show.style.opacity="1"; hide.style.opacity="0";
-  active=showId==="vidA"?"A":"B";
+  show.removeAttribute("poster");
+  var done=false, tmo;
+  function reveal(){
+    if(done)return; done=true; clearTimeout(tmo); show.oncanplay=null; show.onerror=null;
+    var p=show.play(); if(p&&p.catch)p.catch(function(){});
+    show.style.opacity="1"; hide.style.opacity="0";
+    window.curVid=show; active=(showId==="vidA")?"A":"B"; window._vidPending=false;
+  }
+  function fail(){ if(done)return; done=true; clearTimeout(tmo); show.oncanplay=null; show.onerror=null;
+    window._vidPending=false; curKey=null; }   // 끊김 대신 현재 화면 유지 → 다음 tick에서 재시도
+  show.oncanplay=reveal; show.onerror=fail;
+  tmo=setTimeout(fail,10000);                  // 10초 안에 준비 안 되면 재시도
+  show.src=file; show.load();
 }
 function tick(){
   const now=new Date(); const cur=ld(now); SCHEDULE=scheduleFor(cur);
@@ -1373,9 +1384,11 @@ function tick(){
   var sleeping0=(st==="sleep");
   var scene=sleeping0?"night":sceneForMin(minNow);
   var nowMs=Date.now();
-  if(window._curScene!==scene){ window._curScene=scene; window._clipIdx=0; window._lastClipSwap=nowMs; }
-  else if(nowMs-(window._lastClipSwap||0)>75000){ window._clipIdx=((window._clipIdx||0)+1)%5; window._lastClipSwap=nowMs; }
-  setMedia(CLIPS[scene][window._clipIdx||0]);
+  if(!window._vidPending){
+    if(window._curScene!==scene){ window._curScene=scene; window._clipIdx=0; window._lastClipSwap=nowMs; }
+    else if(nowMs-(window._lastClipSwap||0)>90000){ window._clipIdx=((window._clipIdx||0)+1)%5; window._lastClipSwap=nowMs; }
+    setMedia(CLIPS[scene][window._clipIdx||0]);
+  }
   const sleeping=st==="sleep";
   $("glow").style.opacity=sleeping?"0":"1";
   $("stt").innerHTML='<span class="pd" style="background:'+(sleeping?"#9a9a9a":st==="study"?"#e50914":"#e0e0e0")+'"></span>'+(sleeping?"OFFLINE":st==="study"?"STUDYING":"BREAK");
