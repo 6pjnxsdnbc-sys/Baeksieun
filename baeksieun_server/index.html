@@ -118,6 +118,110 @@ body{color:var(--ink);font-family:'Pretendard',system-ui,-apple-system,sans-seri
 .wkv{font-size:22px;font-weight:800;margin-top:7px}.wkv.me{color:var(--red)}.wkv.si{color:var(--ink)}
 .wkd{width:1px;align-self:stretch;background:var(--line);margin:0 8px}
 .ft{text-align:center;font-size:9.5px;color:var(--ink3);margin-top:26px;line-height:1.8}
+/* ---- v4: density + new modules ---- */
+@media(min-width:1000px){.bento{grid-template-columns:repeat(auto-fit,minmax(286px,1fr))}}
+.stmtop{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+.stmnum{font-size:40px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.stmunit{font-size:14px;font-weight:600;color:var(--ink3);margin-left:2px}
+.stmstate{font-size:12px;font-weight:600;color:var(--ink2);text-align:right;padding-bottom:5px}
+.gauge{height:12px;border-radius:99px;background:var(--soft);overflow:hidden;margin-top:12px}
+.gaugef{height:100%;border-radius:99px;background:var(--ink);transition:width .8s ease,background .4s}
+.stmmeta{font-size:10px;color:var(--ink3);margin-top:11px}.stmmeta b{color:var(--ink2);font-weight:600}
+.trend{display:flex;align-items:flex-end;gap:8px;height:120px;margin-top:6px}
+.tcol{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;height:100%;justify-content:flex-end;min-width:0}
+.tbars{display:flex;align-items:flex-end;gap:3px;height:100%;width:100%;justify-content:center}
+.tbar{width:9px;border-radius:3px 3px 0 0;min-height:2px}
+.tbar.si{background:var(--ink)}.tbar.me{background:var(--red)}
+.tlbl{font-size:9px;color:var(--ink3)}.tlbl.today{color:var(--red);font-weight:700}
+.ss{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.ssc{background:var(--soft);border-radius:10px;padding:11px}
+.ssk{font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)}
+.ssv{font-size:18px;font-weight:800;margin-top:5px;letter-spacing:-.02em}
+.ssv s{font-size:11px;font-weight:600;color:var(--ink3);text-decoration:none;margin-left:2px}
+.tlog{display:flex;flex-direction:column}
+.tlogr{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid var(--line);font-size:11.5px}
+.tlogr:last-child{border:none}
+.tlogt{width:42px;flex-shrink:0;color:var(--ink3);font-weight:600}
+.tlogc{flex:1;min-width:0;color:var(--ink2)}.tlogc b{color:var(--ink);font-weight:600}
+.tlogr.now{background:rgba(229,9,20,.06);margin:0 -8px;padding:7px 8px;border-radius:7px;border:none}
+.tlogr.now .tlogc b{color:var(--red)}
+.tlogr.done{opacity:.42}
+.heat{display:grid;grid-template-columns:repeat(15,1fr);gap:4px}
+.hcell{aspect-ratio:1;border-radius:3px;background:var(--soft)}
+.heatleg{display:flex;align-items:center;gap:6px;justify-content:flex-end;font-size:9px;color:var(--ink3);margin-top:10px}
+.heatleg i{width:11px;height:11px;border-radius:3px;display:inline-block}
+.todrow{display:flex;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:12.5px;align-items:center}
+.todrow:last-child{border:none}
+.todk{width:92px;flex-shrink:0;color:var(--ink3);font-weight:600;font-size:11px}
+.todv{flex:1;min-width:0;color:var(--ink2);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.todv b{color:var(--ink);font-weight:700}
+.todg{display:inline-block;width:96px;height:9px;border-radius:99px;background:var(--soft);overflow:hidden;vertical-align:middle}
+.todg>span{display:block;height:100%;border-radius:99px;transition:width .8s ease}
+.hcurve{display:flex;align-items:flex-end;gap:5px;height:122px;margin-top:8px}
+.hcol{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;height:100%;justify-content:flex-end;min-width:0}
+.hbar{width:100%;max-width:18px;border-radius:4px 4px 0 0;transition:height .5s ease,background .4s}
+.hlbl{font-size:8.5px;color:var(--ink3)}.hlbl.now{color:var(--red);font-weight:800}
+.todsub{color:var(--ink3);font-size:10px}
+.stjhead{font-size:11px;color:var(--ink3);margin-bottom:8px}.stjhead b{color:var(--red);font-weight:800}
+.stjr{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);font-size:11.5px}
+.stjr:last-child{border:none}
+.stjr.foc{background:rgba(229,9,20,.05);margin:0 -8px;padding:8px;border-radius:7px;border:none}
+.stjsub{font-weight:700;color:var(--ink);min-width:42px}.stjsub em{font-style:normal;font-size:9px;color:#fff;background:var(--red);border-radius:5px;padding:1px 5px;margin-left:5px}
+.stjacc{color:var(--ink2)}.stjacc b{color:var(--ink)}.stjpm,.stjmo{color:var(--ink3)}.stjwp{color:var(--ink3);flex-basis:100%;font-size:10.5px}
+.mkr{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);font-size:11.5px}
+.mkr:last-of-type{border:none}.mkr.fut{opacity:.5}
+.mkn{font-weight:700;color:var(--ink);min-width:96px}.mkn em{font-style:normal;font-size:9px;color:#fff;background:var(--red);border-radius:5px;padding:1px 5px;margin-left:5px}
+.mkr.pv .mkn{color:var(--red)}.mkd{color:var(--ink3);font-size:10px;min-width:62px}.mkpct b{color:var(--ink)}.mkpct,.mkeng,.mkgs{color:var(--ink2)}
+.mkmine{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line2);font-size:12px;color:var(--ink2)}.mkmine b{color:var(--ink)}
+.myedit{color:var(--red);border-bottom:1px dashed var(--red);min-width:24px;display:inline-block;text-align:center;outline:none;padding:0 3px}
+.pcurve{display:flex;align-items:flex-end;gap:6px;height:140px;margin-top:6px}
+.pcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;height:100%;min-width:0}
+.pval{font-size:10px;font-weight:700;color:var(--ink2)}.pval.fut{color:var(--ink3);font-weight:600}
+.pbar{width:100%;max-width:30px;border-radius:5px 5px 0 0;transition:height .5s}
+.plbl{font-size:9.5px;color:var(--ink3)}.plbl.pv{color:var(--red);font-weight:700}
+.spark{display:flex;align-items:flex-end;gap:1px;height:24px;margin-top:7px}
+.spark i{flex:1;min-width:1px;background:var(--red);opacity:.8;border-radius:1px;transition:height .25s linear}
+.wtop{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.wphase{font-size:14px;font-weight:800;color:var(--red)}.wpct{font-size:12px;color:var(--ink2)}.wpct b{color:var(--ink)}
+.ybar{position:relative;display:flex;gap:2px;height:34px;margin:4px 0 10px}
+.yseg{position:relative;background:var(--soft);border-radius:5px;display:flex;align-items:center;justify-content:center;overflow:hidden;min-width:0}
+.yseg span{font-size:8.5px;color:var(--ink3);white-space:nowrap;padding:0 2px;text-overflow:ellipsis;overflow:hidden}
+.yseg.on{background:#1a1a1a}.yseg.on span{color:#fff;font-weight:700}
+.ymark{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--red);box-shadow:0 0 0 2px rgba(229,9,20,.18);border-radius:2px}
+.ymp{position:absolute;top:50%;width:7px;height:7px;border-radius:50%;background:#fff;border:2px solid var(--ink);transform:translate(-50%,-50%)}
+.wmeta{font-size:11px;color:var(--ink3)}.wmeta b{color:var(--ink)}
+.rgwrap{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.rgbadge{font-size:15px;font-weight:800;color:#fff;background:var(--red);border-radius:8px;padding:4px 12px}
+.rgdesc{font-size:12px;color:var(--ink2)}
+.trow{display:flex;align-items:center;gap:10px;padding:5px 0;font-size:12px}
+.tlbl{min-width:74px;color:var(--ink2)}
+.tbar{flex:1;height:7px;background:var(--soft);border-radius:4px;overflow:hidden}
+.tbf{height:100%;background:#0a0a0a;border-radius:4px}
+.tval{min-width:24px;text-align:right;color:var(--ink)}
+.stjcf{font-size:11px;color:var(--ink3)}.stjcf b{color:var(--ink2)}
+.albig{display:flex;height:16px;border-radius:8px;overflow:hidden;margin-bottom:12px}
+.albig span{display:block;height:100%}
+.alrow{display:flex;align-items:center;gap:8px;padding:4px 0;font-size:12px}
+.aldot{width:9px;height:9px;border-radius:50%;flex:none}
+.alsub{min-width:48px;color:var(--ink)}
+.albar2{flex:1;height:7px;background:var(--soft);border-radius:4px;overflow:hidden}
+.albar2 span{display:block;height:100%;border-radius:4px}
+.almin{min-width:64px;text-align:right;color:var(--ink2)}
+.alnote{font-size:10.5px;color:var(--ink3);margin-top:8px}
+.loadbar{display:inline-flex;width:120px;height:8px;border-radius:4px;overflow:hidden;vertical-align:middle;margin-right:6px}
+.loadbar span{display:block;height:100%}
+.thinkrow{font-size:12px;color:var(--ink);line-height:1.5;padding:6px 0;border-top:1px solid var(--line);margin-top:2px}
+.thlbl{display:inline-block;font-size:9px;font-weight:800;letter-spacing:.4px;color:#fff;background:var(--ink);border-radius:4px;padding:1px 6px;margin-right:6px;vertical-align:middle}
+.thd{color:var(--ink2)}
+.thov{color:var(--red);font-style:normal;font-weight:700;font-size:10px;margin-left:4px}
+.thctrl{color:#0a0a0a;font-style:normal;font-weight:700;font-size:9.5px;background:var(--soft);border-radius:4px;padding:1px 5px;margin-left:5px}
+.thnow{padding:2px 0 8px}.thnow b{font-size:14px}
+.thbadge{display:inline-block;font-size:9px;font-weight:800;letter-spacing:.4px;color:#fff;background:var(--red);border-radius:4px;padding:1px 6px;margin-right:6px;vertical-align:middle}
+.thd2{font-size:11.5px;color:var(--ink2);margin-top:3px}
+.thtrace{display:flex;flex-wrap:wrap;align-items:center;gap:3px;padding:8px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:8px}
+.tcrumb{font-size:10px;color:var(--ink3);background:var(--soft);border-radius:4px;padding:2px 6px;white-space:nowrap}
+.tcrumb.cur{color:#fff;background:var(--ink)}
+.tcarrow{font-size:9px;color:var(--ink3)}
 </style></head>
 <body><div class="app">
   <div class="top">
@@ -159,6 +263,40 @@ body{color:var(--ink);font-family:'Pretendard',system-ui,-apple-system,sans-seri
       <div class="duelrow"><span>시은 <b style="color:var(--ink)" id="siH2" class="tnum"></b></span><span><b style="color:var(--red)" id="meH2" class="tnum"></b> 나</span></div>
       <div class="track"><div class="tA" id="tA" style="width:0%"></div><div class="tB"></div></div>
       <div class="quote" id="quote"></div>
+    </section>
+
+    <!-- 시은 체력 -->
+    <section class="panel">
+      <div class="lbl">시은 체력 · 실시간</div>
+      <div class="stmtop"><div class="stmnum"><span id="stmVal" class="tnum">--</span><span class="stmunit">/100</span></div><div class="stmstate" id="stmLbl"></div></div>
+      <div class="gauge"><div class="gaugef" id="stmFill" style="width:0%"></div></div>
+      <div class="stmmeta">아침 체력 <b id="stmMorn" class="tnum"></b> · 누적 피로 <b id="stmFat" class="tnum"></b> · 평균 수면 <b id="stmSleep" class="tnum"></b></div>
+    </section>
+
+    <!-- 지금 이 순간 (분 단위) -->
+    <section class="panel">
+      <div class="lbl">지금 이 순간 · 실시간</div>
+      <div class="stmtop"><div class="stmnum"><span id="nowFocus" class="tnum">--</span><span class="stmunit">% 집중</span></div></div>
+      <div class="gauge"><div class="gaugef" id="nowFocusFill" style="width:0%"></div></div>
+      <div class="stmmeta" id="nowMicro" style="min-height:13px"></div>
+      <div class="stmmeta">각성 <b id="nowAlert"></b> · 90분 주기 <b id="nowUd"></b></div>
+      <div class="stmmeta" id="nowFlow" style="min-height:13px"></div>
+      <div class="thinkrow" id="nowThink" style="min-height:13px"></div>
+      <div class="stmmeta" id="nowMode" style="min-height:13px"></div>
+      <div class="stmmeta" id="nowBio" style="min-height:13px"></div>
+      <div class="spark" id="nowspark" title="최근 48초 집중 미세변동"></div>
+    </section>
+
+    <!-- 오늘의 시은 -->
+    <section class="panel span2">
+      <div class="lbl">오늘의 시은</div>
+      <div id="today"></div>
+    </section>
+
+    <!-- 시간대별 집중력 곡선 -->
+    <section class="panel span2">
+      <div class="lbl">오늘 시간대별 집중력 곡선 · 점심 후 딥 / 저녁 반등</div>
+      <div id="hourcurve"></div>
     </section>
 
     <!-- 육각 레이더 -->
@@ -205,15 +343,116 @@ body{color:var(--ink);font-family:'Pretendard',system-ui,-apple-system,sans-seri
       <div class="wk"><div class="wkc"><div class="lbl">나</div><div class="wkv me tnum" id="wkMe"></div></div>
         <div class="wkd"></div><div class="wkc"><div class="lbl">시은</div><div class="wkv si tnum" id="wkSi"></div></div></div>
     </section>
+
+    <!-- 7일 순공 추이 -->
+    <section class="panel span2">
+      <div class="lbl">최근 7일 순공 추이 · 나(빨강) vs 시은(검정)</div>
+      <div id="trend7"></div>
+    </section>
+
+    <!-- 시은 누적 통계 -->
+    <section class="panel">
+      <div class="lbl">시은 누적 통계</div>
+      <div id="sistats"></div>
+    </section>
+
+    <!-- 시은 오늘 학습 로그 -->
+    <section class="panel">
+      <div class="lbl">시은 오늘 학습 로그</div>
+      <div id="tlog" class="tlog"></div>
+    </section>
+
+    <!-- 나의 30일 기록 -->
+    <section class="panel span2">
+      <div class="lbl">최근 30일 나의 기록 · 진할수록 오래 공부</div>
+      <div id="heat"></div>
+    </section>
+
+    <!-- 과목별 오늘 -->
+    <section class="panel span2">
+      <div class="lbl">과목별 오늘 · 정답률 · 오답 · 자신감/불안 · 공략</div>
+      <div id="subjtoday"></div>
+    </section>
+
+    <!-- 오늘의 공부 배분 -->
+    <section class="panel span2">
+      <div class="lbl">오늘의 공부 배분 · 5과목이 시간을 두고 경쟁</div>
+      <div id="alloc"></div>
+    </section>
+
+    <!-- 모의고사 성적 이력 -->
+    <section class="panel span2">
+      <div class="lbl">시은 모의고사 성적 이력 · 백분위는 국·수·탐 평균</div>
+      <div id="mock"></div>
+    </section>
+
+    <!-- 모의고사 백분위 추이 -->
+    <section class="panel span2">
+      <div class="lbl">시은 모의고사 백분위 추이 · 빨강=평가원</div>
+      <div id="pcttrend"></div>
+    </section>
+
+    <!-- 재수 전체 여정 (매크로) -->
+    <section class="panel span2">
+      <div class="lbl">재수 전체 여정 · 시작 2월 → 수능 11월</div>
+      <div id="wholej"></div>
+    </section>
+
+    <!-- 이번 주 -->
+    <section class="panel">
+      <div class="lbl">이번 주 · 주간 리듬</div>
+      <div id="weekp"></div>
+    </section>
+
+    <!-- 이달의 시은 -->
+    <section class="panel">
+      <div class="lbl">이달의 시은 · 월간 국면</div>
+      <div id="monthp"></div>
+    </section>
+
+    <!-- 내면 상태 (창발) -->
+    <section class="panel span2">
+      <div class="lbl">지금 시은의 내면 · 여러 신호가 만들어내는 상태</div>
+      <div id="inner"></div>
+    </section>
+
+    <!-- 심리 프로필 -->
+    <section class="panel span2">
+      <div class="lbl">시은의 성격 · 모든 반응의 세기를 결정하는 고정 축 (재수하며 미세 변화)</div>
+      <div id="traits"></div>
+    </section>
+
+    <!-- 인지 상태 -->
+    <section class="panel span2">
+      <div class="lbl">시은의 인지 상태 · 작업기억 · 인지 부하 · 사고 모드 · 오류 유형</div>
+      <div id="cog"></div>
+    </section>
+
+    <!-- 사고 회로 -->
+    <section class="panel span2">
+      <div class="lbl">사고 회로 · 추론 흐름 · 메타인지 감시→제어 (지금 이 순간)</div>
+      <div id="think"></div>
+    </section>
+
+    <!-- 기억 역학 -->
+    <section class="panel span2">
+      <div class="lbl">기억 역학 · 인출강도 vs 저장강도 (Bjork)</div>
+      <div id="memory"></div>
+    </section>
   </div>
 
   <div class="ft">백시은은 실존 인물이 아닙니다 · 진도·이해도·예상등급은 강사 커리큘럼과 컨디션으로 자동 계산된 추정치입니다 · 공부시간은 같은 동기화 키 기기끼리 합쳐집니다</div>
 </div>
 <script>
 
-const MEDIA={study:"study.mp4",stretch:"stretch.mp4",coffee:"coffee.mp4",phone:"phone.mp4",sleep:"sleep.mp4"};
-const POSTERS={study:"poster_study.jpg",stretch:"poster_stretch.jpg",coffee:"poster_coffee.jpg",phone:"poster_phone.jpg",sleep:"poster_sleep.jpg"};
-const SCHEDULE = [
+/* 시간대별 영상 장면 (각 5클립). 같은 폴더에 night1.mp4~eve5.mp4 파일을 두면 됩니다. */
+const CLIPS={
+  night:["night1.mp4","night2.mp4","night3.mp4","night4.mp4","night5.mp4"], // 심야·수학 (새까만 밤 창)
+  dawn :["dawn1.mp4","dawn2.mp4","dawn3.mp4","dawn4.mp4","dawn5.mp4"],       // 새벽·영어 (여명, 밝은 자연광)
+  eve  :["eve1.mp4","eve2.mp4","eve3.mp4","eve4.mp4","eve5.mp4"]            // 저녁·생윤 (비 오는 밤, 따뜻한 램프)
+};
+/* 요일별 스케줄: 평일 / 토(약점·인강) / 일(실전 모의고사) */
+const SCHED_WD = [
   { s:0,    e:390,  label:"취침 중",          state:"sleep",  d:["새근새근...","내일을 위한 충전","Zzz..."] },
   { s:390,  e:420,  label:"기상 · 영단어",     state:"stretch",d:["눈 비비며 단어장 펴는 중","찬물 세수하고 정신 차리는 중"] },
   { s:420,  e:480,  label:"아침 · 약점노트",   state:"eat",    d:["어제 틀린 거 다시 보는 중","토스트 물고 약점노트 넘기는 중"] },
@@ -229,8 +468,44 @@ const SCHEDULE = [
   { s:1380, e:1410, label:"취침 준비",         state:"stretch",d:["불 끄기 직전","마지막 스트레칭 중"] },
   { s:1410, e:1440, label:"취침 중",           state:"sleep",  d:["방금 잠든 듯","Zzz..."] },
 ];
+const SCHED_SAT = [
+  { s:0,    e:420,  label:"취침 중",          state:"sleep",  d:["주말도 루틴대로","조금 더 자둔다","Zzz..."] },
+  { s:420,  e:450,  label:"기상 · 영단어",     state:"stretch",d:["주말도 같은 시간 기상","단어장부터 펴는 중"] },
+  { s:450,  e:510,  label:"아침 · 주간 오답총정리", state:"eat", d:["이번 주 틀린 거 싹 모으는 중","토스트 물고 오답 보는 중"] },
+  { s:510,  e:660,  label:"약점 집중 · 수학",   state:"study",  d:["한 주 약점 1순위부터","안 풀리던 30번 재도전 중","개념 구멍 메우는 중"] },
+  { s:660,  e:780,  label:"인강 몰아보기 · 국어", state:"study", d:["밀린 비문학 강의 따라잡는 중","강의 필기 정리 중","2배속으로 듣는 중"] },
+  { s:780,  e:840,  label:"점심 · 산책",       state:"stretch",d:["주말 점심은 조금 여유","머리 식히는 중"] },
+  { s:840,  e:990,  label:"약점 집중 · 생명 유전", state:"study", d:["가계도 유형별 정리 중","유전 약점 끝장내는 중","오답 원인 분석 중"] },
+  { s:990,  e:1110, label:"인강 · 생활과윤리",  state:"study",  d:["사상가 비교 강의 듣는 중","표로 정리하며 듣는 중"] },
+  { s:1110, e:1170, label:"저녁 식사",         state:"eat",    d:["밥 먹으며 인강 듣는 중","잠깐 쉬는 중"] },
+  { s:1170, e:1290, label:"주간 복습 · 영어",   state:"study",  d:["빈칸 유형 몰아 푸는 중","어법 약점 정리 중","오답 지문 재해석 중"] },
+  { s:1290, e:1380, label:"한 주 마무리 노트",  state:"study",  d:["주간 오답노트 완성 중","다음 주 계획 짜는 중","약점 리스트 업데이트 중"] },
+  { s:1380, e:1410, label:"취침 준비",         state:"stretch",d:["불 끄기 직전","마지막 스트레칭 중"] },
+  { s:1410, e:1440, label:"취침 중",           state:"sleep",  d:["주말도 잘 버텼다","Zzz..."] },
+];
+const SCHED_SUN = [
+  { s:0,    e:390,  label:"취침 중",          state:"sleep",  d:["실모 전 컨디션 관리","새근새근...","Zzz..."] },
+  { s:390,  e:430,  label:"기상 · 실모 준비",   state:"stretch",d:["실전처럼 컨디션 끌어올리는 중","찬물 세수, 정신 무장 중"] },
+  { s:430,  e:480,  label:"아침 · 워밍업",     state:"eat",    d:["국어 지문 하나로 머리 깨우는 중","밥 먹으며 마인드셋 잡는 중"] },
+  { s:480,  e:560,  label:"실전 국어 (80분)",   state:"study",  d:["1교시 국어, 실전처럼 80분","화작+독서 시간 배분 중","OMR까지 실전 모드"] },
+  { s:560,  e:580,  label:"쉬는 시간",         state:"stretch",d:["다음 교시 준비 중","물 한 모금"] },
+  { s:580,  e:680,  label:"실전 수학 (100분)",  state:"study",  d:["2교시 수학, 100분 풀가동","22·30번에 시간 쏟는 중","계산 실수와 사투 중"] },
+  { s:680,  e:750,  label:"점심 · 멘탈 정비",   state:"stretch",d:["오전 망친 거 잊으려 애쓰는 중","밥 먹으며 오후 준비"] },
+  { s:750,  e:820,  label:"실전 영어 (70분)",   state:"study",  d:["3교시 영어, 듣기부터 집중","빈칸·순서 시간 관리 중"] },
+  { s:820,  e:840,  label:"쉬는 시간",         state:"stretch",d:["탐구 준비 중","심호흡하는 중"] },
+  { s:840,  e:904,  label:"실전 탐구 (생윤·생명)", state:"study", d:["4교시 탐구 2과목 연속","생윤 30분, 생명 30분","제한시간 압박 견디는 중"] },
+  { s:904,  e:920,  label:"쉬는 시간",         state:"stretch",d:["가채점 준비 중","어깨 푸는 중"] },
+  { s:920,  e:1140, label:"실모 채점 · 오답 해설", state:"study", d:["가채점하고 멘탈 부여잡는 중","틀린 문제 해설 보는 중","왜 틀렸는지 끝까지 파는 중"] },
+  { s:1140, e:1200, label:"저녁 식사",         state:"eat",    d:["오늘 점수 곱씹으며 밥 먹는 중","10분 눈 감고 쉬는 중"] },
+  { s:1200, e:1380, label:"오답노트 · 약점 보강", state:"study", d:["오늘 실모 오답 정리 중","약점 파트 개념 다시 보는 중","다음 주 계획에 반영 중"] },
+  { s:1380, e:1410, label:"취침 준비",         state:"stretch",d:["고생한 하루 마무리","마지막 스트레칭 중"] },
+  { s:1410, e:1440, label:"취침 중",           state:"sleep",  d:["실모 점수가 자꾸 떠올라","Zzz..."] },
+];
 const isStudy=x=>x.state==="study";
-const RAW=SCHEDULE.filter(isStudy).reduce((a,x)=>a+(x.e-x.s),0);
+function scheduleFor(k){var g=parseDate(k).getDay();return g===0?SCHED_SUN:g===6?SCHED_SAT:SCHED_WD;}
+function rawFor(k){return scheduleFor(k).filter(isStudy).reduce((a,x)=>a+(x.e-x.s),0);}
+function planLabel(k){var g=parseDate(k).getDay();return g===0?"실전 모의고사":g===6?"약점 집중·인강":"정규 커리큘럼";}
+let SCHEDULE = SCHED_WD;
 function hashStr(s){let h=1779033703^s.length;for(let i=0;i<s.length;i++){h=Math.imul(h^s.charCodeAt(i),3432918353);h=(h<<13)|(h>>>19);}return (h^=h>>>16)>>>0;}
 const SUNUNG=new Date("2026-11-19T08:40:00+09:00");
 const Y0=new Date(2026,1,1);            // 재수 본격 시작점
@@ -238,22 +513,255 @@ const WK=["일","월","화","수","목","금","토"];
 const parseDate=k=>{const p=k.split("-");return new Date(+p[0],(+p[1])-1,+p[2]);};
 const ld=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
 /* 컨디션: 단일 해시가 아니라 며칠씩 이어지는 슬럼프/정점 파동 */
-function dayTypeFor(k){
-  const h=(hashStr(k)%1000)/1000;
-  const di=Math.round((parseDate(k)-Y0)/86400000);
-  const wave=0.5+0.27*Math.sin(di/4.3)+0.17*Math.sin(di/10.7+1.1);
-  const r=Math.max(0,Math.min(1, wave*0.68+h*0.32));
-  if(r<0.12)return{key:"번아웃",mult:0.34,color:"#b79fc0",r};
-  if(r<0.33)return{key:"슬럼프",mult:0.50,color:"#cf9f6a",r};
-  if(r<0.79)return{key:"평범",mult:0.66,color:"#e0a85c",r};
-  return{key:"불꽃",mult:0.82,color:"#ec7a4a",r};
-}
+function _dk(p,off){return ld(new Date(p.getFullYear(),p.getMonth(),p.getDate()-off));}
+var MOCKS=[new Date(2026,5,4),new Date(2026,8,3)];
+function mockBoost(k){var d=parseDate(k),best=0,i;for(i=0;i<MOCKS.length;i++){var diff=(d-MOCKS[i])/86400000;if(diff>=0&&diff<=21){var f=1-diff/21;if(f>best)best=f;}}return best;}
+function preMockDip(k){var d=parseDate(k),i;for(i=0;i<MOCKS.length;i++){var diff=(MOCKS[i]-d)/86400000;if(diff>=0&&diff<=2)return (3-diff)/3;}return 0;}
+var _bm={},_sl={},_sd={},_mn={},_st={},_mo={},_fa={},_se={},_ax={},_rg={},_gap={},_alloc={},_aft={};
+function baseMood(k){if(_bm[k])return _bm[k];
+  var h=(hashStr(k)%1000)/1000, di=Math.round((parseDate(k)-Y0)/86400000);
+  var wave=0.5+0.27*Math.sin(di/4.3)+0.17*Math.sin(di/10.7+1.1);
+  var r=Math.max(0,Math.min(1,wave*0.68+h*0.32));
+  var mult0=r<0.12?0.34:r<0.33?0.50:r<0.79?0.66:0.82;
+  return _bm[k]={r:r,mult0:mult0,di:di};}
+function sleepHours(k){if(_sl[k]!=null)return _sl[k];
+  var b=baseMood(k),hs=(hashStr(k+"slp")%100)/100,s=6.6+hs*1.6;
+  if(preMockDip(k)>0)s-=0.9; if(b.mult0<=0.34)s+=1.1; if(b.mult0>=0.82)s-=0.5;
+  s-=Math.min(0.8,gapToGoal(k)*0.05)*traitAt(k).anxsens;            // 목표 압박·불안으로 잠 설침
+  s=Math.max(4.8,Math.min(9.2,s));return _sl[k]=Math.round(s*10)/10;}
+var EVENTS=[
+ {p:6,tag:"몸살",t:"감기 기운, 약 먹고 버티는 중",stam:-15,ment:-5,mult:-0.11,mot:-4},
+ {p:6,tag:"생리통",t:"컨디션 난조, 진통제로 버팀",stam:-11,ment:-7,mult:-0.06,mot:-3},
+ {p:6,tag:"눈물",t:"어젯밤 불안에 늦게까지 울다 잠듦",stam:-8,ment:-13,mult:-0.06,mot:-2},
+ {p:5,tag:"갈등",t:"엄마랑 사소하게 다퉈 마음이 무거움",stam:-3,ment:-13,mult:-0.05,mot:-3},
+ {p:5,tag:"슬럼프",t:"책상 앞에서 멍, 집중이 안 됨",stam:-5,ment:-11,mult:-0.09,mot:-6},
+ {p:6,tag:"리프레시",t:"오랜만에 친구 만나 숨 돌림",stam:5,ment:12,mult:-0.05,mot:5},
+ {p:6,tag:"동기부여",t:"인강쌤 라이브 보고 의욕 충전",stam:3,ment:12,mult:0.05,mot:12},
+ {p:5,tag:"숙면",t:"어젯밤 푹 자서 머리가 맑음",stam:11,ment:7,mult:0.06,mot:3},
+ {p:5,tag:"작은성취",t:"목표 분량 다 끝내고 뿌듯",stam:2,ment:9,mult:0.04,mot:8},
+ {p:5,tag:"몰입",t:"하루 종일 미친 듯이 집중됨",stam:-4,ment:10,mult:0.08,mot:6},
+ {p:4,tag:"두통",t:"종일 머리가 지끈거림",stam:-9,ment:-4,mult:-0.07,mot:-2},
+ {p:4,tag:"카페인 과다",t:"커피 너무 마셔 손이 미세하게 떨림",stam:-2,ment:-3,mult:-0.04,mot:0},
+ {p:4,tag:"소음",t:"자습실 옆자리가 시끄러워 신경 쓰임",stam:-1,ment:-6,mult:-0.06,mot:-2},
+ {p:4,tag:"명당",t:"옆자리가 비어 집중이 잘 됨",stam:2,ment:5,mult:0.05,mot:3},
+ {p:4,tag:"새 교재",t:"주문한 실모 교재 도착, 의욕 상승",stam:1,ment:6,mult:0.03,mot:9},
+ {p:4,tag:"등수 공개",t:"학원 모의 등수 떠서 긴장+자극",stam:-2,ment:-3,mult:0.04,mot:10},
+ {p:4,tag:"부모님 격려",t:"부모님이 조용히 응원해 주심",stam:1,ment:10,mult:0.02,mot:7},
+ {p:4,tag:"수면 부족",t:"새벽까지 뒤척여 잠을 설침",stam:-12,ment:-5,mult:-0.08,mot:-3},
+ {p:3,tag:"폭식",t:"스트레스로 야식 폭식, 더부룩함",stam:-5,ment:-6,mult:-0.05,mot:-4},
+ {p:3,tag:"알레르기",t:"비염·알레르기로 컨디션 저하",stam:-7,ment:-3,mult:-0.05,mot:-1},
+ {p:3,tag:"인강 서버",t:"인강 서버가 느려 시간을 까먹음",stam:0,ment:-5,mult:-0.05,mot:-3},
+ {p:3,tag:"좋은 펜",t:"새 펜이 잘 써져서 기분 좋음",stam:1,ment:4,mult:0.02,mot:2},
+ {p:3,tag:"롤모델",t:"합격 수기 읽고 마음 다잡음",stam:0,ment:8,mult:0.03,mot:11},
+ {p:3,tag:"비교",t:"친구 성적과 비교돼 마음이 조급",stam:-1,ment:-9,mult:-0.03,mot:4},
+ {p:3,tag:"컨디션 최상",t:"몸도 머리도 가뿐한 완벽한 날",stam:9,ment:11,mult:0.09,mot:7}];
+function eventOf(k){var hv=hashStr(k+"evt")%100;if(hv>=38)return null;
+  var total=0,i;for(i=0;i<EVENTS.length;i++)total+=EVENTS[i].p;var pick=hashStr(k+"evp")%total,acc=0;
+  for(i=0;i<EVENTS.length;i++){acc+=EVENTS[i].p;if(pick<acc)return EVENTS[i];}return null;}
+function fatigueOf(k){if(_fa[k]!=null)return _fa[k];var p=parseDate(k),f=6,i;for(i=1;i<=8;i++){var kk=_dk(p,i),b=baseMood(kk),w=(9-i)/8;
+  f+=Math.max(0,(b.mult0-0.58))*w*55;f+=Math.max(0,(sleepNeed(kk)-sleepHours(kk)))*w*3.6;}
+  f+=yearFatigue(k)*0.30+weekFatigue(k)*0.20;
+  return _fa[k]=Math.max(0,Math.min(54,f));}
+function mentalOf(k){if(_mn[k]!=null)return _mn[k];var p=parseDate(k),i,mom=0,savg=0,t=traitAt(k);
+  for(i=0;i<6;i++)mom+=(baseMood(_dk(p,i)).r-0.5); mom=mom/6*42;
+  for(i=0;i<10;i++)savg+=baseMood(_dk(p,i)).mult0; savg/=10;
+  var sched=Math.max(-12,Math.min(12,(savg-0.66)*120));
+  var mb=mockBoost(k),dip=preMockDip(k);
+  var mock=(mb>0?6*mb*(0.7+t.resil*0.6):0)-dip*9*(0.7+t.anxsens*0.8);   // 특성 변조: 회복탄력·불안민감
+  var ev=eventOf(k),emv=ev?(ev.ment<0?ev.ment*(0.7+t.anxsens*0.6):ev.ment*(0.8+t.resil*0.4)):0;
+  var streak=0;for(i=1;i<14;i++){if(baseMood(_dk(p,i)).mult0<=0.50)streak++;else break;}
+  var arc=0;if(streak>=4){arc=-9*(1.2-t.resil*0.6);if((hashStr(k+"rec")%100)<35)arc=18;}
+  var cyc=cycleMood(k)*10, wx=weatherOf(k).m*10, sea=seasonMod(k)*8;
+  var eff=(selfEfficacy(k)-50)*0.18, soc=socialContext(k), socm=soc?soc.ment:0, aft=eventAftermath(k);
+  return _mn[k]=Math.max(8,Math.min(100,Math.round(58+mom+sched+mock+emv+arc+cyc+wx+sea+eff+socm+aft)));}
+function mentalLabel(v){return v>=78?"자신감 충만":v>=62?"의욕적":v>=46?"담담히 버팀":v>=30?"흔들리는 중":"많이 지친 상태";}
+function focusOf(k){var w=[],i,j;for(i=0;i<CURRIC.length;i++){var s=CURRIC[i],weak=0;for(j=0;j<s.part.length;j++)if(s.part[j].w)weak++;w.push({s:s,wt:1+weak*1.4});}
+  var total=0;for(i=0;i<w.length;i++)total+=w[i].wt;var pick=(hashStr(k+"foc")%1000)/1000*total,acc=0;
+  for(i=0;i<w.length;i++){acc+=w[i].wt;if(pick<acc)return w[i].s;}return CURRIC[0];}
+/* 28일 에너지·기분 주기 (생리주기 모델: 생리기 저하→난포기 상승→배란 정점→황체후기 PMS 급강) */
+var CYCLE_OFF=6;
+function cycleDay(k){var di=baseMood(k).di;return ((di+CYCLE_OFF)%28+28)%28;}
+function cyclePhase(k){var c=cycleDay(k);return c<5?"생리기":c<14?"난포기":c<16?"배란기":c<24?"황체기":"황체후기·PMS";}
+function cycleEnergy(k){var c=cycleDay(k);if(c<5)return -0.5+c*0.06;if(c<14)return 0.2+(c-5)*0.07;if(c<16)return 0.85;if(c<24)return 0.5-(c-16)*0.07;return -0.2-(c-24)*0.16;}
+function cycleMood(k){var c=cycleDay(k);if(c<5)return -0.35;if(c<14)return 0.25;if(c<16)return 0.6;if(c<24)return 0.1;return -0.55;}
+/* 계절·일조: 2월 시작(추위 적응)·한여름 체력 소모·11월 수능 직전 긴장 */
+function seasonMod(k){var mo=parseDate(k).getMonth();if(mo<=1)return -0.10;if(mo===6||mo===7)return -0.08;if(mo===10)return -0.05;return 0;}
+/* 날씨: 그날 결정 (맑음→가벼운 +, 흐림/미세먼지→-) */
+var WX=[{t:"맑음",p:34,e:0.04,m:0.05},{t:"구름 조금",p:24,e:0,m:0},{t:"흐림",p:18,e:-0.03,m:-0.05},{t:"비",p:12,e:-0.05,m:-0.02},{t:"눈",p:4,e:-0.03,m:0.06},{t:"황사·미세먼지",p:8,e:-0.07,m:-0.06}];
+function weatherOf(k){var total=0,i;for(i=0;i<WX.length;i++)total+=WX[i].p;var pick=hashStr(k+"wxp")%total,acc=0;for(i=0;i<WX.length;i++){acc+=WX[i].p;if(pick<acc)return WX[i];}return WX[0];}
+/* 요일 리듬: 월 처짐 · 수 정점 · 금 피로 */
+function dowEnergy(k){var g=parseDate(k).getDay();return g===1?-0.06:g===2?0.02:g===3?0.04:g===4?0.01:g===5?-0.04:g===6?-0.01:0;}
+/* 스트레스/번아웃: 과부하·수면부족·부정사건 누적, 시험 직전 +, 시험 끝나면 해소 */
+function stressOf(k){if(_st[k]!=null)return _st[k];var p=parseDate(k),s=14,i;for(i=1;i<=10;i++){var kk=_dk(p,i),b=baseMood(kk),w=(11-i)/10;
+  s+=Math.max(0,(b.mult0-0.62))*w*40; s+=Math.max(0,(sleepNeed(kk)-0.2-sleepHours(kk)))*w*4.0;
+  var ev=eventOf(kk);if(ev)s+=(ev.ment<0?2.5:-2.0)*w;}
+  s+=preMockDip(k)*14-mockBoost(k)*6; s+=weekFatigue(k)*0.25+yearFatigue(k)*0.20;
+  return _st[k]=Math.max(0,Math.min(100,Math.round(s)));}
+function stressLabel(v){return v>=78?"번아웃 위험":v>=58?"높음":v>=38?"보통":v>=20?"안정적":"여유";}
+/* 동기: 목표 구배(수능 다가올수록 ↑) + 모평 전후 + 사건 + 파동 */
+function motivationOf(k){if(_mo[k]!=null)return _mo[k];var di=baseMood(k).di,base=46+(di/DTOT)*30;
+  base+=mockBoost(k)*10+preMockDip(k)*8; var ev=eventOf(k);if(ev)base+=ev.mot||0;
+  base+=Math.sin(di/9.0)*5+cycleEnergy(k)*4+(phaseOfYear(k).motiv-0.7)*12;
+  var soc=socialContext(k);base+=(soc?soc.mot:0)+(selfEfficacy(k)-50)*0.10;
+  return _mo[k]=Math.max(15,Math.min(100,Math.round(base)));}
+function motivLabel(v){return v>=82?"불타는 중":v>=64?"의욕 충만":v>=46?"꾸준함":v>=30?"느슨함":"번아웃 직전";}
+/* 기온(계절 평균±) · 미세먼지 */
+function tempOf(k){var mo=parseDate(k).getMonth(),base=[2,4,10,17,23,27,29,30,26,19,11,3][mo],h=(hashStr(k+"tmp")%70)/10-3.5;return Math.round(base+h);}
+function dustOf(k){var hv=hashStr(k+"dust")%100;return hv<46?"좋음":hv<78?"보통":hv<93?"나쁨":"매우나쁨";}
+/* 수면 필요량 — 상수 대신 국면 함수화 (후반일수록 잠 줄임; 권장 아닌 묘사) */
+function sleepNeed(k){return 7.0-phaseOfYear(k).i*0.04;}
+/* ===== 전체(재수 여정) 매크로 척도 ===== */
+function yearFrac(k){var f=baseMood(k).di/DTOT;return f<0?0:(f>1?1:f);}
+function phaseOfYear(k){var f=yearFrac(k);
+  if(f<0.10)return {name:"적응기",i:0,intensity:0.84,motiv:0.55};
+  if(f<0.34)return {name:"기초 성장기",i:1,intensity:0.93,motiv:0.63};
+  if(f<0.52)return {name:"도약기",i:2,intensity:1.00,motiv:0.72};
+  if(f<0.66)return {name:"정체·재정비기",i:3,intensity:0.91,motiv:0.60};
+  if(f<0.86)return {name:"실전기",i:4,intensity:1.02,motiv:0.80};
+  return {name:"파이널 스퍼트",i:5,intensity:1.06,motiv:0.93};}
+function yearFatigue(k){var di=baseMood(k).di,f=yearFrac(k),base=f*18;
+  base+=Math.max(0,Math.sin(di/42*Math.PI*2))*6;            // ~6주 번아웃 파동
+  return Math.round(Math.max(0,Math.min(30,base)));}
+function siWhole(k){var ph=phaseOfYear(k);
+  return {frac:yearFrac(k),phase:ph.name,pi:ph.i,intensity:ph.intensity,motiv0:ph.motiv,
+    yfat:yearFatigue(k),dday:Math.max(0,Math.ceil((SUNUNG-parseDate(k))/86400000))};}
+/* ===== 월 단위 척도 ===== */
+function monthIndex(k){var p=parseDate(k);return (p.getFullYear()-2026)*12+p.getMonth();}
+function siMonth(k){var p=parseDate(k),md=p.getDate(),dim=new Date(p.getFullYear(),p.getMonth()+1,0).getDate(),frac=md/dim;
+  var phase=frac<0.18?"월초 계획":frac<0.75?"월중 집중":"월말 점검";
+  var diff=Math.min(5,Math.max(1,Math.round((monthIndex(k)-1)*0.55)+1));
+  var tgt=Math.round(7.5*phaseOfYear(k).intensity*10)/10;
+  return {mi:monthIndex(k),monthDay:md,dim:dim,frac:frac,phase:phase,difficulty:diff,target:tgt};}
+/* ===== 주 단위 척도 ===== */
+function weekIndex(k){return Math.floor(baseMood(k).di/7);}
+function weekFatigue(k){var p=parseDate(k),f=0,i;for(i=1;i<=7;i++){var kk=_dk(p,i),b=baseMood(kk);
+  f+=Math.max(0,(b.mult0-0.60))*9+Math.max(0,(sleepNeed(kk)-sleepHours(kk)))*1.6;}return Math.round(Math.max(0,Math.min(36,f)));}
+function siWeek(k){var dow=parseDate(k).getDay();
+  var arc=dow===1?"리셋":(dow===2||dow===3)?"빌드업":dow===4?"정점":dow===5?"피로 누적":dow===6?"약점 보강":"실전 점검";
+  return {wi:weekIndex(k),dow:dow,arc:arc,weekFatigue:weekFatigue(k),planProg:Math.round(((dow===0?7:dow)/7)*100)};}
+/* ===== 초 단위 척도: 분 집중값 위에 매초 미세 떨림(주의 미세변동) ===== */
+function secJitter(k,mn,sec){var hv=hashStr(k+"|"+mn+"|"+sec+"|sj")%1000/1000;return 0.93+hv*0.14;}
+/* ===== 심리 특성 축 (고정 성격) — 모든 동적 시스템의 반응 강도를 변조 ===== */
+function traits(){return {consci:0.82,resil:0.60,perfect:0.80,anxsens:0.72,compete:0.66,curio:0.56};}
+function traitAt(k){var t=traits(),f=yearFrac(k);          // 재수하며 성장: 회복탄력 ↑, 불안민감 ↓
+  t.resil=Math.min(0.86,t.resil+f*0.14); t.anxsens=Math.max(0.56,t.anxsens-f*0.10);
+  return t;}
+/* ===== 목표(의대)와의 거리 — 투영 등급합 vs 목표 ===== */
+function projGradeSum(k){var T=(parseDate(k)-Y0)/(SUNUNG-Y0),s=0,i;for(i=0;i<CURRIC.length;i++)s+=projScore(CURRIC[i],T);return s;}
+function gapToGoal(k){if(_gap[k]!=null)return _gap[k];return _gap[k]=Math.max(0,Math.min(22,projGradeSum(k)-6));} // 6=의대권 등급합 목표
+/* ===== 자기효능감 (느린 적분기, Bandura 상호결정) — 과거 성취가 쌓여 수행·멘탈로 되먹임 ===== */
+function selfEfficacy(k){if(_se[k]!=null)return _se[k];var p=parseDate(k),base=40,i;
+  base+=yearFrac(k)*22;                                    // 누적 성취감
+  var prod=0;for(i=1;i<=30;i++)prod+=baseMood(_dk(p,i)).mult0; base+=((prod/30)-0.62)*40;
+  var lastPct=null;for(i=MOCKEXAMS.length-1;i>=0;i--){if(parseDate(MOCKEXAMS[i].d)<p){lastPct=examAvgPct(MOCKEXAMS[i].d);break;}}
+  if(lastPct!=null)base+=(lastPct-55)*0.18;                // 모의 성공경험(mastery experience)
+  var t=traitAt(k); base-=(t.perfect-0.5)*10; base+=(t.resil-0.5)*10; // 완벽주의는 깎고, 회복탄력은 받침
+  return _se[k]=Math.max(20,Math.min(95,Math.round(base)));}
+function effLabel(v){return v>=80?"확신 충만":v>=62?"단단함":v>=44?"보통":v>=28?"흔들림":"자신 없음";}
+/* ===== 불안 (스트레스 × 불안민감 × 목표거리 × 시험직전, 효능감·회복탄력이 완충) ===== */
+function anxietyOf(k){if(_ax[k]!=null)return _ax[k];var t=traitAt(k),base=stressOf(k)*0.5;
+  base+=gapToGoal(k)*1.6*t.anxsens; base+=preMockDip(k)*22*(0.6+t.anxsens);
+  base-=(selfEfficacy(k)-50)*0.25; base-=(t.resil-0.5)*14; base-=perceivedGap(k).gap*0.3; // 체감<실제면 불안↑
+  return _ax[k]=Math.max(0,Math.min(100,Math.round(base)));}
+function anxietyLabel(v){return v>=72?"심한 불안":v>=52?"불안 고조":v>=32?"약간 긴장":v>=16?"차분":"평온";}
+/* ===== 몰입 (분 단위, 도전-실력 균형 × 집중 × 동기; 너무 쉬우면 권태·어려우면 불안) ===== */
+function flowAt(k,mn){var d=siDay(k),seg=scheduleFor(k).find(x=>mn>=x.s&&mn<x.e)||scheduleFor(k)[0];
+  if(seg.state!=="study")return {f:0,label:seg.state==="sleep"?"수면":"휴식"};
+  var ud=ultraAt(k,mn),a=siHour(k,mn/60),conc=a*ud.u;
+  var diff=siMonth(k).difficulty/5,skill=d.mult,balance=Math.max(0,1-Math.abs(skill-diff)*0.9);
+  var load=cogLoadAt(k,mn),loadF=load.overload?0.78:(load.ratio<0.6?0.9:1); // 과부하·과소부하 모두 몰입 저해
+  var flow=Math.max(0,Math.min(1,conc*balance*(0.7+d.motiv/100*0.3)*loadF));
+  var label=flow>0.78?"완전 몰입":flow>0.6?"몰입 진입":flow>0.4?"집중":flow>0.22?"산만":"권태·불안";
+  return {f:flow,label:label};}
+/* ===== 창발 레짐 (질적 상태, 히스테리시스) — 신호들의 상호작용으로 떠오름 ===== */
+function regimeOf(k){if(_rg[k]!=null)return _rg[k];var p=parseDate(k);
+  function vec(kk){var m=mentalOf(kk),s=stressOf(kk),ax=anxietyOf(kk),mo=motivationOf(kk),se=selfEfficacy(kk),fa=fatigueOf(kk),t=traitAt(kk);
+    return {m:m,scores:{
+      "평온":8,
+      "몰입":(m-56)*0.7+(se-50)*0.4-Math.max(0,ax-40)*0.4+Math.max(0,mo-58)*0.3,
+      "불안":(ax-42)*1.15,
+      "슬럼프":(46-m)*0.85+Math.max(0,45-mo)*0.45,
+      "과열":Math.max(0,s-54)*0.8+Math.max(0,fa-34)*0.8,
+      "정체":(t.perfect-0.5)*16+6-Math.abs(m-50)*0.4-Math.abs(mo-52)*0.35}};}
+  var today=vec(k),yest=vec(_dk(p,1)),keys=Object.keys(today.scores);
+  var yTop=keys.reduce((a,b)=>(yest.scores[a]||0)>(yest.scores[b]||0)?a:b);
+  var blended={};keys.forEach(function(kk2){blended[kk2]=today.scores[kk2]+0.2*(yest.scores[kk2]||0);});
+  var top=keys.reduce((a,b)=>blended[a]>blended[b]?a:b);
+  if((today.m-yest.m)>=6 && (yTop==="슬럼프"||yTop==="불안"||yTop==="과열") && top!=="과열") top="회복";
+  return _rg[k]=top;}
+function regimeDesc(r){return {"평온":"잔잔하게 페이스를 지키는 상태","몰입":"흐름을 타고 깊이 빠져든 상태","불안":"마음이 앞서 조급한 상태","슬럼프":"가라앉아 손이 안 잡히는 상태","과열":"너무 몰아붙여 과부하 직전","정체":"제자리걸음 같아 답답한 상태","회복":"바닥을 찍고 다시 올라오는 중"}[r]||"";}
+/* ===== 내면 동기 (지금 그녀를 움직이는 것) ===== */
+function driveOf(k){var ax=anxietyOf(k),mo=motivationOf(k),se=selfEfficacy(k),t=traitAt(k),fa=fatigueOf(k);
+  var sc={"성취 욕구":(mo-50)*0.9+(se-45)*0.5+t.compete*15,"불안 회피":Math.max(0,ax-38)*1.2+(t.anxsens-0.5)*18,
+    "의무감":t.consci*26-(mo-50)*0.25,"호기심":t.curio*30+(se-48)*0.5-Math.max(0,ax-35)*0.4,"소진 회피":Math.max(0,fa-33)*1.05+Math.max(0,ax-52)*0.7};
+  var keys=Object.keys(sc);return keys.reduce((a,b)=>sc[a]>sc[b]?a:b);}
+/* ===== 관계 맥락 (주변 사람·압박이 만드는 호/불호 결) ===== */
+var SOCIAL=[
+ {tag:"부모님 기대",t:"\"의대 가야지\" 한마디가 어깨에 얹힘",ment:-4,mot:5},
+ {tag:"또래 비교",t:"친구 성적표가 마음을 들쑤심",ment:-6,mot:4},
+ {tag:"멘토 피드백",t:"담임·조교 조언이 방향을 잡아줌",ment:5,mot:6},
+ {tag:"합격 수기",t:"작년 합격자 글에 가슴이 뜀",ment:4,mot:8},
+ {tag:"가족 응원",t:"말없이 챙겨주는 가족이 힘이 됨",ment:7,mot:3},
+ {tag:"SNS 거리두기",t:"비교를 끊으려 SNS를 잠시 지움",ment:3,mot:2},
+ {tag:"속마음 고백",t:"친구에게 힘들다 털어놓고 가벼워짐",ment:6,mot:1},
+ {tag:"등수 압박",t:"학원 등수표가 신경을 긁음",ment:-5,mot:5}];
+function socialContext(k){if(hashStr(k+"soc")%100>=24)return null;return SOCIAL[hashStr(k+"socp")%SOCIAL.length];}
+function siDay(k){if(_sd[k])return _sd[k];
+  var b=baseMood(k),sleep=sleepHours(k),fat=fatigueOf(k);
+  var cycE=cycleEnergy(k),wx=weatherOf(k),sea=seasonMod(k),stress=stressOf(k),motiv=motivationOf(k),dow=dowEnergy(k);
+  var whole=siWhole(k),month=siMonth(k),week=siWeek(k),eff=selfEfficacy(k),anx=anxietyOf(k);
+  var morning=Math.round(Math.max(46,Math.min(100,100-fat+cycE*6+sea*12-stress/100*8)));
+  var mental=mentalOf(k),ev=eventOf(k),focus=focusOf(k),m=b.mult0;
+  m*=(0.86+0.28*(mental/100));
+  m*=(0.92+0.16*((Math.max(5,Math.min(8,sleep))-5)/3));
+  m-=fat/54*0.10; m+=cycE*0.04; m+=wx.e; m+=sea*0.5; if(ev)m+=ev.mult;
+  m+=motiv/100*0.05-0.025; m-=stress/100*0.08; m+=dow;
+  m+=(whole.intensity-0.95)*0.10; m-=(month.difficulty-3)*0.006;
+  m+=(eff-50)/100*0.05; m-=anx/100*0.045;                  // 자기효능감↑ 수행 · 불안↓ 수행 (상호결정)
+  m=Math.max(0.28,Math.min(0.92,m));
+  var key=m<0.42?"번아웃":m<0.56?"슬럼프":m<0.74?"평범":"불꽃";
+  var color=key==="불꽃"?"#e50914":key==="평범"?"#0a0a0a":"#bdbdbd";
+  return _sd[k]={r:b.r,mult:m,key:key,color:color,sleep:sleep,fatigue:Math.round(fat),morning:morning,mental:mental,event:ev,focus:focus,
+    cycleDay:cycleDay(k),phase:cyclePhase(k),cycE:cycE,weather:wx.t,plan:planLabel(k),stress:stress,motiv:motiv,temp:tempOf(k),dust:dustOf(k),
+    whole:whole,week:week,month:month,eff:eff,anx:anx,regime:regimeOf(k),drive:driveOf(k),social:socialContext(k)};}
+function dayTypeFor(k){var s=siDay(k);return {key:s.key,mult:s.mult,color:s.color,r:s.r};}
 function condStreak(k){let n=1,key=dayTypeFor(k).key,p=parseDate(k);for(let i=1;i<21;i++){p.setDate(p.getDate()-1);if(dayTypeFor(ld(p)).key===key)n++;else break;}return n;}
 const segAt=m=>SCHEDULE.find(x=>m>=x.s&&m<x.e)||SCHEDULE[0];
 const studiedMin=m=>SCHEDULE.filter(isStudy).reduce((a,x)=>a+Math.max(0,Math.min(m,x.e)-x.s),0);
 const hm=s=>Math.floor(s/3600)+"h "+String(Math.floor((s%3600)/60)).padStart(2,"0")+"m";
 const fmtC=s=>{const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),x=Math.floor(s%60);return[h,m,x].map(v=>String(v).padStart(2,"0")).join(":");};
-const fullDay=k=>RAW/60*dayTypeFor(k).mult;
+const fullDay=k=>rawFor(k)/60*dayTypeFor(k).mult;
+/* ===== 시간 단위 엔진: 생체리듬 각성곡선 (연구 기반: 기상직후 저조→늦은오전 정점→점심후 딥→초저녁 2차정점→밤 하강) ===== */
+const CIRC=[[6,0.62],[7,0.72],[8,0.85],[9,0.96],[10,1.05],[11,1.08],[12,1.02],[13,0.90],[14,0.82],[15,0.86],[16,0.95],[17,1.00],[18,1.04],[19,1.01],[20,0.94],[21,0.86],[22,0.76],[23,0.66],[24,0.60]];
+function circadian(h){if(h<=6)return 0.62;if(h>=24)return 0.60;for(var i=0;i<CIRC.length-1;i++){if(h>=CIRC[i][0]&&h<=CIRC[i+1][0]){var t=(h-CIRC[i][0])/(CIRC[i+1][0]-CIRC[i][0]);return CIRC[i][1]+(CIRC[i+1][1]-CIRC[i][1])*t;}}return 0.85;}
+function wakeMin(k){var sch=scheduleFor(k),i;for(i=0;i<sch.length;i++){if(sch[i].state==="sleep"&&sch[i].s===0)return sch[i].e;}return 390;}
+function mealDip(k,h){var sch=scheduleFor(k),dip=0,i;for(i=0;i<sch.length;i++){if(sch[i].state!=="eat")continue;var ds=sch[i].s/60;if(h>=ds-0.75&&h<ds)dip-=0.05*(1-(ds-h)/0.75);if(h>=sch[i].e/60&&h<sch[i].e/60+0.4)dip+=0.03;}return dip;}
+function siHour(k,h){var d=siDay(k),c=circadian(h),debt=Math.max(0,7-d.sleep),awake=Math.max(0,h-wakeMin(k)/60);
+  var press=-(awake*0.006)-debt*0.012*(awake/10);
+  var caf=(h>=12.7&&h<=15.5)?0.06*(1-(h-12.7)/2.8):0;
+  var a=c+press+caf+mealDip(k,h);return Math.max(0.5,Math.min(1.14,a));}
+/* ===== 분 단위 엔진: 90분 울트라디안 집중주기 + 미세 사건 ===== */
+function ultraAt(k,mn){var period=86+(hashStr(k+"ud")%14),ph=((mn-wakeMin(k))%period+period)%period,frac=ph/period,u;
+  if(frac<0.16)u=0.78+frac/0.16*0.20;else if(frac<0.82)u=0.98+0.10*Math.sin((frac-0.16)/0.66*Math.PI);else u=0.96-(frac-0.82)/0.18*0.26;
+  return {u:u,frac:frac,label:frac<0.16?"워밍업":frac<0.82?"몰입 구간":"집중 하강"};}
+var MICRO=[{t:"갑자기 술술 풀려 손이 빨라짐",f:1.16},{t:"창밖을 잠깐 멍하니 봄",f:0.58},{t:"폰 알림에 잠깐 흔들림",f:0.52},{t:"물 한 모금 마시며 숨 고르는 중",f:0.86},{t:"막히는 문제에 미간 찌푸리는 중",f:0.78},{t:"리듬 타고 빠르게 풀어내는 중",f:1.12},{t:"졸음이 살짝 몰려옴",f:0.62},{t:"좋은 풀이가 떠올라 메모하는 중",f:1.10},{t:"손가락으로 관자놀이 누르는 중",f:0.8},{t:"문제 다 맞혀서 살짝 미소",f:1.08}];
+function microAt(k,mn,studying){if(!studying)return null;if(hashStr(k+"|"+mn+"|mc")%100>=22)return null;return MICRO[hashStr(k+"|"+mn+"|mp")%MICRO.length];}
+function effShape(k,mn){return siHour(k,mn/60)*ultraAt(k,mn).u;}
+var _avgShape={};
+function avgShape(k){if(_avgShape[k]!=null)return _avgShape[k];var sch=scheduleFor(k),sum=0,n=0,i,m;for(i=0;i<sch.length;i++){if(sch[i].state!=="study")continue;for(m=sch[i].s;m<sch[i].e;m++){sum+=effShape(k,m);n++;}}return _avgShape[k]=n?sum/n:1;}
+function siSecLive(k,mn){var d=siDay(k),sch=scheduleFor(k),a=avgShape(k),sec=0,i,m;for(i=0;i<sch.length;i++){if(sch[i].state!=="study")continue;var e=Math.min(mn,sch[i].e);if(e<=sch[i].s)continue;for(m=sch[i].s;m<e;m++)sec+=d.mult*effShape(k,m)/a;}return Math.round(sec*60);}
+function siNow(k,mn){var d=siDay(k),h=mn/60,seg=scheduleFor(k).find(x=>mn>=x.s&&mn<x.e)||scheduleFor(k)[0];
+  var studying=seg.state==="study",a=siHour(k,h),ud=ultraAt(k,mn),mic=microAt(k,mn,studying);
+  var focus=studying?(d.mult/0.9*a*ud.u*(mic?mic.f:1)):(seg.state==="sleep"?0:0.3*a);
+  focus=focus*100;
+  if(studying){var att=attentionAt(k,mn),net=att.net||attentionNetworks(k,mn),cf=cogFatigueAt(k,mn),cogF=(0.78+net.eff/100*0.22)*(1-cf/100*0.12);if(att.wander)cogF*=0.6;focus=focus*cogF;}
+  focus=Math.max(3,Math.min(100,Math.round(focus)));
+  var sleeping=seg.state==="sleep";
+  var hr=sleeping?Math.round(54+d.stress/100*8):Math.round(62+(a*ud.u-0.6)*30+(mic?(mic.f>1?7:-4):0)+(studying?4:0)+d.stress/100*6);
+  hr=Math.max(50,Math.min(104,hr));
+  var eyes=sleeping?"감김":focus>70?"또렷한 눈빛":focus>45?"집중 유지":focus>25?"눈 비빔":"졸린 눈";
+  var posture=sleeping?"숙면 자세":focus>60?"꼿꼿한 자세":focus>35?"약간 구부정":"늘어진 자세";
+  return {focus:focus,alert:a,ultra:ud.u,udLabel:ud.label,studying:studying,micro:mic,seg:seg,hr:hr,eyes:eyes,posture:posture};}
 const SI=[{s:"국어",v:"96",p:96,me:"89",mp:89},{s:"수학",v:"98",p:98,me:"50",mp:50},{s:"영어",v:"1등급",p:96,me:"2후반",mp:78},{s:"생명Ⅰ",v:"1등급",p:96,me:"5등급",mp:40},{s:"생활과윤리",v:"1등급",p:96,me:"6등급",mp:30}];
 function yT(){const n=new Date();let t=(n-Y0)/(SUNUNG-Y0);return t<0?0:(t>1?1:t);}
 
@@ -285,9 +793,6 @@ var DTOT=Math.round((SUNUNG-Y0)/86400000);                 // 재수 시작~수�
 function recentPace(k){var p=parseDate(k),sum=0,i;for(i=0;i<21;i++){var d=new Date(p);d.setDate(d.getDate()-i);sum+=dayTypeFor(ld(d)).mult;}return (sum/21)/0.66;} // ~1.0 기준, >1 상승세 <1 슬럼프
 function pace(){if(window._pace==null)window._pace=recentPace(ld(new Date()));return window._pace;}
 function effT(off){var e=yT()+(pace()-1)*0.06;if(e<0)e=0;if(e>1)e=1;e+=off;return e<0?0:(e>1?1:e);} // 최근 페이스가 계획 대비 진도를 ±당김
-var MOCKS=[new Date(2026,5,4),new Date(2026,8,3)];          // 6/4, 9/3 모평
-function mockBoost(k){var d=parseDate(k),best=0,i;for(i=0;i<MOCKS.length;i++){var diff=(d-MOCKS[i])/86400000;if(diff>=0&&diff<=21){var f=1-diff/21;if(f>best)best=f;}}return best;} // 모평 직후 오답 복기 효과(21일 감쇠)
-function preMockDip(k){var d=parseDate(k),i;for(i=0;i<MOCKS.length;i++){var diff=(MOCKS[i]-d)/86400000;if(diff>=0&&diff<=2)return (3-diff)/3;}return 0;} // 시험 직전 긴장
 function prog(s){var t=effT(s.off),total=0,done=0,cur=null,prev=0,f=0;var sl=[0,0,0,0],sd=[0,0,0,0],i,m;
  for(i=0;i<s.mod.length;i++){total+=s.mod[i].lec;sl[s.mod[i].s]+=s.mod[i].lec;}
  for(i=0;i<s.mod.length;i++){m=s.mod[i];if(t>=m.d){done+=m.lec;sd[m.s]+=m.lec;}else if(!cur){f=(t-prev)/(m.d-prev);f=f<0?0:(f>1?1:f);cur=m;done+=m.lec*f;sd[m.s]+=m.lec*f;}prev=m.d;}
@@ -304,7 +809,11 @@ function subjMastery(s){var t=effT(s.off),p=prog(s),adv=p.pct/100,today=ld(new D
   var mk=(pt.w?6:2)*mb;                                     // 모평 직후 복기(약점일수록 크게)
   var nv=-dip*2.5;                                          // 시험 직전 긴장
   var wob=((hashStr(today+pt.l)%100)/100-0.5)*1.6;          // 일별 미세변동
-  var v=b+rec+cnd+mk+nv+wob;if(v>pt.c)v=pt.c;if(v<0)v=0;v=Math.round(v);
+  var consol=Math.min(1,0.32+0.68*adv);                     // 복습 누적 → 망각 둔화(에빙하우스)
+  var revPhase=(Math.sin(di/6.0+(hashStr(pt.l+"rv")%100)/16)+1)/2;
+  var forget=-(1-consol)*(1-revPhase)*8;                    // 최근 안 본·초반 파트일수록 망각 ↓
+  var spurt=Math.sin(di/19+(hashStr(s.key+"g")%100)/16)*1.4;// 정체기·성장기 완만 파동
+  var v=b+rec+cnd+mk+nv+wob+forget+spurt;if(v>pt.c)v=pt.c;if(v<0)v=0;v=Math.round(v);
   parts.push({l:pt.l,w:pt.w,v:v});sum+=v;}
  var ov=Math.round(sum/parts.length);return{parts:parts,ov:ov,p:p,pace:pc};}
 /* ===== 점수 엔진: 약점 가중 + 실전 디스카운트 + 시험별 변동 (등급컷은 근사치) ===== */
@@ -312,7 +821,7 @@ function gradeFor(max,raw){if(max===100){var c=[92,85,77,67,55,42,28,16];for(var
 function effMastery(parts){var sum=0,wsum=0,mn=101,i;for(i=0;i<parts.length;i++){var pt=parts[i],wt=pt.w?1.6:1;sum+=pt.v*wt;wsum+=wt;if(pt.v<mn)mn=pt.v;}return 0.78*(sum/wsum)+0.22*mn;} // 약점이 발목을 잡음
 function realScore(eff,max){var r=max*Math.pow(Math.max(eff,0)/100,1.18)*1.02;return r<0?0:(r>max?max:r);} // 이해도→실전 원점수(상위권일수록 격차 작게)
 function gradeFromMastery(key,m){if(key==="eng")return m>=90?1:m>=80?2:m>=70?3:m>=60?4:m>=50?5:m>=40?6:m>=30?7:8;var max=(key==="bio"||key==="eth")?50:100;return gradeFor(max,Math.round(realScore(m,max)));}
-function siScore(s){var M=subjMastery(s),eff=effMastery(M.parts),today=ld(new Date()),vc=((hashStr(today+"v"+s.key)%100)/100-0.5)*3.0; // 시험마다 ±변동
+function siScore(s){var M=subjMastery(s),eff=effMastery(M.parts),today=ld(new Date()),vc=((hashStr(today+"v"+s.key)%100)/100-0.5)*3.0+(selfEfficacy(today)-50)*0.03; // 시험변동 + 효능감 미세 영향
  if(s.key==="eng"){var lvl=eff+vc,g=lvl>=90?1:lvl>=80?2:lvl>=70?3:lvl>=60?4:lvl>=50?5:lvl>=40?6:lvl>=30?7:8;return{raw:null,max:100,grade:g,ov:M.ov,eff:Math.round(eff),disp:g+"등급"};}
  var max=(s.key==="bio"||s.key==="eth")?50:100,raw=Math.round(Math.min(max,Math.max(0,realScore(eff,max)+vc*(max/100)))),g=gradeFor(max,raw);
  return{raw:raw,max:max,grade:g,ov:M.ov,eff:Math.round(eff),disp:raw+"/"+max+" "+g+"등급"};}
@@ -322,17 +831,267 @@ function projScore(s,T){var t=Math.max(0,Math.min(1,T+s.off)),adv=Math.max(0,Mat
  var max=(s.key==="bio"||s.key==="eth")?50:100;return gradeFor(max,Math.round(realScore(eff,max)));}
 function mcol(v){return v>=80?"#0a0a0a":(v>=65?"#7a7a7a":"#bdbdbd");}
 function subjKey(label){if(label.indexOf("생명")>=0||label.indexOf("과탐")>=0)return"bio";if(label.indexOf("생활과윤리")>=0||label.indexOf("사탐")>=0)return"eth";if(label.indexOf("수학")>=0)return"math";if(label.indexOf("국어")>=0)return"kor";if(label.indexOf("영")>=0)return"eng";return null;}
+/* ===== 과목별 일일 역학: 정답률·문제수·오답·모멘텀·공략 약점 ===== */
+function subjDay(s){var k=ld(new Date()),M=subjMastery(s),ov=M.ov,d=siDay(k);
+  var al=subjAlloc(k).find(x=>x.key===s.key)||{frac:0.2,min:0},allocAdj=(al.frac-0.2)*18; // 더 배분된 과목은 오늘 컨디션 ↑
+  var slipAdj=-(1-processingModeAt(k,720).s2)*4;                                          // 직관적 사고일수록 부주의 실수 ↑
+  var noise=((hashStr(k+s.key+"acc")%100)/100-0.5)*10,isF=(d.focus.key===s.key);
+  var acc=Math.max(35,Math.min(99,Math.round(ov*0.85+d.mental*0.10+noise+(isF?2:0)+allocAdj+slipAdj)));
+  var baseP=s.key==="math"?30:s.key==="kor"?15:s.key==="eng"?24:20;
+  var problems=Math.max(4,Math.round(baseP*(0.75+(d.mult/0.7)*0.4)*(isF?1.3:1)));
+  var mistakes=Math.max(0,Math.round(problems*(1-acc/100)));
+  var mr=(hashStr(k+s.key+"mom")%100)/100,momLbl=mr>0.66?"상승세":mr<0.33?"답답함":"평이";
+  var weak=s.part.filter(x=>x.w),pool=weak.length?weak:s.part,wp=pool[hashStr(k+s.key+"wp")%pool.length];
+  return {ov:ov,acc:acc,problems:problems,mistakes:mistakes,conf:subjConf(s,k),sanx:subjAnx(s,k),min:al.min,frac:al.frac,momLbl:momLbl,isF:isF,attack:wp.l};}
+function wrongBacklog(){var k=ld(new Date()),p=parseDate(k),acc=30,i;
+  for(i=0;i<6;i++){var kk=_dk(p,i),add=18+hashStr(kk+"wb")%24,clr=16+hashStr(kk+"rv2")%22;
+    add+=cogLoadAt(kk,840).overload?4:0; add+=Math.max(0,55-cogControl(kk))*0.15;   // 과부하·낮은 통제 → 오답 ↑
+    clr+=Math.max(0,metacogResolution(kk)-60)*0.12;                                  // 메타인지 좋은 날 → 정리 ↑
+    acc+=add-clr;}
+  return Math.max(0,Math.min(150,Math.round(acc)));}
+/* ===== 행동 축: 하루 순공을 5과목에 나눠 담는 배분(약점·모의·요일·성격이 우선순위를 좌우) ===== */
+/* 배분 정확도: 자기 점검(메타인지)이 정확할수록 진짜 약점에 시간이 감. 모의 직후엔 객관 피드백으로 보정 */
+function allocAccuracy(k){var base=metacogResolution(k),mb=mockBoost(k)*8;return Math.max(20,Math.min(98,Math.round(base+mb)));}
+function subjPriority(s,k){var ov=subjMastery(s).ov,trueWeak=(100-ov)/100,dow=parseDate(k).getDay(),idx=CURRIC.indexOf(s);
+  var acc=allocAccuracy(k)/100,distort=((hashStr(k+s.key+"mis")%100)/100-0.5)*0.5;       // 자기 점검이 부정확하면 ±왜곡
+  var weak=Math.max(0,Math.min(1,trueWeak*acc+(trueWeak+distort)*(1-acc)));               // 지각된 약점(오배분의 근원)
+  var rot=0.6+0.5*Math.cos((dow-idx*1.2)/7*Math.PI*2);          // 요일 시간표(과목별 회전)
+  var mockNear=preMockDip(k)>0?(0.5+weak*0.8):0;                 // 시험 임박→약한 과목 가중
+  var t=traitAt(k),face=(t.resil-0.5)*0.5-(t.perfect-0.5)*0.5;   // 회복탄력=약점 직면, 완벽주의=강점 안주
+  return Math.max(0.15,0.6+weak*(1.0+face)+rot*0.5+mockNear);}
+function subjAlloc(k){if(_alloc[k])return _alloc[k];var totalMin=Math.round(fullDay(k)*60);
+  var ws=CURRIC.map(function(s){return {s:s,w:subjPriority(s,k)};}),sum=ws.reduce(function(a,x){return a+x.w;},0);
+  return _alloc[k]=ws.map(function(x){var frac=x.w/sum;return {key:x.s.key,subj:x.s.subj,frac:frac,min:Math.round(totalMin*frac),w:x.w};});}
+function subjConf(s,k){var M=subjMastery(s),em=effMastery(M.parts),wc=s.part.filter(x=>x.w).length,t=traitAt(k),se=selfEfficacy(k);
+  return Math.max(8,Math.min(99,Math.round(em*0.85+(se-50)*0.2-(t.perfect-0.5)*12-wc*6)));}
+function subjAnx(s,k){var M=subjMastery(s),em=effMastery(M.parts),wc=s.part.filter(x=>x.w).length,t=traitAt(k);
+  return Math.max(0,Math.min(100,Math.round((100-em)*0.55+wc*7+preMockDip(k)*30*(0.6+t.anxsens))));}
+/* ===== 경로 의존성: 사건은 하루로 끝나지 않고 며칠~몇 주 감쇠하며 여운을 남김 ===== */
+function eventAftermath(k){if(_aft[k]!=null)return _aft[k];var p=parseDate(k),sum=0,i;
+  for(i=1;i<=10;i++){var ev=eventOf(_dk(p,i));if(ev&&ev.ment&&Math.abs(ev.ment)>=8)sum+=ev.ment*Math.pow(0.70,i-1);} // 큰 사건만 여운
+  return _aft[k]=Math.max(-16,Math.min(12,Math.round(sum*0.7)));}
+/* ===== 메타인지: 체감 실력 vs 실제 실력 (완벽주의는 과소평가, 효능감은 과대평가) ===== */
+function actualLevelAvg(k){var T=(parseDate(k)-Y0)/(SUNUNG-Y0),sum=0,n=0,i,j;
+  for(i=0;i<CURRIC.length;i++){var s=CURRIC[i],t=Math.max(0,Math.min(1,T+s.off));
+    for(j=0;j<s.part.length;j++){var pt=s.part[j],v=pt.c*(0.50+0.30*Math.pow(Math.max(t,0.001),0.7)+0.20*Math.pow(Math.max(t,0.001),0.95));sum+=Math.min(pt.c,v);n++;}}
+  return sum/n;}
+function perceivedGap(k){var actual=actualLevelAvg(k),t=traitAt(k),se=selfEfficacy(k);
+  var perceived=Math.max(0,Math.min(100,actual+(se-50)*0.25-(t.perfect-0.5)*22));
+  return {actual:Math.round(actual),perceived:Math.round(perceived),gap:Math.round(perceived-actual)};}
+/* =========================================================
+   인지 모델 (Cognitive Architecture) — 사고 회로
+   작업기억·인지부하·이중처리·주의·기억 이중강도·메타인지·오류·청킹.
+   전부 결정론적·경계 있음. siDay 등 상위 신호를 읽기만 하며 백본(진도·이해도·순공)은 바꾸지 않음.
+   ========================================================= */
+var _wm={},_cc={},_cfat={},_atn={},_con={};
+/* 작업기억 용량(청크): 기본 4.0, 수면·정서는 +, 피로·스트레스·불안은 − (Baddeley; 수면부족→WM 저하) */
+function workingMemory(k){if(_wm[k]!=null)return _wm[k];var d=siDay(k),cap=4.0;
+  cap+=(Math.max(5,Math.min(8.5,d.sleep))-6.8)*0.42; cap+=(d.mental-55)/100*1.1;
+  cap-=d.fatigue/54*0.9; cap-=d.stress/100*0.7; cap-=d.anx/100*0.5;
+  cap=Math.max(2.5,Math.min(5.6,cap));
+  return _wm[k]={cap:Math.round(cap*10)/10,label:cap>=4.8?"넓음":cap>=3.8?"보통":cap>=3.0?"좁아짐":"매우 좁음"};}
+/* 집행기능·인지통제(억제·목표유지) */
+function cogControl(k){if(_cc[k]!=null)return _cc[k];var d=siDay(k);
+  var c=58+(d.mental-55)*0.4+(d.motiv-50)*0.25+(Math.max(5,Math.min(8.5,d.sleep))-6.8)*5-d.fatigue*0.5-d.anx*0.25;
+  return _cc[k]=Math.max(15,Math.min(100,Math.round(c)));}
+/* 인지(정신) 피로: 기상 후 공부 누적에 따라 상승, 식사·휴식에 회복 — 체력과 별개 */
+function cogFatigueAt(k,mn){var ck=k+"|"+mn;if(_cfat[ck]!=null)return _cfat[ck];var sch=scheduleFor(k),acc=0,i,seg;
+  for(i=0;i<sch.length;i++){seg=sch[i];if(seg.s>=mn)break;var e=Math.min(mn,seg.e);if(e<=seg.s)continue;var dur=e-seg.s;
+    if(seg.state==="study")acc+=dur*0.085; else if(seg.state==="eat")acc-=dur*0.10; else if(seg.state==="stretch")acc-=dur*0.07; else if(seg.state==="sleep")acc=0;}
+  acc+=Math.max(0,(mn-720))/720*8; var base=siDay(k).fatigue*0.18;
+  return _cfat[ck]=Math.max(0,Math.min(100,Math.round(acc+base)));}
+/* 이중처리: System2(분석·느림) 비중. 신선·고통제·고난도→S2; 피로·시간압박·친숙→S1 (Kahneman) */
+function processingModeAt(k,mn){var cf=cogFatigueAt(k,mn),ctrl=cogControl(k),diff=siMonth(k).difficulty/5;
+  var s2=Math.max(0.08,Math.min(0.95,0.45+diff*0.30+(ctrl-55)/100*0.35-cf/100*0.45));
+  return {s2:s2,label:s2>=0.66?"분석적 사고(S2)":s2>=0.4?"혼합":"직관적 사고(S1)"};}
+/* 주의 3망(Posner): 경계(각성 유지)·지향(대상 선택)·집행(갈등 해소) → 유효 주의 */
+function attentionNetworks(k,mn){var ck=k+"|"+mn;if(_atn[ck])return _atn[ck];var d=siDay(k),cf=cogFatigueAt(k,mn),alertBase=siHour(k,mn/60);
+  var alerting=Math.max(0,Math.min(100,Math.round(alertBase*70+30-cf*0.35)));
+  var orienting=Math.max(0,Math.min(100,Math.round(50+(d.motiv-50)*0.5-d.stress*0.12-cf*0.15)));
+  var executive=Math.max(0,Math.min(100,Math.round(cogControl(k)*0.8+20-cf*0.2)));
+  var eff=Math.max(0,Math.min(100,Math.round(alerting*0.34+orienting*0.30+executive*0.36)));
+  return _atn[ck]={alerting:alerting,orienting:orienting,executive:executive,eff:eff};}
+/* 주의: 지속주의 감퇴 + 딴생각(인지피로·낮은 동기·집행주의 약화) + 재집중(약 23분 주기), 3망이 변조 */
+function attentionAt(k,mn){var seg=scheduleFor(k).find(x=>mn>=x.s&&mn<x.e)||scheduleFor(k)[0];
+  if(seg.state==="sleep")return {state:"수면",sustain:0,wander:false,net:attentionNetworks(k,mn)};
+  if(seg.state!=="study")return {state:"휴식",sustain:0.5,wander:false,net:attentionNetworks(k,mn)};
+  var net=attentionNetworks(k,mn),into=mn-seg.s,blk=seg.e-seg.s,sustainBase=Math.max(0.25,1-into/Math.max(40,blk)*0.55);
+  var sustain=Math.max(0.2,Math.min(1,sustainBase*(0.6+net.eff/100*0.5)));
+  var cf=cogFatigueAt(k,mn),d=siDay(k),wanderP=Math.max(0,Math.min(100,cf*0.5+(60-d.motiv)*0.6+into*0.3+(100-net.executive)*0.2));
+  var wander=(hashStr(k+"|"+mn+"|mw")%100)<wanderP*0.22, refocus=(mn%23<3)&&(hashStr(k+"|"+(mn-mn%23)+"|rf")%100)<30;
+  var state=wander?"딴생각·이탈":refocus?"다시 집중 잡는 중":sustain>0.8?"집중 몰두":sustain>0.55?"주의 지속":"주의 흐려짐";
+  return {state:state,sustain:sustain,wander:wander,net:net};}
+/* 청킹·전문성: 숙련될수록 패턴을 덩어리로 인식 → 내재 부하 ↓ */
+function chunkingLevel(s,k){return Math.max(0,Math.min(1,(subjMastery(s).ov-40)/55));}
+/* 인지 부하(Sweller): 내재(난이도−청킹)+외재(산만·스트레스)+본유(분석 노력), WM 대비 과부하 판정 */
+function cogLoadAt(k,mn){var d=siDay(k),seg=scheduleFor(k).find(x=>mn>=x.s&&mn<x.e)||scheduleFor(k)[0];
+  var s=CURRIC.find(c=>c.key===subjKey(seg.label)),chunk=s?chunkingLevel(s,k):0.5,diff=siMonth(k).difficulty/5;
+  var intrinsic=Math.max(0,(0.40+diff*0.45)-chunk*0.5),att=attentionAt(k,mn);
+  var extraneous=0.10+(att.wander?0.28:0)+d.stress/100*0.15+(1-att.sustain)*0.18;
+  var germane=processingModeAt(k,mn).s2*0.30,total=intrinsic+extraneous+germane;
+  var thresh=workingMemory(k).cap/3.6*1.10;
+  return {intrinsic:intrinsic,extraneous:extraneous,germane:germane,total:total,overload:total>thresh,ratio:total/thresh};}
+/* 기억 이중강도(Bjork): 저장강도(천천히 누적·거의 안 떨어짐) vs 인출강도(최근성에 빠르게 변동) */
+/* 누적 학습의 질(공고화 효율): 최근 14일 처리 깊이·분석 비중을 적분 → 저장강도를 봉투 위/아래로 (Bjork: 깊은 처리가 저장을 키움) */
+function consolidationEff(k){if(_con[k]!=null)return _con[k];var p=parseDate(k),sum=0,wsum=0,i;
+  for(i=0;i<14;i++){var kk=_dk(p,i),w=Math.pow(0.92,i),ed=encodingDepthAt(kk,600).depth,s2=processingModeAt(kk,600).s2;
+    sum+=(ed*0.6+s2*0.4)*w; wsum+=w;}
+  return _con[k]=Math.max(0,Math.min(1,sum/wsum));}
+/* 기억 이중강도(Bjork): 저장강도=달력 실력 봉투 × 누적 학습의 질, 인출강도=최근 학습량에 빠르게 변동 */
+function memoryDynamics(k){var p=parseDate(k),calMast=actualLevelAvg(k),con=consolidationEff(k);
+  var storage=Math.max(0,Math.min(100,Math.round(calMast*(0.82+con*0.30))));
+  var rec=0,i;for(i=1;i<=7;i++)rec+=baseMood(_dk(p,i)).mult0; rec/=7;
+  var retrieval=Math.max(0,Math.min(100,Math.round(storage*0.5+(rec-0.55)*75+35)));
+  return {storage:storage,retrieval:retrieval,gap:retrieval-storage,con:con};}
+/* 처리 깊이(Craik): 깊은(정교화) vs 얕은(기계적) */
+function encodingDepthAt(k,mn){var att=attentionAt(k,mn),d=siDay(k),t=traitAt(k),mode=processingModeAt(k,mn);
+  var depth=Math.max(0,Math.min(1,att.sustain*0.4+d.motiv/100*0.25+t.curio*0.2+mode.s2*0.25-(att.wander?0.3:0)));
+  return {depth:depth,label:depth>=0.7?"깊은 처리(정교화)":depth>=0.45?"보통 처리":"얕은 처리(기계적)"};}
+/* 메타인지 해상도: 자기평가가 실제를 얼마나 잘 추적하나 (전문성↑→정확, |체감격차|↑→부정확) */
+function metacogResolution(k){var pg=perceivedGap(k);return Math.max(20,Math.min(98,Math.round(70+yearFrac(k)*15-Math.abs(pg.gap)*1.6)));}
+/* 오류 유형: 실수(S1 부주의)·개념오류(지식공백)·인출실패·시간압박 */
+function errorProfile(k){var mode=processingModeAt(k,720),wm=workingMemory(k).cap,d=siDay(k),md=memoryDynamics(k);
+  var slip=(1-mode.s2)*40+d.fatigue*0.3,concept=Math.max(0,100-actualLevelAvg(k))*0.5,retrievalF=Math.max(0,72-md.retrieval)*0.6,timeP=d.anx*0.25+Math.max(0,3.2-wm)*8;
+  var sum=slip+concept+retrievalF+timeP||1;
+  return {slip:Math.round(slip/sum*100),concept:Math.round(concept/sum*100),retrieval:Math.round(retrievalF/sum*100),timeP:Math.round(timeP/sum*100)};}
+/* 다중 작업기억(Baddeley): 중앙집행기·음운고리·시공간 메모장·일화버퍼 — 스칼라 용량에서 파생, 과목별 병목 */
+function wmComponents(k){var cap=workingMemory(k).cap,d=siDay(k);
+  function L(v){v=Math.max(1.4,Math.min(5.6,v));return Math.round(v*10)/10;}
+  return {exec:L(cap-d.stress/100*0.4),phono:L(cap*0.95-d.fatigue/54*0.5),visuo:L(cap*0.88-d.stress/100*0.5),epis:L(cap*0.9-d.fatigue/54*0.3)};}
+function bufferName(key){return {exec:"중앙집행기",phono:"음운고리",visuo:"시공간 메모장",epis:"일화버퍼"}[key];}
+/* 문제 유형 분류기: 개념 인출·절차 실행·문제 해결·분석 추론·부호화 암기 (과목·블록·시간으로) */
+var PTYPE={concept:{label:"개념 인출",s2:0.4,buf:"phono"},procedure:{label:"절차 실행",s2:0.5,buf:"exec"},
+  solve:{label:"문제 해결",s2:0.82,buf:"visuo"},analyze:{label:"분석·추론",s2:0.75,buf:"exec"},encode:{label:"부호화·암기",s2:0.35,buf:"epis"}};
+function problemTypeAt(k,mn){var seg=scheduleFor(k).find(x=>mn>=x.s&&mn<x.e)||scheduleFor(k)[0];if(seg.state!=="study")return {key:"rest",label:"-",buf:null};
+  var sk=subjKey(seg.label),pools={math:["solve","procedure","analyze"],kor:["analyze","concept","encode"],eng:["concept","analyze","encode"],bio:["encode","concept","solve"],eth:["analyze","concept","encode"]};
+  var pool=pools[sk]||["concept","analyze","procedure"],idx=(Math.floor((mn-seg.s)/18)+hashStr(k+"pt")%pool.length)%pool.length,key=pool[idx];
+  return {key:key,label:PTYPE[key].label,s2:PTYPE[key].s2,buf:PTYPE[key].buf};}
+function wmBottleneckAt(k,mn){var pt=problemTypeAt(k,mn);if(!pt.buf)return null;var comp=wmComponents(k);return {buffer:bufferName(pt.buf),cap:comp[pt.buf]};}
+/* 메타인지 감시(Nelson-Narens): FOK(인출 가능감)·JOL(학습 판단)·확신·불확실 — 휴리스틱 단서 기반이라 어긋날 수 있음 */
+function metaMonitorAt(k,mn){var md=memoryDynamics(k),pg=perceivedGap(k),res=metacogResolution(k),pt=problemTypeAt(k,mn);
+  var seg=scheduleFor(k).find(x=>mn>=x.s&&mn<x.e)||scheduleFor(k)[0],s=CURRIC.find(c=>c.key===subjKey(seg.label)),ov=s?subjMastery(s).ov:60,hardPen=(pt.s2>0.7?16:0);
+  var fok=Math.max(0,Math.min(100,Math.round(md.retrieval*0.45+ov*0.35-hardPen+(hashStr(k+"|"+Math.floor(mn/9)+"|fok")%34-17))));
+  var jol=Math.max(0,Math.min(100,Math.round(md.storage*0.5+ov*0.25+20+pg.gap*0.4)));
+  var confidence=Math.max(0,Math.min(100,Math.round(fok*0.55+jol*0.45)));
+  var uncertainty=Math.max(0,Math.min(100,Math.round(100-confidence-(res-60)*0.25+hardPen*0.6)));
+  return {fok:fok,jol:jol,confidence:confidence,uncertainty:uncertainty};}
+/* 메타인지 제어: 감시 결과로 고르는 교정 행동 (계속/시간 추가/전략 전환/재학습/표시 후 회귀/멈춤) */
+function metaControlAt(k,mn){var seg=scheduleFor(k).find(x=>mn>=x.s&&mn<x.e)||scheduleFor(k)[0];if(seg.state!=="study")return {action:"-",d:"",mon:null};
+  var mon=metaMonitorAt(k,mn),load=cogLoadAt(k,mn),cf=cogFatigueAt(k,mn),timeLeft=seg.e-mn,net=attentionNetworks(k,mn),a,d;
+  if(mon.fok<38&&net.executive>38){a="재학습(개념 회귀)";d="기초 개념으로 돌아가 다지는 중";}
+  else if(mon.uncertainty>60&&timeLeft>22){a="전략 전환";d="안 풀려서 접근법을 바꾸는 중";}
+  else if(mon.uncertainty>52&&timeLeft<=18){a="표시 후 회귀";d="별표 치고 일단 넘어가는 중";}
+  else if(load.overload&&cf>62){a="잠깐 멈춤";d="과부하라 호흡 고르는 중";}
+  else if(mon.confidence>70){a="계속 진행";d="흐름이 좋아 밀고 나가는 중";}
+  else {a="시간 더 투입";d="조금 더 붙잡고 파고드는 중";}
+  return {action:a,d:d,mon:mon};}
+/* 전략 레퍼토리 + 선택 (과목별 휴리스틱 toolkit, 숙련도가 적합도에 영향) */
+var STRATEGIES={math:["역산으로 검토","그림·도식 그리기","유사 기출 상기","경우의 수 분해","정의로 회귀","대입·소거"],
+  kor:["지문 구조도 작성","선지 소거법","발문 다시 읽기","근거 문장 표시","주제 문장 찾기"],
+  eng:["빈칸 앞뒤 논리 추적","오답 소거","구문 분석","연결어 단서","문맥 추론"],
+  bio:["가계도 그리기","도표·그래프 분석","예외 사례 점검","과정 순서 재배열","개념 연결망"],
+  eth:["사상가 입장 대조","제시문 키워드 표시","선지 함정 점검","개념 정의 구분"]};
+function strategyAt(k,mn){var seg=scheduleFor(k).find(x=>mn>=x.s&&mn<x.e)||scheduleFor(k)[0],sk=subjKey(seg.label);if(seg.state!=="study"||!sk||!STRATEGIES[sk])return null;
+  var pool=STRATEGIES[sk],s=CURRIC.find(c=>c.key===sk),ov=s?subjMastery(s).ov:50,idx=(Math.floor((mn-seg.s)/14)+hashStr(k+"strat")%pool.length)%pool.length;
+  return {name:pool[idx],fit:Math.max(30,Math.min(98,Math.round(ov*0.6+(hashStr(k+"|"+idx+"|fit")%30)+10)))};}
+/* System-1 편향 결: 고착·익숙한 패턴 과적용·정착·부주의 */
+function biasProfile(k){var mode=processingModeAt(k,720),cf=cogFatigueAt(k,720),md=memoryDynamics(k);
+  var fixation=(1-mode.s2)*30+cf*0.2,overmatch=md.retrieval*0.25,anchor=(1-mode.s2)*22+10,careless=cf*0.3+(1-mode.s2)*18,sum=fixation+overmatch+anchor+careless||1;
+  return {fixation:Math.round(fixation/sum*100),overmatch:Math.round(overmatch/sum*100),anchor:Math.round(anchor/sum*100),careless:Math.round(careless/sum*100)};}
+/* 활성 스키마: 지금 머릿속에 '켜진' 개념 (확산 활성화 근사) */
+function activeSchemasAt(k,mn){var seg=scheduleFor(k).find(x=>mn>=x.s&&mn<x.e)||scheduleFor(k)[0],s=CURRIC.find(c=>c.key===subjKey(seg.label));if(!s)return [];
+  var n=s.part.length,i0=hashStr(k+"|"+Math.floor(mn/12)+"|sch")%n;return [s.part[i0].l,s.part[(i0+1)%n].l,s.part[(i0+2)%n].l];}
+/* ★ 사고 회로 — 17개 인지 연산의 분기형 제어 그래프 (Polya + 인출 분기 + 막힘→부화·재구조화→통찰 + 메타 제어) */
+var THOUGHT2=[
+ {op:"문제 표상·부호화",d:"조건을 읽고 머릿속에 그림으로 세우는 중",b:"입력"},
+ {op:"유형 식별",d:"이게 어떤 종류의 문제인지 가늠하는 중",b:"입력"},
+ {op:"지식 인출(성공)",d:"필요한 개념·공식이 바로 떠오름",b:"인출"},
+ {op:"지식 인출(부분)",d:"가물가물한 걸 끄집어내려 더듬는 중",b:"인출"},
+ {op:"지식 인출(실패)",d:"분명 배웠는데 안 떠올라 답답한 중",b:"인출"},
+ {op:"전략 선택",d:"어떤 접근으로 풀지 경로 고르는 중",b:"전략"},
+ {op:"절차 실행",d:"세운 계획을 단계별로 밀고 나가는 중",b:"실행"},
+ {op:"중간 점검·검산",d:"여기까지 말이 되는지 되짚는 중",b:"점검"},
+ {op:"오류 감지",d:"뭔가 어긋났다는 걸 알아챈 중",b:"오류"},
+ {op:"오류 수정",d:"틀어진 지점을 바로잡는 중",b:"오류"},
+ {op:"막힘(impasse)",d:"길이 막혀 더 못 나가는 상태",b:"오류"},
+ {op:"부화(incubation)",d:"잠시 내려놓고 머리 한켠에서 굴리는 중",b:"돌파"},
+ {op:"재구조화",d:"문제를 다른 각도로 다시 짜보는 중",b:"돌파"},
+ {op:"통찰·도약(Aha)",d:"흩어진 단서가 한순간에 꿰지는 순간",b:"돌파"},
+ {op:"메타 판단·제어",d:"지금 방식이 맞나 스스로 점검하는 중",b:"메타"},
+ {op:"회귀(표시 문제)",d:"별표 친 문제로 다시 돌아온 중",b:"메타"},
+ {op:"공고화·구조화",d:"푼 과정을 구조로 정리해 새기는 중",b:"정리"}];
+function thoughtCycleAt(k,mn){var seg=scheduleFor(k).find(x=>mn>=x.s&&mn<x.e)||scheduleFor(k)[0];
+  if(seg.state==="sleep")return {op:"오프라인 공고화",d:"잠든 사이 기억을 정리하는 중",phase:-1,b:"수면",s2:0,overload:false,ctrl:"-",mon:null};
+  if(seg.state!=="study")return {op:"이완·디폴트 모드",d:"머리를 잠시 비우는 중",phase:-1,b:"휴식",s2:0,overload:false,ctrl:"-",mon:null};
+  var att=attentionAt(k,mn);
+  if(att.wander)return {op:"주의 이탈",d:"잠깐 딴 데로 생각이 새는 중",phase:-1,b:"이탈",s2:0,overload:false,ctrl:"-",mon:null};
+  var load=cogLoadAt(k,mn),mode=processingModeAt(k,mn),mon=metaMonitorAt(k,mn),ctrl=metaControlAt(k,mn),step=(Math.floor(mn/3)+Math.floor(ultraAt(k,mn).frac*7))%7,idx;
+  if(ctrl.action==="재학습(개념 회귀)"&&(hashStr(k+"|"+mn+"|rl")%100)<40)idx=0;
+  else if(ctrl.action==="표시 후 회귀"&&(hashStr(k+"|"+mn+"|rt")%100)<45)idx=15;
+  else if(ctrl.action==="전략 전환")idx=5;
+  else{
+    if(step===0)idx=0;else if(step===1)idx=1;
+    else if(step===2)idx=(mon.fok>=70?2:mon.fok>=45?3:4);
+    else if(step===3)idx=5;else if(step===4)idx=6;else if(step===5)idx=7;else idx=6;
+    if(idx===4&&(hashStr(k+"|"+mn+"|im")%100)<(load.overload?60:30))idx=10;
+    if(idx===7&&(hashStr(k+"|"+mn+"|ed")%100)<(load.overload?55:28))idx=8;
+  }
+  if(idx===10){var r2=hashStr(k+"|"+mn+"|res")%100;idx=(r2<25?10:r2<45?11:r2<70?12:5);}
+  if(idx===8&&(hashStr(k+"|"+mn+"|fx")%100)<70)idx=9;
+  if(idx===12&&mode.s2>0.52&&(hashStr(k+"|"+mn+"|aha")%100)<50)idx=13;
+  if((idx===6||idx===7)&&mode.s2>0.7&&(hashStr(k+"|"+mn+"|sa")%100)<5)idx=13;   // 깊은 분석 중 드문 통찰
+  if(idx!==13&&(hashStr(k+"|"+mn+"|mc")%100)<9)idx=14;
+  if((seg.e-mn)<=8&&(hashStr(k+"|"+mn+"|cs")%100)<55)idx=16;
+  return {op:THOUGHT2[idx].op,d:THOUGHT2[idx].d,phase:idx,b:THOUGHT2[idx].b,s2:mode.s2,overload:load.overload,ctrl:ctrl.action,mon:mon};}
+/* 추론 흐름: 최근 n개 인지 연산의 자취 (4분 간격) */
+function reasoningTrace(k,mn,n){var out=[],i;for(i=n-1;i>=0;i--){var m=mn-i*4;if(m<0)m=0;out.push(thoughtCycleAt(k,m).op);}return out;}
+/* ===== 모의고사 성적 이력 (원점수·백분위·등급, 시간이 갈수록 향상; 평가원=6·9·수능) ===== */
+var MOCKEXAMS=[{d:"2026-03-29",n:"3월 학원 실모",s:"3월",pv:false},{d:"2026-04-26",n:"4월 학원 실모",s:"4월",pv:false},{d:"2026-06-04",n:"6월 모평",s:"6평",pv:true},{d:"2026-07-26",n:"7월 학원 실모",s:"7월",pv:false},{d:"2026-09-03",n:"9월 모평",s:"9평",pv:true},{d:"2026-10-25",n:"10월 학원 실모",s:"10월",pv:false},{d:"2026-11-19",n:"수능",s:"수능",pv:true}];
+function pctFromGrade(g,raw,max){var band=[[96,99],[89,95],[77,88],[60,76],[40,59],[23,39],[11,22],[4,10],[1,3]][g-1];
+  var cuts=max===100?[92,85,77,67,55,42,28,16,0]:[45,42,38,33,27,21,15,10,0],hi=g>1?cuts[g-2]:max,lo=cuts[g-1],frac=hi>lo?(raw-lo)/(hi-lo):0.5;frac=Math.max(0,Math.min(1,frac));return Math.round(band[0]+(band[1]-band[0])*frac);}
+function siExam(s,k){var T=(parseDate(k)-Y0)/(SUNUNG-Y0),t=Math.max(0,Math.min(1,T+s.off)),adv=Math.max(0,Math.min(1,Math.pow(Math.max(t,0.001),0.95))),parts=[],i;
+  for(i=0;i<s.part.length;i++){var pt=s.part[i],v=pt.c*(0.50+0.30*Math.pow(Math.max(t,0.001),0.7)+0.20*adv);if(v>pt.c)v=pt.c;parts.push({v:v,w:pt.w});}
+  var eff=effMastery(parts),vc=((hashStr(k+"ex"+s.key)%100)/100-0.5)*7;eff=Math.max(0,Math.min(100,eff+vc));
+  if(s.key==="eng"){var g=eff>=90?1:eff>=80?2:eff>=70?3:eff>=60?4:eff>=50?5:eff>=40?6:eff>=30?7:8;return {eng:true,grade:g,pct:null};}
+  var max=(s.key==="bio"||s.key==="eth")?50:100,raw=Math.round(Math.min(max,Math.max(0,realScore(eff,max)))),g=gradeFor(max,raw);
+  return {eng:false,grade:g,raw:raw,max:max,pct:pctFromGrade(g,raw,max)};}
+function examAvgPct(k){var sum=0,n=0,i;for(i=0;i<CURRIC.length;i++){var r=siExam(CURRIC[i],k);if(!r.eng){sum+=r.pct;n++;}}return n?Math.round(sum/n):0;}
+function examGradeSum(k){var s=0,i;for(i=0;i<CURRIC.length;i++)s+=siExam(CURRIC[i],k).grade;return s;}
+let mymock={};try{mymock=JSON.parse(localStorage.getItem("mymock")||"{}")||{};}catch(e){mymock={};}
+function setMyMock(v){v=Math.max(0,Math.min(100,Math.round(Number(v)||0)));mymock.avg=v;try{localStorage.setItem("mymock",JSON.stringify(mymock));}catch(e){}buildMock();}
 var MIND={
- math:["미적 30번… 손은 기억하는데 머리가 못 따라가. 한 번 더.","계산 실수만 줄여도 1등급인데. 검산 습관 들이는 중.","개념은 잡았어. 이제 킬러에서 안 무너지면 돼."],
- kor:["과학·기술 지문, 또 두 번 읽었다. 남들 한 번 읽을 때.","문학은 자신 있어. 비문학이 발목을 잡네.","독해 속도는 끈기로 메운다. 매일 한 지문씩."],
- eng:["빈칸은 감으로 풀면 안 돼. 논리로 끊어야 해.","듣기·어법은 안정권. 빈칸 하나만 잡자.","단어는 그냥 매일. 변명 없이."],
- bio:["유전 가계도, 또 틀렸어. 근데 왜 틀렸는진 알겠어. 그게 다음 단계지.","비유전은 거의 다 왔다. 유전만 넘으면 1등급.","추론이 막히면 개념으로 돌아간다. 백 번이라도."],
- eth:["사상가 입장만 안 헷갈리면 만점인데. 표로 다시 정리.","생윤은 효자 과목. 여기서 1등급 못 받으면 안 돼.","시사 문제는 자신 있어. 사상사만 완벽하게."],
- rest:["잠깐 쉬어도 머릿속은 아직 30번에 가 있어.","눈 감고 방금 본 거 떠올리는 중.","딱 10분만. 그리고 다시 책상으로."],
- sleep:["내일은 유전부터. 그 생각하다 잠들어.","오늘 못 끝낸 분량이 자꾸 떠올라.","꿈에서도 문제 푸는 기분이야."]
+ math:["미적 30번… 손은 기억하는데 머리가 못 따라가. 한 번 더.","계산 실수만 줄여도 1등급인데. 검산 습관 들이는 중.","개념은 잡았어. 이제 킬러에서 안 무너지면 돼.","적분 계산이 자꾸 어긋나. 천천히, 정확히.","30번은 손이 기억하게 만들 거야. 반복뿐이야."],
+ kor:["과학·기술 지문, 또 두 번 읽었다. 남들 한 번 읽을 때.","문학은 자신 있어. 비문학이 발목을 잡네.","독해 속도는 끈기로 메운다. 매일 한 지문씩.","문장 구조부터 끊어 읽자. 급하면 다 놓쳐.","선지 근거를 지문에서 찾는 습관. 감 금지."],
+ eng:["빈칸은 감으로 풀면 안 돼. 논리로 끊어야 해.","듣기·어법은 안정권. 빈칸 하나만 잡자.","단어는 그냥 매일. 변명 없이.","순서·삽입은 연결어가 답이야. 흐름을 봐.","오답 지문 다시 해석. 왜 틀렸는지가 중요해."],
+ bio:["유전 가계도, 또 틀렸어. 근데 왜 틀렸는진 알겠어. 그게 다음 단계지.","비유전은 거의 다 왔다. 유전만 넘으면 1등급.","추론이 막히면 개념으로 돌아간다. 백 번이라도.","가계도는 경우의 수 싸움. 표로 정리하자.","근수축·신경 그림 다시 그려본다. 손으로."],
+ eth:["사상가 입장만 안 헷갈리면 만점인데. 표로 다시 정리.","생윤은 효자 과목. 여기서 1등급 못 받으면 안 돼.","시사 문제는 자신 있어. 사상사만 완벽하게.","칸트랑 밀, 또 헷갈렸다. 키워드로 구분.","제시문 두 번 읽기. 함정은 늘 디테일에 있어."],
+ rest:["잠깐 쉬어도 머릿속은 아직 30번에 가 있어.","눈 감고 방금 본 거 떠올리는 중.","딱 10분만. 그리고 다시 책상으로.","커피 한 모금. 오후가 진짜 승부야.","스트레칭하고 다시 집중 모드로."],
+ sleep:["내일은 유전부터. 그 생각하다 잠들어.","오늘 못 끝낸 분량이 자꾸 떠올라.","꿈에서도 문제 푸는 기분이야.","딱 이만큼만 더… 하다 잠들었다.","내일은 오늘보다 나을 거야. 자자."],
+ hi:["오늘 페이스 좋다. 이대로만 가면 돼.","머리가 맑아. 어려운 것부터 치고 나가자.","이 흐름 끊기기 싫어. 한 시간만 더.","요즘 손에 잡히는 느낌이야. 자신 있어."],
+ lo:["…진짜 이래도 되는 걸까. 불안하다.","남들 다 앞서가는 것 같아. 조급해.","오늘은 머리가 안 돌아가. 그래도 앉아 있자.","울고 싶은데, 일단 한 문제만 더 풀자.","느려도 멈추진 않을 거야. 그거면 돼."],
+ regime:{
+  "몰입":["지금 이 흐름, 끊기기 싫어. 손이 알아서 움직여.","시간 가는 줄 모르겠어. 이대로 쭉.","머리가 맑게 트였어. 어려운 거 가져와."],
+  "불안":["가슴이 자꾸 답답해. 그래도 펜은 안 놨어.","잘하고 있는 걸까. 불안할수록 한 문제 더.","생각이 앞서 달려. 일단 눈앞 것부터."],
+  "슬럼프":["오늘은 진짜 안 잡힌다. 그래도 앉아는 있자.","의욕이 바닥이야. 딱 한 페이지만.","멍하다. 그래도 책상은 안 떠나."],
+  "과열":["몸이 보내는 신호가 느껴져. 무리했나 봐.","쉬어야 하는데 손이 안 멈춰. 위험한 신호.","머리가 과부하야. 10분만 눈 감자."],
+  "정체":["분명 하는데 안 느는 느낌. 답답해.","제자리걸음 같아도 쌓이고 있겠지.","완벽하게 하고 싶은데 멀게만 느껴져."],
+  "회복":["바닥 찍었으니 이제 올라갈 일만.","어제보단 낫다. 천천히 페이스 되찾자.","다시 시동 거는 중. 무리하진 말고."]
+ }
 };
 function curSubjKey(){var n=new Date(),mn=n.getHours()*60+n.getMinutes(),seg=segAt(mn);if(seg.state==="sleep")return"sleep";if(seg.state!=="study")return"rest";return subjKey(seg.label)||"rest";}
-function renderMind(){var k=curSubjKey(),n=new Date(),mn=n.getHours()*60+n.getMinutes();var b=document.querySelectorAll(".pgtoday");for(var i=0;i<b.length;i++){b[i].style.display=(b[i].getAttribute("data-k")===k)?"inline":"none";}var pool=MIND[k]||MIND.rest;var m=$("mind");if(m)m.textContent="시은의 지금 속마음 — "+pool[Math.floor(mn/11)%pool.length];}
+function renderMind(){var k=curSubjKey(),n=new Date(),mn=n.getHours()*60+n.getMinutes(),d=siDay(ld(n));
+ var b=document.querySelectorAll(".pgtoday");for(var i=0;i<b.length;i++){b[i].style.display=(b[i].getAttribute("data-k")===k)?"inline":"none";}
+ var pool;
+ if(d.event && (mn%41<13)) pool=[d.event.t+"…"];
+ else if(d.social && (mn%43<10)) pool=[d.social.t+"…"];
+ else if(k==="sleep") pool=MIND.sleep;
+ else if(k==="rest") pool=MIND.rest;
+ else if(MIND.regime[d.regime] && (mn%37<13)) pool=MIND.regime[d.regime];
+ else { var sp=MIND[k]||MIND.rest;
+   if(d.mental>=74 && (mn%31<11)) pool=MIND.hi;
+   else if(d.mental<=38 && (mn%29<12)) pool=MIND.lo;
+   else pool=sp; }
+ var m=$("mind");if(m)m.textContent="시은의 지금 속마음 — "+pool[Math.floor(mn/11)%pool.length];}
 function buildProgress(){var pc=pace(),dev=Math.round((pc-1)*0.06*DTOT);var h='<div style="font-size:10px;color:#857b88;font-family:DM Mono,monospace;margin-bottom:4px;letter-spacing:.3px">최근 21일 페이스 '+(pc>=1?"+":"")+Math.round((pc-1)*100)+'% · 계획 대비 '+(dev>=0?"+":"")+dev+'일</div>',j,i;for(j=0;j<CURRIC.length;j++){var s=CURRIC[j],p=prog(s),segs="",labs="";
  for(i=0;i<4;i++){var ff=p.sl[i]?(p.sd[i]/p.sl[i]*100):0;segs+='<div class="pgs" style="flex:'+p.sl[i]+'"><div class="pgsf" style="width:'+ff.toFixed(0)+'%"></div></div>';labs+='<span style="flex:'+p.sl[i]+'">'+s.stg[i]+'</span>';}
  var cur=p.cur||s.mod[s.mod.length-1];var lecpos=p.cur?(" · "+p.curLecIdx+"/"+p.curLecTot+"강"):" · 완강";
@@ -397,15 +1156,173 @@ function buildRadar(){
  svg+='<polygon points="'+poly(mv)+'" fill="rgba(229,9,20,.14)" stroke="#e50914" stroke-width="2.2" stroke-linejoin="round"/>';
  for(i=0;i<N;i++){var mp=P(i,ax[i].me);svg+='<circle cx="'+mp[0]+'" cy="'+mp[1]+'" r="2.6" fill="#e50914"/>';}
  for(i=0;i<N;i++){var a=(-90+i*360/N)*Math.PI/180,lr=R+18,lx=cx+lr*Math.cos(a),ly=cy+lr*Math.sin(a),anc=lx>cx+6?"start":(lx<cx-6?"end":"middle"),dy=ly>cy+6?9:(ly<cy-6?0:4);
-   svg+='<text x="'+lx.toFixed(1)+'" y="'+(ly+dy).toFixed(1)+'" text-anchor="'+anc+'" font-size="12" font-weight="600" fill="#0a0a0a">'+ax[i].l+'</text>';}
+   svg+='<text x="'+lx.toFixed(1)+'" y="'+(ly+dy).toFixed(1)+'" text-anchor="'+anc+'" font-size="12" font-weight="600" fill="#0a0a0a">'+ax[i].l+'</text>';
+   svg+='<text x="'+lx.toFixed(1)+'" y="'+(ly+dy+13).toFixed(1)+'" text-anchor="'+anc+'" font-size="9.5" font-weight="700"><tspan fill="#e50914">'+ax[i].me+'</tspan><tspan fill="#9a9a9a">·'+ax[i].si+'</tspan></text>';}
  svg+='</svg>';
  el.innerHTML=svg;
 }
-function mediaKey(seg){
-  if(seg.state==="sleep")return "sleep";
-  if(seg.state==="eat")return "coffee";
-  if(seg.state==="stretch")return seg.label.indexOf("산책")>=0?"phone":"stretch";
-  return "study";
+/* ===== 체력(stamina) 엔진 — 컨디션→누적피로→아침체력, 하루 동안 소모/회복 ===== */
+var SLEEPMIN=(function(){var s=0;SCHEDULE.forEach(function(x){if(x.state==="sleep")s+=(x.e-x.s);});return s;})();
+function dayFatigue(k){return siDay(k).fatigue;}
+function morningStamina(k){return siDay(k).morning;}
+function staminaAt(min,k){var dt=dayTypeFor(k),M=morningStamina(k),wake=390;
+ if(min<wake||min>=1410)return {v:Math.min(100,M+5),sleep:true};
+ var sm=0,bm=0;SCHEDULE.forEach(function(x){if(x.e<=wake||x.state==="sleep")return;var s=Math.max(x.s,wake),e=Math.min(x.e,min);if(e<=s)return;if(x.state==="study")sm+=(e-s);else bm+=(e-s);});
+ var dep=dt.key==="불꽃"?0.046:dt.key==="번아웃"?0.073:dt.key==="슬럼프"?0.063:0.055;
+ var evening=min>1200?(min-1200)/240*11:0;
+ var v=M-dep*sm+0.018*bm-evening;v=Math.max(12,Math.min(100,v));
+ return {v:Math.round(v),sleep:false};}
+function staminaLabel(v,sleep){if(sleep)return "수면 · 회복 중";if(v>=78)return "쌩쌩함";if(v>=58)return "집중 유지";if(v>=40)return "슬슬 지침";return "방전 직전 · 집중력 저하";}
+/* ===== 추가 통계 ===== */
+function siCumSec(){var s=0,d=new Date(Y0),now=new Date(),c=0;while(d<=now&&c<400){s+=fullDay(ld(d))*3600;d.setDate(d.getDate()+1);c++;}return s;}
+function daysSinceY0(){return Math.max(1,Math.round((new Date()-Y0)/86400000));}
+function remainingMocks(){var n=new Date(),c=0,i;for(i=0;i<EXAMS.length;i++){if(EXAMS[i].n.indexOf("모의")>=0&&parseDate(EXAMS[i].d)>=n)c++;}return c;}
+function buildSiStats(){var el=$("sistats");if(!el)return;
+ var cum=siCumSec(),lec=0,pctsum=0,j;for(j=0;j<CURRIC.length;j++){var p=prog(CURRIC[j]);lec+=p.done;pctsum+=p.pct;}
+ var days=daysSinceY0(),avg=cum/days;
+ el.innerHTML='<div class="ss">'
+  +'<div class="ssc"><div class="ssk">총 순공</div><div class="ssv tnum">'+Math.round(cum/3600)+'<s>시간</s></div></div>'
+  +'<div class="ssc"><div class="ssk">수강한 강의</div><div class="ssv tnum">'+lec+'<s>강</s></div></div>'
+  +'<div class="ssc"><div class="ssk">일평균 순공</div><div class="ssv tnum">'+(avg/3600).toFixed(1)+'<s>시간</s></div></div>'
+  +'<div class="ssc"><div class="ssk">평균 진도</div><div class="ssv tnum">'+Math.round(pctsum/CURRIC.length)+'<s>%</s></div></div>'
+  +'<div class="ssc"><div class="ssk">재수</div><div class="ssv tnum">'+days+'<s>일째</s></div></div>'
+  +'<div class="ssc"><div class="ssk">남은 모평</div><div class="ssv tnum">'+remainingMocks()+'<s>회</s></div></div>'
+  +'</div>';}
+function buildTrend(){var el=$("trend7");if(!el)return;
+ var now=new Date(),days=[],max=1,i;
+ for(i=6;i>=0;i--){var d=new Date(now);d.setDate(d.getDate()-i);var k=ld(d);
+   var me=i===0?(window._liveU||(log[k]||0)):(log[k]||0),si=i===0?(window._siSec||fullDay(k)*3600):fullDay(k)*3600;
+   days.push({wd:WK[d.getDay()],me:me,si:si,today:i===0});if(me>max)max=me;if(si>max)max=si;}
+ var H=112,h="",x;for(i=0;i<days.length;i++){x=days[i];
+   var sh=Math.max(2,Math.round(x.si/max*H)),mh=Math.max(2,Math.round(x.me/max*H));
+   h+='<div class="tcol"><div class="tbars"><div class="tbar si" style="height:'+sh+'px" title="시은 '+hm(x.si)+'"></div><div class="tbar me" style="height:'+mh+'px" title="나 '+hm(x.me)+'"></div></div><div class="tlbl'+(x.today?" today":"")+'">'+x.wd+'</div></div>';}
+ el.innerHTML='<div class="trend">'+h+'</div>';}
+function minToHM(m){var h=Math.floor(m/60),mm=m%60;return (h<10?"0":"")+h+":"+(mm<10?"0":"")+mm;}
+function buildLog(){var el=$("tlog");if(!el)return;var rows="",i;
+ for(i=0;i<SCHEDULE.length;i++){var x=SCHEDULE[i];if(x.state==="sleep"||x.state==="stretch")continue;
+  rows+='<div class="tlogr" data-s="'+x.s+'" data-e="'+x.e+'"><div class="tlogt">'+minToHM(x.s)+'</div><div class="tlogc"><b>'+x.label+'</b></div></div>';}
+ el.innerHTML=rows;markLog();}
+function markLog(){var el=$("tlog");if(!el)return;var now=new Date(),mn=now.getHours()*60+now.getMinutes(),rows=el.querySelectorAll(".tlogr"),i;
+ for(i=0;i<rows.length;i++){var s=+rows[i].getAttribute("data-s"),e=+rows[i].getAttribute("data-e");rows[i].classList.toggle("now",mn>=s&&mn<e);rows[i].classList.toggle("done",mn>=e);}}
+function buildHeat(){var el=$("heat");if(!el)return;var now=new Date(),cells="",i;
+ for(i=29;i>=0;i--){var d=new Date(now);d.setDate(d.getDate()-i);var k=ld(d);var sec=i===0?(window._liveU||(log[k]||0)):(log[k]||0);var hrs=sec/3600;
+  var bg;if(sec<=0)bg="var(--soft)";else{var a=Math.min(1,0.18+hrs/8*0.82);bg="rgba(229,9,20,"+a.toFixed(2)+")";}
+  cells+='<div class="hcell" style="background:'+bg+'" title="'+k+" · "+hm(sec)+'"></div>';}
+ el.innerHTML='<div class="heat">'+cells+'</div><div class="heatleg">적음<i style="background:var(--soft)"></i><i style="background:rgba(229,9,20,.35)"></i><i style="background:rgba(229,9,20,.7)"></i><i style="background:rgba(229,9,20,1)"></i>많음</div>';}
+function buildToday(){var el=$("today");if(!el)return;var d=siDay(ld(new Date()));
+ var ev=d.event?('<b>'+d.event.tag+'</b> · '+d.event.t):'특별한 일 없이, 묵묵히 책상 앞';
+ var mc=d.mental<35?"#e50914":"#0a0a0a", sc=d.stress>=58?"#e50914":"#0a0a0a", mo=d.motiv<35?"#e50914":"#0a0a0a";
+ el.innerHTML=
+  '<div class="todrow"><span class="todk">오늘 일정</span><span class="todv"><b>'+d.plan+'</b></span></div>'
+ +'<div class="todrow"><span class="todk">오늘의 사건</span><span class="todv">'+ev+'</span></div>'
+ +'<div class="todrow"><span class="todk">멘탈</span><span class="todv"><span class="todg"><span style="width:'+d.mental+'%;background:'+mc+'"></span></span> <b class="tnum">'+d.mental+'</b> · '+mentalLabel(d.mental)+'</span></div>'
+ +'<div class="todrow"><span class="todk">스트레스</span><span class="todv"><span class="todg"><span style="width:'+d.stress+'%;background:'+sc+'"></span></span> <b class="tnum">'+d.stress+'</b> · '+stressLabel(d.stress)+'</span></div>'
+ +'<div class="todrow"><span class="todk">동기</span><span class="todv"><span class="todg"><span style="width:'+d.motiv+'%;background:'+mo+'"></span></span> <b class="tnum">'+d.motiv+'</b> · '+motivLabel(d.motiv)+'</span></div>'
+ +'<div class="todrow"><span class="todk">생체 리듬</span><span class="todv">'+d.phase+' <span class="todsub">(주기 '+(d.cycleDay+1)+'일째)</span></span></div>'
+ +'<div class="todrow"><span class="todk">어젯밤 수면</span><span class="todv"><b class="tnum">'+d.sleep.toFixed(1)+'</b>시간</span></div>'
+ +'<div class="todrow"><span class="todk">날씨 · 기온</span><span class="todv">'+d.weather+' · '+d.temp+'℃ <span class="todsub">미세먼지 '+d.dust+'</span></span></div>'
+ +'<div class="todrow"><span class="todk">오늘 집중 과목</span><span class="todv"><b>'+d.focus.subj+'</b> · '+d.focus.tc+'</span></div>';}
+function buildSubjToday(){var el=$("subjtoday");if(!el)return;var rows="",j;
+ for(j=0;j<CURRIC.length;j++){var s=CURRIC[j],x=subjDay(s);
+  rows+='<div class="stjr'+(x.isF?" foc":"")+'"><span class="stjsub">'+s.subj+(x.isF?'<em>집중</em>':'')+'</span>'
+   +'<span class="stjacc">정답률 <b>'+x.acc+'%</b></span><span class="stjpm">'+x.problems+'문제·오답 '+x.mistakes+'</span>'
+   +'<span class="stjcf">자신감 <b>'+x.conf+'</b>·불안 <b>'+x.sanx+'</b></span>'
+   +'<span class="stjmo">'+x.momLbl+'</span><span class="stjwp">공략 '+x.attack+'</span></div>';}
+ el.innerHTML='<div class="stjhead">오답노트 잔여 <b class="tnum">'+wrongBacklog()+'</b>문제</div>'+rows;}
+function buildAlloc(){var el=$("alloc");if(!el)return;var k=ld(new Date()),al=subjAlloc(k).slice().sort(function(a,b){return b.min-a.min;});
+ var cols=["#e50914","#0a0a0a","#6b6b6b","#9a9a9a","#cfcfcf"],bar="",rows="",i;
+ for(i=0;i<al.length;i++){bar+='<span style="width:'+(al[i].frac*100).toFixed(1)+'%;background:'+cols[i]+'" title="'+al[i].subj+' '+al[i].min+'분"></span>';}
+ for(i=0;i<al.length;i++){var hm=Math.floor(al[i].min/60),mm=al[i].min%60,ts=(hm>0?hm+"시간 ":"")+mm+"분";
+   rows+='<div class="alrow"><span class="aldot" style="background:'+cols[i]+'"></span><span class="alsub">'+al[i].subj+'</span><span class="albar2"><span style="width:'+Math.round(al[i].frac*100)+'%;background:'+cols[i]+'"></span></span><span class="almin tnum">'+ts+'</span></div>';}
+ el.innerHTML='<div class="albig">'+bar+'</div>'+rows+'<div class="todrow"><span class="todk">배분 정확도</span><span class="todv"><span class="todg"><span style="width:'+allocAccuracy(k)+'%;background:'+(allocAccuracy(k)<55?"#e50914":"#0a0a0a")+'"></span></span> <b class="tnum">'+allocAccuracy(k)+'</b> · 자기 점검이 정확할수록 진짜 약점에 시간이 감</span></div><div class="alnote">약점·모의 임박·요일 시간표·성격으로 매일 우선순위가 바뀝니다 (자기 점검이 흐리면 엉뚱한 과목에 시간이 쏠림)</div>';}
+function buildMock(){var el=$("mock");if(!el)return;var now=new Date(),rows="",i,eng=CURRIC.find(c=>c.key==="eng");
+ for(i=0;i<MOCKEXAMS.length;i++){var e=MOCKEXAMS[i],de=parseDate(e.d),past=de<=now;
+  var avg=examAvgPct(e.d),gs=examGradeSum(e.d),eg=siExam(eng,e.d).grade;
+  rows+='<div class="mkr'+(e.pv?" pv":"")+(past?"":" fut")+'"><span class="mkn">'+e.n+(e.pv?'<em>평가원</em>':'')+'</span>'
+   +'<span class="mkd">'+(past?"응시 완료":"D-"+Math.max(0,Math.ceil((de-now)/86400000)))+'</span>'
+   +'<span class="mkpct">백분위 <b class="tnum">'+avg+'</b></span><span class="mkeng">영어 '+eg+'등급</span><span class="mkgs">등급합 '+gs+'</span></div>';}
+ var lastPast=null;for(i=MOCKEXAMS.length-1;i>=0;i--){if(parseDate(MOCKEXAMS[i].d)<=now){lastPast=MOCKEXAMS[i];break;}}
+ var siAvg=lastPast?examAvgPct(lastPast.d):examAvgPct(ld(now)),myv=mymock.avg!=null?mymock.avg:"";
+ el.innerHTML=rows+'<div class="mkmine"><span>시은 최근 평균 백분위 <b class="tnum">'+siAvg+'</b></span><span>내 평균 백분위 <b class="myedit tnum" contenteditable>'+(myv===""?"–":myv)+'</b></span></div>';
+ var me=el.querySelector(".myedit");if(me)me.onblur=function(){setMyMock(this.textContent);};}
+function buildPctTrend(){var el=$("pcttrend");if(!el)return;var now=new Date(),H=104,bars="",i;
+ for(i=0;i<MOCKEXAMS.length;i++){var e=MOCKEXAMS[i],fut=parseDate(e.d)>now,v=examAvgPct(e.d),hh=Math.max(3,Math.round(v/100*H)),col=fut?"#cfcfcf":(e.pv?"#e50914":"#0a0a0a");
+  bars+='<div class="pcol"><div class="pval'+(fut?" fut":"")+'">'+v+'</div><div class="pbar" style="height:'+hh+'px;background:'+col+'" title="'+e.n+' 평균 백분위 '+v+'"></div><div class="plbl'+(e.pv?" pv":"")+'">'+e.s+'</div></div>';}
+ el.innerHTML='<div class="pcurve">'+bars+'</div>';}
+function buildWhole(){var el=$("wholej");if(!el)return;var k=ld(new Date()),w=siDay(k).whole;
+ var phases=[["적응기",0,0.10],["기초 성장기",0.10,0.34],["도약기",0.34,0.52],["정체·재정비",0.52,0.66],["실전기",0.66,0.86],["파이널",0.86,1.0]];
+ var segs="",i;for(i=0;i<phases.length;i++){var ph=phases[i],wd=(ph[2]-ph[1])*100,on=(w.frac>=ph[1]&&w.frac<ph[2]);
+   segs+='<div class="yseg'+(on?" on":"")+'" style="flex:'+wd+'"><span>'+ph[0]+'</span></div>';}
+ var cur=Math.round(w.frac*100),fr6=(new Date(2026,5,4)-Y0)/(SUNUNG-Y0)*100,fr9=(new Date(2026,8,3)-Y0)/(SUNUNG-Y0)*100;
+ el.innerHTML='<div class="wtop"><span class="wphase">'+w.phase+'</span><span class="wpct">전체 <b class="tnum">'+cur+'%</b> · D-'+w.dday+'</span></div>'
+  +'<div class="ybar">'+segs+'<div class="ymark" style="left:'+cur+'%"></div><div class="ymp" style="left:'+fr6.toFixed(1)+'%" title="6월 모평"></div><div class="ymp" style="left:'+fr9.toFixed(1)+'%" title="9월 모평"></div></div>'
+  +'<div class="wmeta">누적 피로 <b class="tnum">'+w.yfat+'</b>/30 · 국면 강도 <b class="tnum">'+w.intensity.toFixed(2)+'</b> · 장기 동기 <b class="tnum">'+Math.round(w.motiv0*100)+'</b></div>';}
+function buildWeek(){var el=$("weekp");if(!el)return;var k=ld(new Date()),wk=siDay(k).week;
+ el.innerHTML='<div class="todrow"><span class="todk">주차</span><span class="todv"><b>'+(wk.wi+1)+'주차</b> · '+WK[wk.dow]+'요일</span></div>'
+  +'<div class="todrow"><span class="todk">주간 흐름</span><span class="todv"><b>'+wk.arc+'</b></span></div>'
+  +'<div class="todrow"><span class="todk">주간 누적 피로</span><span class="todv"><span class="todg"><span style="width:'+Math.round(wk.weekFatigue/36*100)+'%;background:'+(wk.weekFatigue>=24?"#e50914":"#0a0a0a")+'"></span></span> <b class="tnum">'+wk.weekFatigue+'</b>/36</span></div>'
+  +'<div class="todrow"><span class="todk">주간 목표 진행</span><span class="todv"><span class="todg"><span style="width:'+wk.planProg+'%;background:#0a0a0a"></span></span> <b class="tnum">'+wk.planProg+'</b>%</span></div>'
+  +'<div class="todrow"><span class="todk">일요일</span><span class="todv"><span class="todsub">실전 모의고사 · 주간 점검</span></span></div>';}
+function buildMonth(){var el=$("monthp");if(!el)return;var k=ld(new Date()),mo=siDay(k).month,mn=parseDate(k).getMonth()+1;
+ el.innerHTML='<div class="todrow"><span class="todk">이번 달</span><span class="todv"><b>'+mn+'월</b> · '+mo.phase+'</span></div>'
+  +'<div class="todrow"><span class="todk">교재 난이도</span><span class="todv">'+"■".repeat(mo.difficulty)+"□".repeat(5-mo.difficulty)+' <b class="tnum">'+mo.difficulty+'</b>/5</span></div>'
+  +'<div class="todrow"><span class="todk">이달 목표 순공</span><span class="todv"><b class="tnum">'+mo.target+'</b>시간/일</span></div>'
+  +'<div class="todrow"><span class="todk">이달 진행</span><span class="todv"><span class="todg"><span style="width:'+Math.round(mo.frac*100)+'%;background:#0a0a0a"></span></span> <b class="tnum">'+Math.round(mo.frac*100)+'</b>%</span></div>';}
+function buildInner(){var el=$("inner");if(!el)return;var k=ld(new Date()),d=siDay(k);
+ var ac=d.anx>=52?"#e50914":"#0a0a0a", soc=d.social?('<b>'+d.social.tag+'</b> · '+d.social.t):'특별한 외부 자극 없음';
+ var pg=perceivedGap(k),gtxt=pg.gap<0?('실제보다 <b>'+(-pg.gap)+'</b> 낮게 느낌'):pg.gap>0?('실제보다 <b>'+pg.gap+'</b> 높게 느낌'):'실제와 비슷하게 느낌';
+ el.innerHTML='<div class="rgwrap"><span class="rgbadge">'+d.regime+'</span><span class="rgdesc">'+regimeDesc(d.regime)+'</span></div>'
+  +'<div class="todrow"><span class="todk">지금 움직이는 힘</span><span class="todv"><b>'+d.drive+'</b></span></div>'
+  +'<div class="todrow"><span class="todk">자기효능감</span><span class="todv"><span class="todg"><span style="width:'+d.eff+'%;background:#0a0a0a"></span></span> <b class="tnum">'+d.eff+'</b> · '+effLabel(d.eff)+'</span></div>'
+  +'<div class="todrow"><span class="todk">불안</span><span class="todv"><span class="todg"><span style="width:'+d.anx+'%;background:'+ac+'"></span></span> <b class="tnum">'+d.anx+'</b> · '+anxietyLabel(d.anx)+'</span></div>'
+  +'<div class="todrow"><span class="todk">체감 vs 실제 실력</span><span class="todv">체감 <b class="tnum">'+pg.perceived+'</b> / 실제 <b class="tnum">'+pg.actual+'</b> · '+gtxt+'</span></div>'
+  +'<div class="todrow"><span class="todk">의대까지 체감 거리</span><span class="todv">투영 등급합 '+projGradeSumDisp(k)+'</span></div>'
+  +'<div class="todrow"><span class="todk">관계 맥락</span><span class="todv">'+soc+'</span></div>';}
+function projGradeSumDisp(k){return Math.round(projGradeSum(k))+' · 목표 6';}
+function traitBars(){var t=traitAt(ld(new Date()));return [["성실성",t.consci],["회복탄력성",t.resil],["완벽주의",t.perfect],["불안민감성",t.anxsens],["경쟁심",t.compete],["호기심",t.curio]];}
+function buildTraits(){var el=$("traits");if(!el)return;var bars=traitBars(),h="",i;
+ for(i=0;i<bars.length;i++){var v=Math.round(bars[i][1]*100);h+='<div class="trow"><span class="tlbl">'+bars[i][0]+'</span><div class="tbar"><div class="tbf" style="width:'+v+'%"></div></div><span class="tval tnum">'+v+'</span></div>';}
+ el.innerHTML=h;}
+function buildCog(){var el=$("cog");if(!el)return;var k=ld(new Date()),now=new Date(),mn=now.getHours()*60+now.getMinutes();
+ var wm=workingMemory(k),wc=wmComponents(k),bn=wmBottleneckAt(k,mn),ctrl=cogControl(k),cf=cogFatigueAt(k,mn),mode=processingModeAt(k,mn),net=attentionNetworks(k,mn),att=attentionAt(k,mn),load=cogLoadAt(k,mn),meta=metacogResolution(k),err=errorProfile(k),bias=biasProfile(k);
+ var s2=Math.round(mode.s2*100),tot=load.total,iW=Math.round(load.intrinsic/tot*100),eW=Math.round(load.extraneous/tot*100),gW=Math.max(0,100-iW-eW),ec=load.overload?"#e50914":"#0a0a0a";
+ function wb(lbl,v,bot){var w=Math.round(v/5.6*100);return '<div class="trow"><span class="tlbl">'+lbl+(bot?' <em style="color:#e50914;font-style:normal">●</em>':'')+'</span><div class="tbar"><div class="tbf" style="width:'+w+'%;background:'+(bot?"#e50914":"#0a0a0a")+'"></div></div><span class="tval tnum">'+v+'</span></div>';}
+ var bk=bn?bn.buffer:"";
+ el.innerHTML='<div class="todrow"><span class="todk">작업기억 총용량</span><span class="todv"><b class="tnum">'+wm.cap+'</b> 청크 · '+wm.label+(bn?' · 지금 병목 <b>'+bn.buffer+'</b>':'')+'</span></div>'
+  +wb("중앙집행기",wc.exec,bk==="중앙집행기")+wb("음운고리",wc.phono,bk==="음운고리")+wb("시공간 메모장",wc.visuo,bk==="시공간 메모장")+wb("일화버퍼",wc.epis,bk==="일화버퍼")
+  +'<div class="alnote">● = 지금 문제 유형이 가장 많이 쓰는 버퍼(병목)</div>'
+  +'<div class="todrow"><span class="todk">주의 3망 (Posner)</span><span class="todv">경계 <b>'+net.alerting+'</b> · 지향 <b>'+net.orienting+'</b> · 집행 <b>'+net.executive+'</b> → 유효 <b class="tnum">'+net.eff+'</b></span></div>'
+  +'<div class="todrow"><span class="todk">인지 통제</span><span class="todv"><span class="todg"><span style="width:'+ctrl+'%;background:#0a0a0a"></span></span> <b class="tnum">'+ctrl+'</b></span></div>'
+  +'<div class="todrow"><span class="todk">인지 피로</span><span class="todv"><span class="todg"><span style="width:'+cf+'%;background:'+(cf>=60?"#e50914":"#0a0a0a")+'"></span></span> <b class="tnum">'+cf+'</b> · 체력과 별개</span></div>'
+  +'<div class="todrow"><span class="todk">사고 모드</span><span class="todv">'+mode.label+' · 분석 <b class="tnum">'+s2+'</b>%</span></div>'
+  +'<div class="todrow"><span class="todk">인지 부하</span><span class="todv"><span class="loadbar"><span style="width:'+iW+'%;background:#0a0a0a" title="내재"></span><span style="width:'+eW+'%;background:#9a9a9a" title="외재"></span><span style="width:'+gW+'%;background:#cfcfcf" title="본유"></span></span> '+(load.overload?'<b style="color:'+ec+'">과부하</b>':'여유')+'</span></div>'
+  +'<div class="todrow"><span class="todk">메타인지 정확도</span><span class="todv"><span class="todg"><span style="width:'+meta+'%;background:#0a0a0a"></span></span> <b class="tnum">'+meta+'</b></span></div>'
+  +'<div class="todrow"><span class="todk">오늘 오류 결</span><span class="todv">실수 '+err.slip+'% · 개념 '+err.concept+'% · 인출실패 '+err.retrieval+'% · 시간압박 '+err.timeP+'%</span></div>'
+  +'<div class="todrow"><span class="todk">System-1 편향</span><span class="todv">고착 '+bias.fixation+'% · 패턴과적용 '+bias.overmatch+'% · 정착 '+bias.anchor+'% · 부주의 '+bias.careless+'%</span></div>';}
+function buildThink(){var el=$("think");if(!el)return;var k=ld(new Date()),now=new Date(),mn=now.getHours()*60+now.getMinutes();
+ var tc=thoughtCycleAt(k,mn),pt=problemTypeAt(k,mn),st=strategyAt(k,mn),tr=reasoningTrace(k,mn,6),sch=activeSchemasAt(k,mn),mon=tc.mon;
+ var crumbs=tr.map(function(o,i){return '<span class="tcrumb'+(i===tr.length-1?" cur":"")+'">'+o+'</span>';}).join('<span class="tcarrow">→</span>');
+ var h='<div class="thnow"><span class="thbadge">'+tc.b+'</span> <b>'+tc.op+'</b><div class="thd2">'+tc.d+'</div></div>'
+  +'<div class="thtrace">'+crumbs+'</div>'
+  +'<div class="todrow"><span class="todk">지금 문제 유형</span><span class="todv"><b>'+pt.label+'</b>'+(st?' · 전략 <b>'+st.name+'</b> (적합 '+st.fit+')':'')+'</span></div>';
+ if(mon)h+='<div class="todrow"><span class="todk">메타 감시</span><span class="todv">인출가능감 <b>'+mon.fok+'</b> · 학습판단 <b>'+mon.jol+'</b> · 확신 <b>'+mon.confidence+'</b> / 불확실 <b>'+mon.uncertainty+'</b></span></div>';
+ h+='<div class="todrow"><span class="todk">메타 제어</span><span class="todv"><b>'+tc.ctrl+'</b></span></div>';
+ if(sch.length)h+='<div class="todrow"><span class="todk">활성 개념</span><span class="todv">'+sch.join(" · ")+'</span></div>';
+ el.innerHTML=h;}
+function buildMemory(){var el=$("memory");if(!el)return;var k=ld(new Date()),now=new Date(),mn=now.getHours()*60+now.getMinutes();
+ var md=memoryDynamics(k),ed=encodingDepthAt(k,mn),con=Math.round(md.con*100);
+ var gtxt=md.gap>8?'지금은 잘 떠오르나 아직 덜 굳음(벼락치기형)':md.gap<-8?'굳었는데 잠깐 안 떠오름':'인출·저장 균형';
+ el.innerHTML='<div class="trow"><span class="tlbl">인출강도</span><div class="tbar"><div class="tbf" style="width:'+md.retrieval+'%;background:#e50914"></div></div><span class="tval tnum">'+md.retrieval+'</span></div>'
+  +'<div class="trow"><span class="tlbl">저장강도</span><div class="tbar"><div class="tbf" style="width:'+md.storage+'%"></div></div><span class="tval tnum">'+md.storage+'</span></div>'
+  +'<div class="trow"><span class="tlbl">누적 학습의 질</span><div class="tbar"><div class="tbf" style="width:'+con+'%;background:#0a0a0a"></div></div><span class="tval tnum">'+con+'</span></div>'
+  +'<div class="alnote">'+gtxt+' · 저장강도 = 달력 실력 × 누적 학습의 질 — 깊게 판 구간은 저장이 봉투 위로, 벼락치기 구간은 인출만 오르고 저장은 처집니다</div>'
+  +'<div class="todrow"><span class="todk">지금 처리 깊이</span><span class="todv">'+ed.label+' · <b class="tnum">'+Math.round(ed.depth*100)+'</b></span></div>';}
+function buildExtras(){buildTrend();buildSiStats();buildLog();buildHeat();buildToday();buildHourCurve();buildSubjToday();buildAlloc();buildMock();buildPctTrend();buildWhole();buildWeek();buildMonth();buildInner();buildTraits();buildCog();buildThink();buildMemory();
+ var k=ld(new Date());if($("stmMorn")){$("stmMorn").textContent=morningStamina(k);$("stmFat").textContent=Math.round(dayFatigue(k));$("stmSleep").textContent=siDay(k).sleep.toFixed(1)+"h";}}
+function sceneForMin(m){
+  if(m<330||m>=1260) return "night";   // 21:00~05:30 : 심야 클립 (취침 시간 포함)
+  if(m<1020) return "dawn";             // 05:30~17:00 : 밝은 낮엔 새벽 클립
+  return "eve";                          // 17:00~21:00 : 저녁엔 비 오는 밤 클립
 }
 let log={}; try{log=JSON.parse(localStorage.getItem("studylog")||"{}")||{};}catch(e){log={};}
 let syncKey=localStorage.getItem("synckey")||"";
@@ -427,37 +1344,58 @@ function setupSync(){ const k=window.prompt("동기화 키를 입력하세요.\n
   if(k===null)return; syncKey=k.trim(); localStorage.setItem("synckey",syncKey);
   if(syncKey){ $("synced").textContent="● 동기화: "+syncKey; loadServer(); } else { $("synced").textContent="○ 동기화 꺼짐"; } }
 function playCur(){ if(window.curVid){var p=window.curVid.play(); if(p&&p.catch)p.catch(function(){});} }
-function setMedia(key){
-  if(key===curKey)return; curKey=key;
+function setMedia(file){
+  if(file===curKey)return; curKey=file;
   const showId=active==="A"?"vidB":"vidA", hideId=active==="A"?"vidA":"vidB";
   const show=$(showId), hide=$(hideId);
-  show.poster=POSTERS[key]; show.src=MEDIA[key]; show.load(); window.curVid=show;
+  show.removeAttribute("poster"); show.src=file; show.load(); window.curVid=show;
   const p=show.play(); if(p&&p.catch)p.catch(function(){});
   show.style.opacity="1"; hide.style.opacity="0";
   active=showId==="vidA"?"A":"B";
 }
 function tick(){
-  const now=new Date(); const cur=ld(now);
-  if(cur!==dk){dk=cur; window._pace=recentPace(cur); if(running)startTs=Date.now(); buildProgress(); buildMastery(); buildCompare();}
+  const now=new Date(); const cur=ld(now); SCHEDULE=scheduleFor(cur);
+  if(cur!==dk){dk=cur; window._pace=recentPace(cur); if(running)startTs=Date.now(); buildStatic(); buildProgress(); buildMastery(); buildCompare(); buildExtras();}
   const minNow=now.getHours()*60+now.getMinutes();
   const seg=segAt(minNow), dt=dayTypeFor(dk), st=seg.state;
   if(running&&startTs!=null){const el=(Date.now()-startTs)/1000; if(++saveCtr>=15){log[dk]=(log[dk]||0)+el; startTs=Date.now(); saveCtr=0; save(); saveServer();}}
-  const siSec=Math.round(studiedMin(minNow)*60*dt.mult);
+  const live=siNow(dk,minNow); const siSec=siSecLive(dk,minNow);
   const liveU=base()+(running&&startTs!=null?(Date.now()-startTs)/1000:0);
   window._liveU=liveU; window._siSec=siSec;
   $("clk").textContent=fmtC(minNow*60+now.getSeconds());
   $("dt").textContent=ld(now).replace(/-/g,". ")+" · "+WK[now.getDay()]+"요일";
   $("cond").textContent=dt.key; $("conddot").style.background=(dt.key==="불꽃"?"#e50914":dt.key==="평범"?"#0a0a0a":"#bdbdbd");
   if($("condst")){var stn=condStreak(dk); $("condst").textContent=" · "+stn+"일째";}
+  var stm=staminaAt(minNow,dk);
+  if($("stmVal")){$("stmVal").textContent=stm.sleep?"--":stm.v; $("stmFill").style.width=stm.v+"%"; $("stmFill").style.background=(!stm.sleep&&stm.v<35)?"#e50914":"#0a0a0a"; $("stmLbl").textContent=staminaLabel(stm.v,stm.sleep);}
+  markLog();
   $("dday").textContent="D-"+Math.ceil((SUNUNG-now)/86400000);
-  setMedia(mediaKey(seg));
+  var sleeping0=(st==="sleep");
+  var scene=sleeping0?"night":sceneForMin(minNow);
+  var nowMs=Date.now();
+  if(window._curScene!==scene){ window._curScene=scene; window._clipIdx=0; window._lastClipSwap=nowMs; }
+  else if(nowMs-(window._lastClipSwap||0)>75000){ window._clipIdx=((window._clipIdx||0)+1)%5; window._lastClipSwap=nowMs; }
+  setMedia(CLIPS[scene][window._clipIdx||0]);
   const sleeping=st==="sleep";
   $("glow").style.opacity=sleeping?"0":"1";
   $("stt").innerHTML='<span class="pd" style="background:'+(sleeping?"#9a9a9a":st==="study"?"#e50914":"#e0e0e0")+'"></span>'+(sleeping?"OFFLINE":st==="study"?"STUDYING":"BREAK");
-  const detail=seg.d[Math.floor((minNow/7)%seg.d.length)];
+  const detail=(live.micro&&!sleeping)?live.micro.t:seg.d[Math.floor((minNow/7)%seg.d.length)];
   $("nowlabel").textContent="지금 — "+seg.label+" · ";
   if(detail!==lastDetail){lastDetail=detail; let i=0; $("nowtype").textContent=""; clearInterval(typeTimer);
     typeTimer=setInterval(function(){i++; $("nowtype").textContent=detail.slice(0,i); if(i>=detail.length)clearInterval(typeTimer);},34);}
+  var sj=secJitter(dk,minNow,now.getSeconds());
+  var liveFocus=sleeping?0:Math.max(3,Math.min(100,Math.round(live.focus*sj)));
+  var liveHr=Math.max(48,Math.min(108,Math.round(live.hr+(sj-1)*18)));
+  if(!window._spark)window._spark=[]; window._spark.push(sleeping?0:liveFocus); if(window._spark.length>48)window._spark.shift();
+  if($("nowFocus")){$("nowFocus").textContent=sleeping?"—":liveFocus; if($("nowFocusFill"))$("nowFocusFill").style.width=(sleeping?0:liveFocus)+"%"; if($("nowFocusFill"))$("nowFocusFill").style.background=(!sleeping&&liveFocus<35)?"#e50914":"#0a0a0a";
+    $("nowMicro").textContent=sleeping?"잠든 채 회복 중":(live.micro?live.micro.t:detail);
+    $("nowAlert").textContent=alertLabel(live.alert); $("nowUd").textContent=live.studying?live.udLabel:"휴식";
+    if($("nowBio"))$("nowBio").textContent=sleeping?"심박 "+liveHr+" · 숙면 자세":("심박 "+liveHr+" · "+live.posture+" · "+live.eyes);
+    if($("nowFlow")){var fl=flowAt(dk,minNow);$("nowFlow").textContent=sleeping?"":("몰입도 "+Math.round(fl.f*100)+"% · "+fl.label);}
+    if($("nowThink")){var tc=thoughtCycleAt(dk,minNow);$("nowThink").innerHTML='<span class="thlbl">사고 회로</span> '+tc.op+(tc.overload?' <em class="thov">과부하</em>':'')+(tc.ctrl&&tc.ctrl!=="-"&&tc.ctrl!=="계속 진행"?' <em class="thctrl">'+tc.ctrl+'</em>':'')+'<br><span class="thd">'+tc.d+'</span>';}
+    if($("nowMode")){var pm=processingModeAt(dk,minNow),wmn=workingMemory(dk),ptn=problemTypeAt(dk,minNow);$("nowMode").textContent=sleeping?"":(pm.label+" · 작업기억 "+wmn.cap+"청크"+(ptn.buf?" · "+ptn.label:""));}
+    if($("nowspark")){var sp=window._spark,sb="",si;for(si=0;si<sp.length;si++){var hh=Math.max(2,Math.round(sp[si]/100*22));sb+='<i style="height:'+hh+'px"></i>';}$("nowspark").innerHTML=sb;}}
+  if(now.getHours()!==window._lastHr){window._lastHr=now.getHours(); buildHourCurve();}
   $("cur").style.display=st==="study"?"inline-block":"none";
   $("siHero").textContent=hm(siSec);
   $("mev").textContent=hm(liveU);
@@ -467,8 +1405,10 @@ function tick(){
   $("btn").textContent=running?"멈춤":"공부 시작"; $("btn").className="btn "+(running?"pause":"start");
   const total=Math.max(liveU+siSec,1), siPct=Math.round(siSec/total*100);
   $("siH2").textContent=hm(siSec); $("meH2").textContent=hm(Math.round(liveU)); $("tA").style.width=siPct+"%";
-  const gap=(siSec-liveU)/3600; let rival;
+  const gap=(siSec-liveU)/3600; let rival; const sm=siDay(dk).mental;
   if(sleeping)rival=liveU>=siSec?"시은이는 잠들었어요. 오늘은 당신 승. 굳히세요.":"시은이는 잠들었어요. 지금이 따라잡을 마지막 기회예요.";
+  else if(sm<=32&&(minNow%23<8))rival=["시은도 오늘 많이 흔들려요. 그래도 책상은 안 떠났대요.","시은, 울 것 같은 얼굴로 버티는 중이에요. 당신은요?","시은도 지쳤대요. 이런 날 격차 벌리는 게 진짜 실력이죠."][Math.floor(minNow/11)%3];
+  else if(sm>=80&&(minNow%23<8))rival=["시은 오늘 폼 미쳤어요. 정신 안 차리면 훅 가요.","시은, 자신감 넘쳐요. 그 기세 꺾어보든가요.","시은이 제일 무서운 날이에요. 바짝 따라붙으세요."][Math.floor(minNow/11)%3];
   else if(gap>5)rival="5시간 넘게 벌어졌어요. 이건 그냥 다른 경기예요.";
   else if(gap>2)rival=gap.toFixed(1)+"시간 앞서고 있어요. 책상 앞으로 오세요.";
   else if(gap>0.3)rival="조금 앞서네요. 근데 당신 페이스도 살아있는데요?";
@@ -490,12 +1430,17 @@ function toggle(){
 }
 function resetDay(){if(!confirm("오늘 기록을 0으로 초기화할까요?"))return; log[dk]=0; startTs=running?Date.now():null; saveCtr=0; save(); saveServer(); tick();}
 function buildStatic(){
-  const stl=$("stl"); if(!stl)return;
+  const stl=$("stl"); if(!stl)return; stl.innerHTML="";
   SCHEDULE.forEach(function(x){const d=document.createElement("div"); d.style.width=((x.e-x.s)/1440*100)+"%";
     d.style.background=x.state==="sleep"?"#e8e8e8":x.state==="study"?"rgba(229,9,20,.5)":"#cfcfcf"; stl.appendChild(d);});
   const mk=document.createElement("div"); mk.id="stlmk"; mk.className="stlmk"; stl.appendChild(mk);
 }
-window.addEventListener("DOMContentLoaded",function(){buildStatic(); buildProgress(); buildMastery(); buildCompare(); buildExams(); buildRadar(); renderMind();
+function alertLabel(a){return a>=1.04?"최고조":a>=0.95?"높음":a>=0.82?"보통":a>=0.7?"낮음":"처짐";}
+function buildHourCurve(){var el=$("hourcurve");if(!el)return;var k=ld(new Date()),now=new Date(),curH=now.getHours()+now.getMinutes()/60,bars="",H=104,maxA=1.14,minA=0.60,h;
+  for(h=6;h<=23;h++){var a=siHour(k,h),hh=Math.max(3,Math.round((a-minA)/(maxA-minA)*H)),isnow=(h===Math.floor(curH)),col=isnow?"var(--red)":(a>=1.0?"#0a0a0a":a>=0.85?"#7a7a7a":"#cfcfcf");
+    bars+='<div class="hcol"><div class="hbar" style="height:'+hh+'px;background:'+col+'" title="'+h+'시 · 각성 '+a.toFixed(2)+'"></div><div class="hlbl'+(isnow?" now":"")+'">'+h+'</div></div>';}
+  el.innerHTML='<div class="hcurve">'+bars+'</div>';}
+window.addEventListener("DOMContentLoaded",function(){SCHEDULE=scheduleFor(ld(new Date())); buildStatic(); buildProgress(); buildMastery(); buildCompare(); buildExams(); buildRadar(); buildExtras(); renderMind();
   $("btn").onclick=toggle; $("reset").onclick=resetDay; $("sync").onclick=setupSync;
   ["vidA","vidB"].forEach(function(id){$(id).addEventListener("playing",function(){$("playhint").style.display="none";});});
   $("hero").addEventListener("click",function(){playCur(); $("playhint").style.display="none";});
