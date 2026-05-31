@@ -1344,25 +1344,38 @@ function setupSync(){ const k=window.prompt("동기화 키를 입력하세요.\n
   if(k===null)return; syncKey=k.trim(); localStorage.setItem("synckey",syncKey);
   if(syncKey){ $("synced").textContent="● 동기화: "+syncKey; loadServer(); } else { $("synced").textContent="○ 동기화 꺼짐"; } }
 function playCur(){ if(window.curVid){var p=window.curVid.play(); if(p&&p.catch)p.catch(function(){});} }
-function setMedia(file){
-  if(file===curKey)return;            // 이미 그 클립이면 무시
-  if(window._vidPending)return;        // 전환 진행 중이면 다음 tick에서
-  curKey=file; window._vidPending=true;
-  const showId=active==="A"?"vidB":"vidA", hideId=active==="A"?"vidA":"vidB";
-  const show=$(showId), hide=$(hideId);
-  show.removeAttribute("poster");
-  var done=false, tmo;
-  function reveal(){
-    if(done)return; done=true; clearTimeout(tmo); show.oncanplay=null; show.onerror=null;
-    var p=show.play(); if(p&&p.catch)p.catch(function(){});
-    show.style.opacity="1"; hide.style.opacity="0";
-    window.curVid=show; active=(showId==="vidA")?"A":"B"; window._vidPending=false;
-  }
-  function fail(){ if(done)return; done=true; clearTimeout(tmo); show.oncanplay=null; show.onerror=null;
-    window._vidPending=false; curKey=null; }   // 끊김 대신 현재 화면 유지 → 다음 tick에서 재시도
-  show.oncanplay=reveal; show.onerror=fail;
-  tmo=setTimeout(fail,10000);                  // 10초 안에 준비 안 되면 재시도
-  show.src=file; show.load();
+/* 히어로 영상 플레이어: 클립을 반복(loop)시키지 않고, 재생 중 다음 클립을 미리 버퍼에 받아뒀다가
+   끝자락에서 즉시 크로스페이드 → 루프 이음매 끊김 제거. 장면(시간대)은 _wantScene으로 지정. */
+function heroPreloadNext(){
+  if(window._heroPending) return;
+  var scene=window._wantScene||"dawn", list=CLIPS[scene]||CLIPS.dawn;
+  var idx = (scene!==window._plScene) ? 0 : ((((window._plIdx)||0)+1)%5);  // 장면 바뀌면 0번부터
+  var file=list[idx];
+  var hideId=(active==="A")?"vidB":"vidA", hide=$(hideId);
+  window._heroPending={file:file,scene:scene,idx:idx,id:hideId,ready:false};
+  hide.removeAttribute("poster");
+  hide.oncanplay=function(){
+    if(!window._heroPending||window._heroPending.id!==hideId)return;
+    window._heroPending.ready=true; try{hide.pause();hide.currentTime=0;}catch(e){}
+    if(!curKey) heroReveal();           // 첫 클립 부트스트랩
+  };
+  hide.onerror=function(){ window._heroPending=null; };  // 실패 → 다음 트리거에서 재시도
+  hide.src=file; hide.load();
+}
+function heroReveal(){
+  var pend=window._heroPending; if(!pend) return;
+  var show=$(pend.id), other=$(pend.id==="vidA"?"vidB":"vidA");
+  var p=show.play(); if(p&&p.catch)p.catch(function(){});
+  show.style.opacity="1"; other.style.opacity="0"; try{other.pause();}catch(e){}
+  active=(pend.id==="vidA")?"A":"B";
+  window._plScene=pend.scene; window._plIdx=pend.idx; window.curVid=show; curKey=pend.file;
+  window._heroPending=null;
+  heroPreloadNext();                    // 다음 클립을 재생되는 동안 미리 버퍼
+}
+function heroTick(){                     // 보이는 영상의 끝자락에서 디졸브 (timeupdate에서 호출)
+  var shownId=(active==="A")?"vidA":"vidB", v=$(shownId), d=v.duration;
+  if(window._heroPending){ if(window._heroPending.ready && isFinite(d) && d>0 && d-v.currentTime<0.6) heroReveal(); }
+  else { heroPreloadNext(); }
 }
 function tick(){
   const now=new Date(); const cur=ld(now); SCHEDULE=scheduleFor(cur);
@@ -1381,14 +1394,7 @@ function tick(){
   if($("stmVal")){$("stmVal").textContent=stm.sleep?"--":stm.v; $("stmFill").style.width=stm.v+"%"; $("stmFill").style.background=(!stm.sleep&&stm.v<35)?"#e50914":"#0a0a0a"; $("stmLbl").textContent=staminaLabel(stm.v,stm.sleep);}
   markLog();
   $("dday").textContent="D-"+Math.ceil((SUNUNG-now)/86400000);
-  var sleeping0=(st==="sleep");
-  var scene=sleeping0?"night":sceneForMin(minNow);
-  var nowMs=Date.now();
-  if(!window._vidPending){
-    if(window._curScene!==scene){ window._curScene=scene; window._clipIdx=0; window._lastClipSwap=nowMs; }
-    else if(nowMs-(window._lastClipSwap||0)>90000){ window._clipIdx=((window._clipIdx||0)+1)%5; window._lastClipSwap=nowMs; }
-    setMedia(CLIPS[scene][window._clipIdx||0]);
-  }
+  window._wantScene = (st==="sleep") ? "night" : sceneForMin(minNow);  // 시간대 장면만 지정, 재생은 플레이어가 처리
   const sleeping=st==="sleep";
   $("glow").style.opacity=sleeping?"0":"1";
   $("stt").innerHTML='<span class="pd" style="background:'+(sleeping?"#9a9a9a":st==="study"?"#e50914":"#e0e0e0")+'"></span>'+(sleeping?"OFFLINE":st==="study"?"STUDYING":"BREAK");
@@ -1455,7 +1461,13 @@ function buildHourCurve(){var el=$("hourcurve");if(!el)return;var k=ld(new Date(
   el.innerHTML='<div class="hcurve">'+bars+'</div>';}
 window.addEventListener("DOMContentLoaded",function(){SCHEDULE=scheduleFor(ld(new Date())); buildStatic(); buildProgress(); buildMastery(); buildCompare(); buildExams(); buildRadar(); buildExtras(); renderMind();
   $("btn").onclick=toggle; $("reset").onclick=resetDay; $("sync").onclick=setupSync;
-  ["vidA","vidB"].forEach(function(id){$(id).addEventListener("playing",function(){$("playhint").style.display="none";});});
+  ["vidA","vidB"].forEach(function(id){var v=$(id);
+    v.addEventListener("playing",function(){$("playhint").style.display="none";});
+    v.addEventListener("timeupdate",heroTick);
+  });
+  curKey=null; active="A"; window._plScene=null; window._plIdx=0; window._heroPending=null;
+  window._wantScene=sceneForMin(new Date().getHours()*60+new Date().getMinutes());
+  heroPreloadNext();   // 첫 클립 로드 → 준비되면 자동 표시
   $("hero").addEventListener("click",function(){playCur(); $("playhint").style.display="none";});
   document.addEventListener("click",playCur,{once:true});
   $("synced").textContent=syncKey?("● 동기화: "+syncKey):"○ 동기화 꺼짐";
