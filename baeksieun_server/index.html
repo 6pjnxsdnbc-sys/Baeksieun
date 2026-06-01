@@ -24,7 +24,7 @@ body{color:var(--ink);font-family:'Pretendard',system-ui,-apple-system,sans-seri
 .condchip .dot{width:7px;height:7px;border-radius:50%;background:var(--ink)}
 .condchip .st{color:var(--ink3);font-weight:400}
 /* ---- bento ---- */
-.bento{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));grid-auto-flow:row dense;gap:14px;align-items:stretch}
+.bento{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));grid-auto-flow:row;gap:14px;align-items:stretch}
 .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:17px 17px;min-width:0;display:flex;flex-direction:column}
 .panel>.lbl{margin-bottom:13px}
 .lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)}
@@ -294,6 +294,8 @@ body{color:var(--ink);font-family:'Pretendard',system-ui,-apple-system,sans-seri
 .bento.view-me [data-tab="si"]{display:none!important}
 [data-tab="cut"]{display:none!important}
 .myedit2{color:var(--ink);border-bottom:1px dashed var(--ink2);min-width:20px;display:inline-block;text-align:center;outline:none;padding:0 3px;font-weight:700;cursor:text}
+.secthead{grid-column:1/-1;font-size:12px;font-weight:800;color:var(--ink3);letter-spacing:.7px;padding:12px 2px 2px;margin-top:10px;border-top:1px solid var(--line2);text-transform:uppercase}
+.secthead.first{border-top:none;margin-top:2px;padding-top:0}
 </style></head>
 
 <body><div class="app">
@@ -1847,6 +1849,29 @@ const STAT_TIPS={
   var sid,se;for(sid in STAT_TIPS){se=document.getElementById(sid);if(!se||se._tipped)continue;se._tipped=1;se.setAttribute("data-tipkey","S:"+sid);se.classList.add("tiptarget");}
  };
 })();
+function layoutSections(){
+ var bento=document.querySelector(".bento");if(!bento||bento._sected)return;bento._sected=1;
+ var heroP=document.getElementById("hero");if(heroP){var hp=heroP.closest(".panel");if(hp){hp.style.order=10;hp.style.gridColumn="1 / -1";}}
+ var SECT={
+  me:[["순공 · 비교",["mev","siH2","mydata","wkMe","trend7","heat"]],
+      ["실력 · 진도 · 이해도",["radar","cmpwrap","myprog","myud"]],
+      ["모의",["mock","pcttrend"]],
+      ["학습 자료 · 기록",["mymat","mylog"]]],
+  si:[["실력 · 진도 · 이해도",["pgwrap","udwrap"]],
+      ["모의",["examwrap"]],
+      ["누적 · 학습 자료",["sistats","simat"]]]
+ };
+ var base={me:100,si:1100};
+ ["me","si"].forEach(function(tab){
+  SECT[tab].forEach(function(grp,gi){
+   var ord=base[tab]+gi*100,vis=false,j;
+   for(j=0;j<grp[1].length;j++){if(document.getElementById(grp[1][j])){vis=true;break;}}
+   if(!vis)return;
+   var h=document.createElement("div");h.className="secthead"+(gi===0?" first":"");h.textContent=grp[0];h.setAttribute("data-tab",tab);h.style.order=ord;bento.appendChild(h);
+   grp[1].forEach(function(id,pi){var c=document.getElementById(id);if(!c)return;var p=c.closest(".panel");if(!p)return;p.style.order=ord+1+pi;});
+  });
+ });
+}
 function setView(v){var b=document.querySelector(".bento");if(b){b.classList.remove("view-si","view-me");b.classList.add("view-"+v);}var bs=document.querySelectorAll(".tabbtn"),i;for(i=0;i<bs.length;i++)bs[i].classList.toggle("on",bs[i].getAttribute("data-v")===v);try{window.scrollTo(0,0);}catch(e){}}
 function setupTabs(){
  var MAP={hero:"si",pgwrap:"si",simat:"si",udwrap:"si",examwrap:"si",sistats:"si",
@@ -1854,6 +1879,7 @@ function setupTabs(){
   today:"cut",stl:"cut",subjtoday:"cut",alloc:"cut",wholej:"cut",weekp:"cut",monthp:"cut",tlog:"cut",
   stmVal:"cut",nowFocus:"cut",hourcurve:"cut",inner:"cut",traits:"cut",cog:"cut",think:"cut",memory:"cut"};
  for(var id in MAP){var c=document.getElementById(id);if(!c)continue;var p=c.closest(".panel");if(!p)continue;p.setAttribute("data-tab",MAP[id]);}
+ layoutSections();
  setView("si");}
 window.addEventListener("DOMContentLoaded",function(){SCHEDULE=scheduleFor(ld(new Date())); buildStatic(); buildProgress(); buildMastery(); buildCompare(); buildExams(); buildRadar(); buildExtras(); renderMind(); attachTips(); setupTabs();
   $("btn").onclick=toggle; $("reset").onclick=resetDay; $("sync").onclick=setupSync;
