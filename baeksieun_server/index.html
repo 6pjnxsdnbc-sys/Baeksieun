@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>백시은 · 라이벌 자습실</title>
+<title>라이브러리</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
 :root{--bg:#fff;--panel:#fff;--ink:#0a0a0a;--ink2:#6b6b6b;--ink3:#9a9a9a;--line:#ededed;--line2:#e0e0e0;--red:#e50914;--soft:#f5f5f5;--r:16px}
@@ -173,6 +173,7 @@ body{color:var(--ink);font-family:'Pretendard',system-ui,-apple-system,sans-seri
 .mkn{font-weight:700;color:var(--ink);min-width:96px}.mkn em{font-style:normal;font-size:9px;color:#fff;background:var(--red);border-radius:5px;padding:1px 5px;margin-left:5px}
 .mkr.pv .mkn{color:var(--red)}.mkd{color:var(--ink3);font-size:10px;min-width:62px}.mkpct b{color:var(--ink)}.mkpct,.mkeng,.mkgs{color:var(--ink2)}
 .mkmine{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line2);font-size:12px;color:var(--ink2)}.mkmine b{color:var(--ink)}
+.mkmy{color:var(--ink3);font-size:11px}.mkmyin{color:var(--red);border-bottom:1px dashed var(--red);min-width:22px;display:inline-block;text-align:center;outline:none;padding:0 3px;font-weight:700;cursor:text}
 .myedit{color:var(--red);border-bottom:1px dashed var(--red);min-width:24px;display:inline-block;text-align:center;outline:none;padding:0 3px}
 .pcurve{display:flex;align-items:flex-end;gap:6px;height:140px;margin-top:6px}
 .pcol{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;height:100%;min-width:0}
@@ -232,17 +233,83 @@ body{color:var(--ink);font-family:'Pretendard',system-ui,-apple-system,sans-seri
 #tip em{color:#ff6b63;font-style:normal;font-weight:700}
 #tip .tsep{display:block;height:1px;background:rgba(255,255,255,.16);margin:6px 0}
 @media (prefers-color-scheme:dark){#tip{background:#1c1c1a;box-shadow:0 8px 28px rgba(0,0,0,.6)}}
+/* ---- 동시 응시 모드 ---- */
+.exgo{font-size:10.5px;font-weight:700;color:#fff;background:var(--ink);border:none;border-radius:7px;padding:3px 9px;cursor:pointer;white-space:nowrap}.exgo:hover{background:var(--red)}
+#exammodal{position:fixed;inset:0;z-index:100000;background:rgba(10,10,10,.5);display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:18px 12px;-webkit-overflow-scrolling:touch}
+#exammodal.on{display:flex}
+.exbox{background:var(--panel);color:var(--ink);width:100%;max-width:520px;border-radius:16px;padding:18px 18px 20px;box-shadow:0 24px 70px rgba(0,0,0,.45);margin:auto}
+.exhd{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:12px}
+.extitle{font-size:17px;font-weight:800;line-height:1.2}.extitle em{font-size:10px;font-weight:800;color:#fff;background:var(--red);border-radius:4px;padding:1px 6px;vertical-align:middle;margin-left:4px}
+.exsub{font-size:11.5px;color:var(--ink3);margin-top:3px}
+.exx{background:var(--soft);border:none;border-radius:8px;width:30px;height:30px;font-size:14px;color:var(--ink2);cursor:pointer;flex:none}
+.exsec2{font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:.5px;margin:4px 0 6px}
+.exttwrap{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:14px}
+.extt{display:flex;justify-content:space-between;gap:8px;padding:6px 11px;font-size:11.5px;border-bottom:1px solid var(--line);color:var(--ink2)}
+.extt:last-child{border:none}.extt span:first-child{color:var(--ink);font-weight:600;flex:1}.extt span:nth-child(2){color:var(--ink2);font-variant-numeric:tabular-nums}.extt.lunch{color:var(--ink3);background:var(--soft)}.extt.lunch span:first-child{color:var(--ink3);font-weight:400}
+.extimer{text-align:center;padding:16px 14px;border:1px solid var(--line2);border-radius:12px;background:var(--soft)}
+.exph{font-size:13px;font-weight:700;color:var(--ink)}
+.exsec{font-size:46px;font-weight:800;letter-spacing:1px;margin:6px 0;font-variant-numeric:tabular-nums;color:var(--ink)}
+.exsi{font-size:12px;color:var(--ink2);margin-bottom:13px}.exsi b{color:var(--ink);font-weight:600}
+.exbtns{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center}
+.exhint{font-size:11px;color:var(--ink3);margin-top:11px;line-height:1.5}
+.exdone .exresulthd{font-size:13px;font-weight:700;margin-bottom:8px}.exdone .exresulthd span{color:var(--ink3);font-weight:400;font-size:11.5px}
+.exrr{display:flex;justify-content:space-between;gap:10px;padding:6px 2px;font-size:12px;border-bottom:1px solid var(--line);color:var(--ink2)}.exrr span:first-child{color:var(--ink);font-weight:600}
+.exrtot{border-top:2px solid var(--line2);border-bottom:none;margin-top:2px;padding-top:8px}.exrtot b{color:var(--red)}
+.exmy{display:flex;align-items:center;gap:8px;margin-top:13px;font-size:12px;flex-wrap:wrap}.exmy span{color:var(--ink)}.exmy input{width:74px;padding:5px 7px;border:1px solid var(--line2);border-radius:7px;font-size:13px;text-align:center}
+.exmynote{font-size:11px;color:var(--ink3);margin-top:6px;line-height:1.5}
+/* ---- 내 학습 세션 기록 ---- */
+.cursess{font-size:11px;color:var(--red);font-weight:600;margin:2px 0 8px;min-height:14px}
+#sessmodal{position:fixed;inset:0;z-index:100000;background:rgba(10,10,10,.5);display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:18px 12px;-webkit-overflow-scrolling:touch}
+#sessmodal.on{display:flex}
+.ssq{font-size:13px;font-weight:700;color:var(--ink);margin:2px 0 10px}
+.sschips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:6px}
+.sschip{font-size:12px;font-weight:600;color:var(--ink);background:var(--soft);border:1px solid var(--line);border-radius:9px;padding:7px 12px;cursor:pointer}
+.sschip:hover,.sschip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sschip.red:hover,.sschip.red.on{background:var(--red);border-color:var(--red)}
+.sssub{font-size:11px;color:var(--ink3);margin:10px 0 5px;letter-spacing:.3px}
+.sssum{font-size:12px;color:var(--ink2);margin-bottom:12px}.sssum b{color:var(--ink)}
+.ssfield{margin-bottom:11px}.ssfield label{display:block;font-size:11px;color:var(--ink3);margin-bottom:4px}
+.ssfield input,.ssfield textarea{width:100%;padding:7px 9px;border:1px solid var(--line2);border-radius:8px;font-size:13px;font-family:inherit;box-sizing:border-box}
+.ssfield textarea{resize:vertical;min-height:40px}
+.ssrate{display:flex;gap:6px}.ssrate .sschip{padding:6px 11px}
+.ssbtns{display:flex;gap:8px;margin-top:6px}
+/* 내 학습 기록 패널 */
+.mlrow{display:flex;flex-wrap:wrap;align-items:center;gap:4px 9px;padding:8px 0;border-bottom:1px solid var(--line);font-size:11.5px}
+.mlrow:last-child{border:none}.mldate{color:var(--ink3);font-size:10px;min-width:42px}.mlsubj{font-weight:700;color:var(--ink)}.mlmat{color:var(--ink2)}.mltime{color:var(--red);font-weight:700;font-variant-numeric:tabular-nums}
+.mlbadge{font-size:9.5px;font-weight:700;color:var(--ink2);background:var(--soft);border-radius:5px;padding:1px 6px}
+.mlsum{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
+.mlcard{flex:1;min-width:84px;background:var(--soft);border-radius:10px;padding:9px 11px}
+.mlcard .k{font-size:10px;color:var(--ink3)}.mlcard .v{font-size:15px;font-weight:800;color:var(--ink);margin-top:2px;font-variant-numeric:tabular-nums}
+.mlbar{display:flex;align-items:center;gap:8px;margin:5px 0;font-size:11.5px}.mlbar .bn{min-width:42px;color:var(--ink);font-weight:600}.mlbar .bt{flex:1;height:9px;background:var(--soft);border-radius:5px;overflow:hidden}.mlbar .bf{height:100%;background:var(--red);border-radius:5px}.mlbar .bv{color:var(--ink2);font-variant-numeric:tabular-nums;min-width:54px;text-align:right}
+.mlempty{font-size:12px;color:var(--ink3);line-height:1.6;padding:6px 0}
+/* 시은 학습 자료 */
+.smrow{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;padding:9px 0;border-bottom:1px solid var(--line);font-size:12px}
+.smrow:last-child{border:none}.smsubj{font-weight:800;color:var(--ink);min-width:42px}.smstage{font-size:9.5px;font-weight:700;color:#fff;background:var(--ink);border-radius:5px;padding:1px 7px}
+.smcourse{color:var(--ink);font-weight:600}.smmod{color:var(--ink2)}.smlec{color:var(--red);font-weight:700}.smtc{color:var(--ink3);font-size:10.5px;margin-left:auto}
+/* ---- 탭: 백시은 / 나 ---- */
+.tabbar{display:flex;gap:8px;margin:2px 0 16px}
+.tabbtn{font-size:13.5px;font-weight:800;color:var(--ink2);background:var(--soft);border:1px solid var(--line);border-radius:11px;padding:9px 22px;cursor:pointer;letter-spacing:.01em}
+.tabbtn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.bento.view-si [data-tab="me"]{display:none!important}
+.bento.view-me [data-tab="si"]{display:none!important}
+[data-tab="cut"]{display:none!important}
+.myedit2{color:var(--ink);border-bottom:1px dashed var(--ink2);min-width:20px;display:inline-block;text-align:center;outline:none;padding:0 3px;font-weight:700;cursor:text}
 </style></head>
 
 <body><div class="app">
   <div class="top">
-    <div class="brand"><h1>백시은 라이벌 자습실</h1><span class="sub">live rival desk</span></div>
+    <div class="brand"><h1>라이브러리</h1><span class="sub">library</span></div>
     <div class="topr">
       <div class="clock tnum" id="clk">00:00:00</div>
       <div class="condchip"><span class="dot" id="conddot"></span>시은 <b id="cond"></b><span class="st" id="condst"></span></div>
       <div class="kpi"><span class="k">수능까지</span><span class="v red tnum" id="dday"></span></div>
       <span id="dt" style="display:none"></span>
     </div>
+  </div>
+
+  <div class="tabbar">
+    <button class="tabbtn on" data-v="si" onclick="setView('si')">백시은</button>
+    <button class="tabbtn" data-v="me" onclick="setView('me')">나</button>
   </div>
 
   <div class="bento">
@@ -264,6 +331,7 @@ body{color:var(--ink);font-family:'Pretendard',system-ui,-apple-system,sans-seri
       <div class="lbl" id="melbl">나의 오늘 순공</div>
       <div class="bignum tnum" id="mev">0h 00m</div>
       <div class="sub11" id="strk"></div>
+      <div class="cursess" id="cursess"></div>
       <button class="btn start" id="btn">공부 시작</button>
       <div class="acts"><button class="linkbtn" id="reset">기록 초기화</button><button class="linkbtn" id="sync">동기화 설정</button><span class="synced" id="synced"></span></div>
     </section>
@@ -274,6 +342,30 @@ body{color:var(--ink);font-family:'Pretendard',system-ui,-apple-system,sans-seri
       <div class="duelrow"><span>시은 <b style="color:var(--ink)" id="siH2" class="tnum"></b></span><span><b style="color:var(--red)" id="meH2" class="tnum"></b> 나</span></div>
       <div class="track"><div class="tA" id="tA" style="width:0%"></div><div class="tB"></div></div>
       <div class="quote" id="quote"></div>
+    </section>
+
+    <!-- 나의 데이터 요약 -->
+    <section class="panel span2">
+      <div class="lbl">나의 데이터 · 요약 / 비교</div>
+      <div id="mydata"></div>
+    </section>
+
+    <!-- 내 진도 -->
+    <section class="panel" data-tab="me">
+      <div class="lbl">내 진도 · 과목별</div>
+      <div id="myprog"></div>
+    </section>
+
+    <!-- 내 이해도 -->
+    <section class="panel" data-tab="me">
+      <div class="lbl">내 이해도 · 과목별</div>
+      <div id="myud"></div>
+    </section>
+
+    <!-- 내 학습 자료 -->
+    <section class="panel span2" data-tab="me">
+      <div class="lbl">내 학습 자료 · 교재 / 강의</div>
+      <div id="mymat"></div>
     </section>
 
     <!-- 시은 체력 -->
@@ -336,6 +428,12 @@ body{color:var(--ink);font-family:'Pretendard',system-ui,-apple-system,sans-seri
       <div class="pgwrap" id="pgwrap"></div>
     </section>
 
+    <!-- 시은 학습 자료 (지금 보는 강의/교재) -->
+    <section class="panel span2">
+      <div class="lbl">시은 학습 자료 · 지금 보는 강의 / 교재</div>
+      <div id="simat"></div>
+    </section>
+
     <!-- 이해도판 -->
     <section class="panel span2">
       <div class="lbl">이해도 · 세부 파트별</div>
@@ -379,6 +477,12 @@ body{color:var(--ink);font-family:'Pretendard',system-ui,-apple-system,sans-seri
       <div id="heat"></div>
     </section>
 
+    <!-- 내 학습 기록 (세션 누적) -->
+    <section class="panel span2">
+      <div class="lbl">내 학습 기록 · 과목·교재별 누적</div>
+      <div id="mylog"></div>
+    </section>
+
     <!-- 과목별 오늘 -->
     <section class="panel span2">
       <div class="lbl">과목별 오늘 · 정답률 · 오답 · 자신감/불안 · 공략</div>
@@ -393,13 +497,13 @@ body{color:var(--ink);font-family:'Pretendard',system-ui,-apple-system,sans-seri
 
     <!-- 모의고사 성적 이력 -->
     <section class="panel span2">
-      <div class="lbl">시은 모의고사 성적 이력 · 백분위는 국·수·탐 평균</div>
+      <div class="lbl">모의고사 성적 이력 · 함께 응시 · 내 백분위 입력</div>
       <div id="mock"></div>
     </section>
 
     <!-- 모의고사 백분위 추이 -->
     <section class="panel span2">
-      <div class="lbl">시은 모의고사 백분위 추이 · 빨강=평가원</div>
+      <div class="lbl">모의고사 백분위 추이 · 나(빨강) vs 시은(검정)</div>
       <div id="pcttrend"></div>
     </section>
 
@@ -454,6 +558,8 @@ body{color:var(--ink);font-family:'Pretendard',system-ui,-apple-system,sans-seri
 
   <div class="ft">백시은은 실존 인물이 아닙니다 · 진도·이해도·예상등급은 강사 커리큘럼과 컨디션으로 자동 계산된 추정치입니다 · 공부시간은 같은 동기화 키 기기끼리 합쳐집니다</div>
 </div>
+<div id="exammodal" onclick="if(event.target===this)examClose()"></div>
+<div id="sessmodal" onclick="if(event.target===this)sessClose()"></div>
 <script>
 
 /* 시간대별 영상 장면 (각 5클립). 파일명에 _v3 = 캐시 우회용 새 URL. 같은 폴더에 두면 됩니다. */
@@ -470,7 +576,7 @@ const SCHED_WD = [
   { s:480,  e:600,  label:"국어 비문학",       state:"study",  d:["과학 지문 구조도 그리는 중","시간 재며 지문 푸는 중","문장 3번째 다시 읽는 중"] },
   { s:600,  e:720,  label:"수학 · 미적분",     state:"study",  d:["27번 킬러 3회독 중","극한 정의로 다시 증명 중","계산 실수 잡아내는 중"] },
   { s:720,  e:780,  label:"점심 · 산책",       state:"stretch",d:["유일하게 폰 보는 시간","머리 식히며 폰 보는 중","스트레칭하는 중"] },
-  { s:780,  e:930,  label:"수학 · 기하/문풀",  state:"study",  d:["기벡 공간도형 그리는 중","모의고사 한 회분 도는 중","오답 원인 분석 중"] },
+  { s:780,  e:930,  label:"수학 · 미적분 문풀",  state:"study",  d:["미적 N제 한 세트 도는 중","모의고사 한 회분 도는 중","오답 원인 분석 중"] },
   { s:930,  e:1080, label:"사탐 · 생활과윤리", state:"study",  d:["기출 선지 꼼꼼히 분석 중","사상가 입장 표로 정리 중","제시문 두 번 읽는 중"] },
   { s:1080, e:1140, label:"저녁 식사",         state:"eat",    d:["밥 먹으며 인강 듣는 중","10분 눈 감고 쉬는 중"] },
   { s:1140, e:1260, label:"과탐 · 생명Ⅰ",      state:"study",  d:["유전 가계도 분석 중","근수축 과정 암기 중","오답 개념 다시 잡는 중"] },
@@ -1057,7 +1163,15 @@ function thoughtCycleAt(k,mn){var seg=scheduleFor(k).find(x=>mn>=x.s&&mn<x.e)||s
 /* 추론 흐름: 최근 n개 인지 연산의 자취 (4분 간격) */
 function reasoningTrace(k,mn,n){var out=[],i;for(i=n-1;i>=0;i--){var m=mn-i*4;if(m<0)m=0;out.push(thoughtCycleAt(k,m).op);}return out;}
 /* ===== 모의고사 성적 이력 (원점수·백분위·등급, 시간이 갈수록 향상; 평가원=6·9·수능) ===== */
-var MOCKEXAMS=[{d:"2026-03-29",n:"3월 학원 실모",s:"3월",pv:false},{d:"2026-04-26",n:"4월 학원 실모",s:"4월",pv:false},{d:"2026-06-04",n:"6월 모평",s:"6평",pv:true},{d:"2026-07-26",n:"7월 학원 실모",s:"7월",pv:false},{d:"2026-09-03",n:"9월 모평",s:"9평",pv:true},{d:"2026-10-25",n:"10월 학원 실모",s:"10월",pv:false},{d:"2026-11-19",n:"수능",s:"수능",pv:true}];
+var MOCKEXAMS=[
+ {d:"2026-03-24",n:"3월 학력평가",s:"3월",pv:false,host:"서울교육청"},
+ {d:"2026-05-07",n:"5월 학력평가",s:"5월",pv:false,host:"경기교육청"},
+ {d:"2026-06-04",n:"6월 모의평가",s:"6평",pv:true,host:"평가원"},
+ {d:"2026-07-08",n:"7월 학력평가",s:"7월",pv:false,host:"인천교육청"},
+ {d:"2026-09-02",n:"9월 모의평가",s:"9평",pv:true,host:"평가원"},
+ {d:"2026-10-20",n:"10월 학력평가",s:"10월",pv:false,host:"서울교육청"},
+ {d:"2026-11-19",n:"수능",s:"수능",pv:true,host:"평가원"}
+];
 function pctFromGrade(g,raw,max){var band=[[96,99],[89,95],[77,88],[60,76],[40,59],[23,39],[11,22],[4,10],[1,3]][g-1];
   var cuts=max===100?[92,85,77,67,55,42,28,16,0]:[45,42,38,33,27,21,15,10,0],hi=g>1?cuts[g-2]:max,lo=cuts[g-1],frac=hi>lo?(raw-lo)/(hi-lo):0.5;frac=Math.max(0,Math.min(1,frac));return Math.round(band[0]+(band[1]-band[0])*frac);}
 function siExam(s,k){var T=(parseDate(k)-Y0)/(SUNUNG-Y0),t=Math.max(0,Math.min(1,T+s.off)),adv=Math.max(0,Math.min(1,Math.pow(Math.max(t,0.001),0.95))),parts=[],i;
@@ -1069,7 +1183,110 @@ function siExam(s,k){var T=(parseDate(k)-Y0)/(SUNUNG-Y0),t=Math.max(0,Math.min(1
 function examAvgPct(k){var sum=0,n=0,i;for(i=0;i<CURRIC.length;i++){var r=siExam(CURRIC[i],k);if(!r.eng){sum+=r.pct;n++;}}return n?Math.round(sum/n):0;}
 function examGradeSum(k){var s=0,i;for(i=0;i<CURRIC.length;i++)s+=siExam(CURRIC[i],k).grade;return s;}
 let mymock={};try{mymock=JSON.parse(localStorage.getItem("mymock")||"{}")||{};}catch(e){mymock={};}
-function setMyMock(v){v=Math.max(0,Math.min(100,Math.round(Number(v)||0)));mymock.avg=v;try{localStorage.setItem("mymock",JSON.stringify(mymock));}catch(e){}buildMock();}
+let mystatsT=0,mymockT=0;try{var __sm=JSON.parse(localStorage.getItem("syncmeta")||"{}")||{};mystatsT=Number(__sm.mystatsT||0);mymockT=Number(__sm.mymockT||0);}catch(e){}
+function saveSyncMeta(){try{localStorage.setItem("syncmeta",JSON.stringify({mystatsT:mystatsT,mymockT:mymockT}));}catch(e){}}
+function saveMyMock(){try{localStorage.setItem("mymock",JSON.stringify(mymock));}catch(e){}}
+function myMockAt(d){var v=mymock[d];return (v==null||v==="")?null:Number(v);}
+function setMyMockAt(d,v){var s=String(v).replace(/[^0-9.]/g,"").trim();if(s===""){delete mymock[d];}else{mymock[d]=Math.max(0,Math.min(100,Math.round(Number(s)||0)));}mymockT=Date.now();saveMyMock();saveSyncMeta();if(typeof saveServer==="function")saveServer();buildMock();buildPctTrend();if(typeof buildMyStats==="function")buildMyStats();}
+function myMockLatest(){var now=new Date(),best=null,i;for(i=0;i<MOCKEXAMS.length;i++){var e=MOCKEXAMS[i];if(parseDate(e.d)<=now){var v=myMockAt(e.d);if(v!=null)best={d:e.d,v:v,n:e.n};}}return best;}
+function setMyMock(v){mymock.avg=Math.max(0,Math.min(100,Math.round(Number(v)||0)));saveMyMock();buildMock();}
+/* ===== 시은과 동시 응시 모드 (실제 시험만) ===== */
+var EXAM_PHASES=[
+ {k:"1교시 · 국어 (화법과 작문)",min:80,si:"화작 먼저 끊고 독서에 시간 남기는 중"},
+ {k:"2교시 · 수학 (미적분)",min:100,si:"22·30번에 시간 쏟는 중, 계산 실수 경계"},
+ {k:"3교시 · 영어",min:70,si:"듣기부터 집중, 빈칸·순서 시간 관리 중"},
+ {k:"4교시 · 한국사",min:30,si:"한국사 빠르게 마킹, 탐구 준비"},
+ {k:"탐구1 · 생활과윤리",min:30,si:"사상가 비교 제시문 정독 중"},
+ {k:"탐구2 · 생명과학Ⅰ",min:30,si:"유전 추론에 마지막 집중"}
+];
+var TIMETABLE=[["1교시 국어","08:40~10:00","80분"],["2교시 수학","10:30~12:10","100분"],["점심","12:10~13:00","50분"],["3교시 영어","13:10~14:20","70분"],["4교시 한국사","14:50~15:20","30분"],["탐구 생활과윤리","15:35~16:05","30분"],["탐구 생명과학Ⅰ","16:05~16:35","30분"]];
+var examMode={open:false,d:null,phase:0,sec:0,running:false,iv:null,done:false};
+function examFmt(s){var m=Math.floor(s/60),x=s%60;return m+":"+String(x).padStart(2,"0");}
+function examOpen(d){examMode.d=d;examMode.phase=0;examMode.sec=0;examMode.running=false;examMode.done=false;if(examMode.iv){clearInterval(examMode.iv);examMode.iv=null;}examMode.open=true;var m=$("exammodal");if(m)m.classList.add("on");examRender();}
+function examClose(){examMode.open=false;examMode.running=false;if(examMode.iv){clearInterval(examMode.iv);examMode.iv=null;}var m=$("exammodal");if(m)m.classList.remove("on");}
+function examStart(){if(examMode.done)return;if(!examMode.running){examMode.running=true;if(examMode.sec<=0)examMode.sec=EXAM_PHASES[examMode.phase].min*60;if(examMode.iv)clearInterval(examMode.iv);examMode.iv=setInterval(examLocalTick,1000);}else{examMode.running=false;if(examMode.iv){clearInterval(examMode.iv);examMode.iv=null;}}examRender();}
+function examLocalTick(){if(!examMode.running)return;examMode.sec--;if(examMode.sec<=0){examMode.phase++;if(examMode.phase>=EXAM_PHASES.length){examFinish();return;}examMode.sec=EXAM_PHASES[examMode.phase].min*60;examRender();return;}var se=$("exsec");if(se)se.textContent=examFmt(examMode.sec);}
+function examNext(){if(examMode.done)return;examMode.phase++;if(examMode.phase>=EXAM_PHASES.length){examFinish();return;}examMode.sec=examMode.running?EXAM_PHASES[examMode.phase].min*60:0;examRender();}
+function examFinish(){examMode.running=false;if(examMode.iv){clearInterval(examMode.iv);examMode.iv=null;}examMode.done=true;examRender();}
+function examResultRows(d){var i,html="";for(i=0;i<CURRIC.length;i++){var s=CURRIC[i],r=siExam(s,d);
+  var disp=r.eng?(r.grade+"등급 (절대평가)"):(r.raw+"/"+r.max+'점 · '+r.grade+'등급 · 백분위 '+r.pct);
+  html+='<div class="exrr"><span>'+s.subj+'</span><span>'+disp+'</span></div>';}return html;}
+function examRender(){var m=$("exammodal");if(!m||!examMode.open)return;var d=examMode.d,e=null,i;for(i=0;i<MOCKEXAMS.length;i++)if(MOCKEXAMS[i].d===d)e=MOCKEXAMS[i];if(!e){m.innerHTML="";return;}
+  var now=new Date(),past=parseDate(d)<=now,ddtxt=past?"응시 완료":("D-"+Math.max(0,Math.ceil((parseDate(d)-now)/86400000)));
+  var tt="";for(i=0;i<TIMETABLE.length;i++)tt+='<div class="extt'+(TIMETABLE[i][0]==="점심"?" lunch":"")+'"><span>'+TIMETABLE[i][0]+'</span><span>'+TIMETABLE[i][1]+'</span><span>'+TIMETABLE[i][2]+'</span></div>';
+  var body="";
+  if(!examMode.done){
+   var ph=EXAM_PHASES[examMode.phase],secShow=examMode.sec>0?examMode.sec:ph.min*60;
+   body='<div class="extimer"><div class="exph">'+ph.k+'</div><div class="exsec" id="exsec">'+examFmt(secShow)+'</div>'
+    +'<div class="exsi">시은 — <b id="exsi">'+ph.si+'</b></div>'
+    +'<div class="exbtns"><button class="btn start" onclick="examStart()">'+(examMode.running?"일시정지":(examMode.phase===0&&examMode.sec<=0?"응시 시작":"이어서"))+'</button>'
+    +'<button class="linkbtn" onclick="examNext()">다음 교시 →</button>'
+    +'<button class="linkbtn" onclick="examFinish()">바로 결과 보기</button></div>'
+    +'<div class="exhint">교시별로 실제 시간만큼 타이머가 흘러가요. 시은도 같은 시험을 같이 봅니다. (직접 시험지를 풀며 시간 재기용)</div></div>';
+  } else {
+   var myv=myMockAt(d),siAvg=examAvgPct(d),siGs=examGradeSum(d);
+   body='<div class="exdone"><div class="exresulthd">시은 응시 결과 <span>· '+e.host+'</span></div>'
+    +examResultRows(d)
+    +'<div class="exrr exrtot"><span>평균 백분위 · 등급합</span><span><b>'+siAvg+'</b> · '+siGs+'등급</span></div>'
+    +'<div class="exmy"><span>내 평균 백분위</span><input type="number" min="0" max="100" id="exmyin" value="'+(myv!=null?myv:"")+'" placeholder="–"><button class="exgo" onclick="examSaveMy()">저장</button></div>'
+    +'<div class="exmynote" id="exmynote">'+(myv!=null?('저장됨 · 나 '+myv+' vs 시은 '+siAvg+' — 백분위 추이 그래프에 반영됩니다.'):'내 평균 백분위를 입력하면 추이 그래프에 빨간 선으로 함께 그려져요.')+'</div></div>';
+  }
+  m.innerHTML='<div class="exbox"><div class="exhd"><div><div class="extitle">'+e.n+(e.pv?' <em>평가원</em>':'')+'</div><div class="exsub">'+d.replace(/-/g,".")+' · '+e.host+' · '+ddtxt+'</div></div><button class="exx" onclick="examClose()">✕</button></div>'
+   +'<div class="exsec2">시험 시간표</div><div class="exttwrap">'+tt+'</div>'+body+'</div>';}
+function examSaveMy(){var el=$("exmyin");if(!el)return;setMyMockAt(examMode.d,el.value);var n=$("exmynote");if(n){var mv=myMockAt(examMode.d),si=examAvgPct(examMode.d);n.textContent=mv!=null?('저장됨 · 나 '+mv+' vs 시은 '+si+' — 백분위 추이 그래프에 반영됩니다.'):'삭제됨';}}
+/* ===== 내 학습 세션 기록 (공부 시작 시 과목·교재 선택 → 누적) ===== */
+var curSubj=null,curMat=null,sessStartMs=null,pendingSess=null,sessPick={subj:null};
+let sessions=[];try{sessions=JSON.parse(localStorage.getItem("sessions")||"[]")||[];if(!Array.isArray(sessions))sessions=[];}catch(e){sessions=[];}
+function saveSessions(){try{localStorage.setItem("sessions",JSON.stringify(sessions.slice(-400)));}catch(e){}}
+function subjName(key){for(var i=0;i<CURRIC.length;i++)if(CURRIC[i].key===key)return CURRIC[i].subj;return key;}
+function matsFor(key){var s=null,i;for(i=0;i<CURRIC.length;i++)if(CURRIC[i].key===key)s=CURRIC[i];if(!s)return[];var out=[],p=prog(s);if(p.cur&&out.indexOf(p.cur.l)<0)out.push(p.cur.l);for(i=0;i<s.course.length;i++)if(out.indexOf(s.course[i])<0)out.push(s.course[i]);return out;}
+function openStartPicker(){sessPick.subj=null;var m=$("sessmodal");if(m)m.classList.add("on");sessRenderPick();}
+function sessClose(){var m=$("sessmodal");if(m)m.classList.remove("on");}
+function sessPickSubj(k){sessPick.subj=k;sessRenderPick();}
+function sessRenderPick(){var m=$("sessmodal");if(!m)return;var i,html='<div class="exbox"><div class="exhd"><div class="extitle">무엇을 공부하나요?</div><button class="exx" onclick="sessClose()">✕</button></div>';
+ html+='<div class="ssq">과목</div><div class="sschips">';
+ for(i=0;i<CURRIC.length;i++)html+='<span class="sschip'+(sessPick.subj===CURRIC[i].key?" on":"")+'" onclick="sessPickSubj(\''+CURRIC[i].key+'\')">'+CURRIC[i].subj+'</span>';
+ html+='</div>';
+ if(sessPick.subj){var mats=matsFor(sessPick.subj);html+='<div class="ssq" style="margin-top:14px">교재 / 강의</div><div class="sschips">';
+  for(i=0;i<mats.length;i++)html+='<span class="sschip red" onclick="startStudyPick('+i+')">'+mats[i]+'</span>';
+  html+='<span class="sschip" onclick="startStudyCustom()">직접 입력</span><span class="sschip" onclick="startStudyPlain()">교재 없이</span></div><div class="exhint" style="margin-top:10px">고르면 바로 타이머가 시작돼요.</div>';}
+ else html+='<div class="exhint" style="margin-top:10px">과목을 먼저 고르면 그 과목 교재가 떠요.</div>';
+ m.innerHTML=html+'</div>';}
+function startStudyPick(idx){var mats=matsFor(sessPick.subj);startStudy(sessPick.subj,mats[idx]||"");}
+function startStudyCustom(){var v=window.prompt("교재/강의명을 입력하세요","");if(v===null)return;startStudy(sessPick.subj,(v||"").trim());}
+function startStudyPlain(){startStudy(sessPick.subj,"");}
+function startStudy(subj,mat){curSubj=subj;curMat=mat;sessStartMs=Date.now();startTs=Date.now();running=true;saveCtr=0;sessClose();var c=$("cursess");if(c)c.textContent="지금: "+subjName(subj)+(mat?" · "+mat:"");tick();}
+function stopStudy(){var el=startTs!=null?(Date.now()-startTs)/1000:0;log[dk]=(log[dk]||0)+el;var dur=sessStartMs?Math.round((Date.now()-sessStartMs)/1000):Math.round(el);startTs=null;running=false;saveCtr=0;save();saveServer();var c=$("cursess");if(c)c.textContent="";
+ if(curSubj!=null){pendingSess={d:dk,subj:curSubj,mat:curMat||"",sec:dur,ts:sessStartMs||Date.now(),probs:null,rng:"",focus:null,diff:null,memo:""};sessions.push(pendingSess);saveSessions();if(typeof saveServer==="function")saveServer();buildMyLog();openStopForm();}
+ curSubj=null;curMat=null;sessStartMs=null;tick();}
+function openStopForm(){var m=$("sessmodal");if(m)m.classList.add("on");sessRenderStop();}
+function sessRenderStop(){var m=$("sessmodal");if(!m||!pendingSess)return;var p=pendingSess,i,html='<div class="exbox"><div class="exhd"><div><div class="extitle">세션 기록</div><div class="exsub">'+subjName(p.subj)+(p.mat?" · "+p.mat:"")+' · '+hm(p.sec)+'</div></div><button class="exx" onclick="sessClose()">✕</button></div>';
+ html+='<div class="sssub">선택 입력 — 비워도 시간·과목은 이미 저장됐어요.</div>';
+ html+='<div class="ssfield"><label>푼 문제 수</label><input type="number" min="0" id="ssprobs" value="'+(p.probs!=null?p.probs:"")+'" placeholder="예: 24"></div>';
+ html+='<div class="ssfield"><label>범위 / 단원</label><input type="text" id="ssrng" value="'+(p.rng||"")+'" placeholder="예: 미적 적분법 30~45p"></div>';
+ html+='<div class="ssfield"><label>집중도 (1~5)</label><div class="ssrate">';for(i=1;i<=5;i++)html+='<span class="sschip red'+(p.focus===i?" on":"")+'" onclick="sessSetRate(\'focus\','+i+')">'+i+'</span>';html+='</div></div>';
+ html+='<div class="ssfield"><label>체감 난이도 (1~5)</label><div class="ssrate">';for(i=1;i<=5;i++)html+='<span class="sschip'+(p.diff===i?" on":"")+'" onclick="sessSetRate(\'diff\','+i+')">'+i+'</span>';html+='</div></div>';
+ html+='<div class="ssfield"><label>메모</label><textarea id="ssmemo" placeholder="막힌 부분, 느낌 등">'+(p.memo||"")+'</textarea></div>';
+ html+='<div class="ssbtns"><button class="btn start" style="flex:1" onclick="sessSaveStop()">저장</button><button class="linkbtn" onclick="sessClose()">건너뛰기</button></div>';
+ m.innerHTML=html+'</div>';}
+function sessSetRate(kind,v){if(!pendingSess)return;pendingSess[kind]=(pendingSess[kind]===v?null:v);sessRenderStop();}
+function sessSaveStop(){if(pendingSess){var a=$("ssprobs"),b=$("ssrng"),c=$("ssmemo");if(a)pendingSess.probs=(a.value===""?null:Math.max(0,parseInt(a.value)||0));if(b)pendingSess.rng=(b.value||"").trim();if(c)pendingSess.memo=(c.value||"").trim();saveSessions();if(typeof saveServer==="function")saveServer();buildMyLog();}sessClose();}
+function buildMyLog(){var el=$("mylog");if(!el)return;var i;
+ if(!sessions.length){el.innerHTML='<div class="mlempty">아직 기록이 없어요. <b>공부 시작</b>을 누르면 과목·교재를 고르고, 끝나면 푼 문제·집중도까지 남길 수 있어요. 이 세션들이 쌓여 과목별 학습 데이터가 됩니다.</div>';return;}
+ var tot=0,probs=0,bysub={};for(i=0;i<sessions.length;i++){var s=sessions[i];tot+=s.sec||0;probs+=s.probs||0;var k=s.subj||"기타";if(!bysub[k])bysub[k]={sec:0,probs:0};bysub[k].sec+=s.sec||0;bysub[k].probs+=s.probs||0;}
+ var cards='<div class="mlsum"><div class="mlcard"><div class="k">기록 세션</div><div class="v">'+sessions.length+'</div></div><div class="mlcard"><div class="k">기록 순공</div><div class="v">'+hm(tot)+'</div></div><div class="mlcard"><div class="k">푼 문제</div><div class="v">'+probs+'</div></div></div>';
+ var order=CURRIC.map(function(c){return c.key;}),maxSec=1,kk;for(kk in bysub)if(bysub[kk].sec>maxSec)maxSec=bysub[kk].sec;
+ var bars='<div class="sssub">과목별 누적 (기록 기준)</div>';
+ for(i=0;i<order.length;i++){var key=order[i];if(!bysub[key])continue;var bs=bysub[key];bars+='<div class="mlbar"><span class="bn">'+subjName(key)+'</span><span class="bt"><span class="bf" style="width:'+Math.round(bs.sec/maxSec*100)+'%"></span></span><span class="bv">'+hm(bs.sec)+(bs.probs?' · '+bs.probs+'문제':'')+'</span></div>';}
+ if(bysub["기타"]){var o=bysub["기타"];bars+='<div class="mlbar"><span class="bn">기타</span><span class="bt"><span class="bf" style="width:'+Math.round(o.sec/maxSec*100)+'%"></span></span><span class="bv">'+hm(o.sec)+'</span></div>';}
+ var rows='<div class="sssub">최근 기록</div>',recent=sessions.slice(-12).reverse();
+ for(i=0;i<recent.length;i++){var r=recent[i];rows+='<div class="mlrow"><span class="mldate">'+(r.d?r.d.slice(5).replace("-","."):"")+'</span><span class="mlsubj">'+subjName(r.subj)+'</span>'+(r.mat?'<span class="mlmat">'+r.mat+'</span>':'')+'<span class="mltime">'+hm(r.sec)+'</span>'+(r.probs?'<span class="mlbadge">'+r.probs+'문제</span>':'')+(r.focus?'<span class="mlbadge">집중 '+r.focus+'</span>':'')+(r.diff?'<span class="mlbadge">난이도 '+r.diff+'</span>':'')+(r.rng?'<span class="mlmat">· '+r.rng+'</span>':'')+'</div>';}
+ el.innerHTML=cards+bars+rows;}
+/* ===== 시은 학습 자료 (진도 기반, 지금 보는 강의/교재) ===== */
+function buildSiMat(){var el=$("simat");if(!el)return;var i,html="";
+ for(i=0;i<CURRIC.length;i++){var s=CURRIC[i],p=prog(s),st=p.curSt,stage=s.stg[st]||"파이널",course=s.course[st]||s.course[s.course.length-1],mod=p.cur?p.cur.l:"파이널 마무리",lec=p.cur?(p.curLecIdx+"/"+p.curLecTot+"강"):"완강";
+  html+='<div class="smrow"><span class="smsubj">'+s.subj+'</span><span class="smstage">'+stage+'</span> <span class="smcourse">'+course+'</span> <span class="smmod">· '+mod+'</span> <span class="smlec">· '+lec+'</span><span class="smtc">'+s.tc+' ('+s.pf+')</span></div>';}
+ el.innerHTML=html+'<div class="exmynote" style="margin-top:8px">진도에 따라 지금 듣는 강의·교재가 자동으로 바뀝니다. 강사·교재는 실제 인강 커리큘럼 기준이에요.</div>';}
 var MIND={
  math:["미적 30번… 손은 기억하는데 머리가 못 따라가. 한 번 더.","계산 실수만 줄여도 1등급인데. 검산 습관 들이는 중.","개념은 잡았어. 이제 킬러에서 안 무너지면 돼.","적분 계산이 자꾸 어긋나. 천천히, 정확히.","30번은 손이 기억하게 만들 거야. 반복뿐이야."],
  kor:["과학·기술 지문, 또 두 번 읽었다. 남들 한 번 읽을 때.","문학은 자신 있어. 비문학이 발목을 잡네.","독해 속도는 끈기로 메운다. 매일 한 지문씩.","문장 구조부터 끊어 읽자. 급하면 다 놓쳐.","선지 근거를 지문에서 찾는 습관. 감 금지."],
@@ -1115,9 +1332,24 @@ function buildMastery(){var h="",j,i;for(j=0;j<CURRIC.length;j++){var s=CURRIC[j
  var el=$("udwrap");if(el)el.innerHTML=h;}
 /* ===== 나 vs 시은 비교 ===== */
 let mystats={}; try{mystats=JSON.parse(localStorage.getItem("mystats")||"{}")||{};}catch(e){mystats={};}
-const MYDEF={math:50,kor:89,eng:78,bio:40,eth:30};
+const MYDEF={kor:89,math:65,eng:89,bio:65,eth:50};
 function myLevel(key){return (mystats[key]!=null)?Number(mystats[key]):MYDEF[key];}
-function setMyLevel(key,v){v=Math.max(0,Math.min(100,Math.round(Number(v)||0)));mystats[key]=v;try{localStorage.setItem("mystats",JSON.stringify(mystats));}catch(e){}buildCompare();}
+function setMyLevel(key,v){v=Math.max(0,Math.min(100,Math.round(Number(v)||0)));mystats[key]=v;try{localStorage.setItem("mystats",JSON.stringify(mystats));}catch(e){}mystatsT=Date.now();saveSyncMeta();if(typeof saveServer==="function")saveServer();buildCompare();if(typeof buildMyStats==="function")buildMyStats();if(typeof buildMyUd==="function")buildMyUd();}
+/* 내 진도(자가, 기본 0) */
+let myProg={}; try{myProg=JSON.parse(localStorage.getItem("myprog")||"{}")||{};}catch(e){myProg={};}
+const MYPROGDEF={kor:0,math:0,eng:0,bio:0,eth:0};
+function myProgOf(key){return (myProg[key]!=null)?Number(myProg[key]):(MYPROGDEF[key]||0);}
+function setMyProg(key,v){v=Math.max(0,Math.min(100,Math.round(Number(v)||0)));myProg[key]=v;try{localStorage.setItem("myprog",JSON.stringify(myProg));}catch(e){}if(typeof saveServer==="function")saveServer();if(typeof buildMyProg==="function")buildMyProg();}
+/* 내 교재/강의 (직접 기입한 목록) */
+const MYMATDEF={
+ kor:["김동욱 일취월장 (일클래스·츀클래스)","매3문","자이 문학","화작 실전 고3"],
+ math:["이미지 미친기분 완성편 수1·수2","미적분 세젤쉬","한완수","시대인재 기출 코어·모어"],
+ eng:["션티 키스로직","매3영","하루 6개 1등급 영어독해","킹콩 40회 모의","마더텅 20분 고3 모의"],
+ bio:["백호 섬개완","스개완"],
+ eth:["임정환 리밋(LIM IT)"]
+};
+let myMat={}; try{myMat=JSON.parse(localStorage.getItem("mymaterials")||"{}")||{};}catch(e){myMat={};}
+function myMatOf(key){return (myMat[key]&&myMat[key].length)?myMat[key]:(MYMATDEF[key]||[]);}
 function buildCompare(){
  var meLvSum=0,siOvSum=0,meGsum=0,siGsum=0,rows="",j;
  var meCum=0;for(var kk in log){meCum+=Number(log[kk]||0);}
@@ -1249,17 +1481,34 @@ function buildAlloc(){var el=$("alloc");if(!el)return;var k=ld(new Date()),al=su
 function buildMock(){var el=$("mock");if(!el)return;var now=new Date(),rows="",i,eng=CURRIC.find(c=>c.key==="eng");
  for(i=0;i<MOCKEXAMS.length;i++){var e=MOCKEXAMS[i],de=parseDate(e.d),past=de<=now;
   var avg=examAvgPct(e.d),gs=examGradeSum(e.d),eg=siExam(eng,e.d).grade;
+  var mv=myMockAt(e.d);
   rows+='<div class="mkr'+(e.pv?" pv":"")+(past?"":" fut")+'"><span class="mkn">'+e.n+(e.pv?'<em>평가원</em>':'')+'</span>'
    +'<span class="mkd">'+(past?"응시 완료":"D-"+Math.max(0,Math.ceil((de-now)/86400000)))+'</span>'
-   +'<span class="mkpct">백분위 <b class="tnum">'+avg+'</b></span><span class="mkeng">영어 '+eg+'등급</span><span class="mkgs">등급합 '+gs+'</span></div>';}
+   +'<span class="mkpct">백분위 <b class="tnum">'+avg+'</b></span><span class="mkeng">영어 '+eg+'등급</span><span class="mkgs">등급합 '+gs+'</span><button class="exgo" onclick="examOpen(\''+e.d+'\')">함께 응시</button>'
+   +(past?'<span class="mkmy">나 <b class="mkmyin tnum" contenteditable data-d="'+e.d+'">'+(mv!=null?mv:"–")+'</b></span>':'')+'</div>';}
  var lastPast=null;for(i=MOCKEXAMS.length-1;i>=0;i--){if(parseDate(MOCKEXAMS[i].d)<=now){lastPast=MOCKEXAMS[i];break;}}
- var siAvg=lastPast?examAvgPct(lastPast.d):examAvgPct(ld(now)),myv=mymock.avg!=null?mymock.avg:"";
- el.innerHTML=rows+'<div class="mkmine"><span>시은 최근 평균 백분위 <b class="tnum">'+siAvg+'</b></span><span>내 평균 백분위 <b class="myedit tnum" contenteditable>'+(myv===""?"–":myv)+'</b></span></div>';
- var me=el.querySelector(".myedit");if(me)me.onblur=function(){setMyMock(this.textContent);};}
-function buildPctTrend(){var el=$("pcttrend");if(!el)return;var now=new Date(),H=104,bars="",i;
- for(i=0;i<MOCKEXAMS.length;i++){var e=MOCKEXAMS[i],fut=parseDate(e.d)>now,v=examAvgPct(e.d),hh=Math.max(3,Math.round(v/100*H)),col=fut?"#cfcfcf":(e.pv?"#e50914":"#0a0a0a");
-  bars+='<div class="pcol"><div class="pval'+(fut?" fut":"")+'">'+v+'</div><div class="pbar" style="height:'+hh+'px;background:'+col+'" title="'+e.n+' 평균 백분위 '+v+'"></div><div class="plbl'+(e.pv?" pv":"")+'">'+e.s+'</div></div>';}
- el.innerHTML='<div class="pcurve">'+bars+'</div>';}
+ var siAvg=lastPast?examAvgPct(lastPast.d):examAvgPct(ld(now)),myL=myMockLatest();
+ el.innerHTML=rows+'<div class="mkmine"><span>시은 최근 평균 백분위 <b class="tnum">'+siAvg+'</b></span><span>내 최근 백분위 <b class="tnum">'+(myL?myL.v:"–")+'</b></span></div>';
+ var ed=el.querySelectorAll(".mkmyin");for(i=0;i<ed.length;i++){(function(b){b.onblur=function(){setMyMockAt(b.getAttribute("data-d"),b.textContent);};b.onkeydown=function(ev){if(ev.key==="Enter"){ev.preventDefault();b.blur();}};})(ed[i]);}}
+function buildPctTrend(){var el=$("pcttrend");if(!el)return;var now=new Date(),i;
+ var N=MOCKEXAMS.length,colW=46,padL=10,padR=10,padT=18,barH=104,lblH=22,W=padL+padR+N*colW,H=padT+barH+lblH;
+ var cx=function(k){return padL+colW*k+colW/2;},yTop=function(v){return padT+barH-Math.max(2,v/100*barH);};
+ var s="";
+ for(i=0;i<N;i++){var e=MOCKEXAMS[i],fut=parseDate(e.d)>now,v=examAvgPct(e.d),bw=18,x=cx(i)-bw/2,y=yTop(v),hh=padT+barH-y;
+   s+='<rect x="'+x.toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+bw+'" height="'+hh.toFixed(1)+'" rx="3" fill="var(--ink)" opacity="'+(fut?"0.32":"1")+'"></rect>';
+   s+='<text x="'+cx(i).toFixed(1)+'" y="'+(y-4).toFixed(1)+'" font-size="9.5" text-anchor="middle" fill="var(--ink3)">'+v+'</text>';
+   s+='<text x="'+cx(i).toFixed(1)+'" y="'+(padT+barH+15).toFixed(1)+'" font-size="9.5" text-anchor="middle" fill="'+(e.pv?"var(--red)":"var(--ink3)")+'" font-weight="'+(e.pv?"700":"400")+'">'+e.s+'</text>';}
+ var pts=[];for(i=0;i<N;i++){var mm=myMockAt(MOCKEXAMS[i].d);if(mm!=null&&parseDate(MOCKEXAMS[i].d)<=now)pts.push([cx(i),yTop(mm),mm]);}
+ if(pts.length>=2){var dp="";for(i=0;i<pts.length;i++)dp+=(i?" L":"M")+pts[i][0].toFixed(1)+" "+pts[i][1].toFixed(1);
+   s+='<path d="'+dp+'" fill="none" stroke="var(--red)" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"></path>';}
+ for(i=0;i<pts.length;i++){s+='<circle cx="'+pts[i][0].toFixed(1)+'" cy="'+pts[i][1].toFixed(1)+'" r="3.6" fill="var(--red)"></circle>';
+   s+='<text x="'+pts[i][0].toFixed(1)+'" y="'+(pts[i][1]-7).toFixed(1)+'" font-size="10" text-anchor="middle" fill="var(--red)" font-weight="700">'+pts[i][2]+'</text>';}
+ var legend='<div style="display:flex;gap:16px;justify-content:center;margin-top:6px;font-size:11px;color:var(--ink2)">'
+   +'<span><i style="display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--red);vertical-align:middle;margin-right:4px"></i>나</span>'
+   +'<span><i style="display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--ink);vertical-align:middle;margin-right:4px"></i>시은</span>'
+   +'<span style="color:var(--red);font-weight:700">평가원</span></div>';
+ var note=pts.length<2?'<div style="text-align:center;font-size:11px;color:var(--ink3);margin-top:4px">↓ 아래 <b>모의고사 성적 이력</b>에서 내 백분위를 입력하면 빨간 선으로 함께 그려져요</div>':'';
+ el.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" width="100%" preserveAspectRatio="xMidYMid meet" style="display:block;max-width:'+(W+40)+'px;margin:0 auto">'+s+'</svg>'+legend+note;}
 function buildWhole(){var el=$("wholej");if(!el)return;var k=ld(new Date()),w=siDay(k).whole;
  var phases=[["적응기",0,0.10],["기초 성장기",0.10,0.34],["도약기",0.34,0.52],["정체·재정비",0.52,0.66],["실전기",0.66,0.86],["파이널",0.86,1.0]];
  var segs="",i;for(i=0;i<phases.length;i++){var ph=phases[i],wd=(ph[2]-ph[1])*100,on=(w.frac>=ph[1]&&w.frac<ph[2]);
@@ -1328,7 +1577,41 @@ function buildMemory(){var el=$("memory");if(!el)return;var k=ld(new Date()),now
   +'<div class="trow"><span class="tlbl">누적 학습의 질</span><div class="tbar"><div class="tbf" style="width:'+con+'%;background:#0a0a0a"></div></div><span class="tval tnum">'+con+'</span></div>'
   +'<div class="alnote">'+gtxt+' · 저장강도 = 달력 실력 × 누적 학습의 질 — 깊게 판 구간은 저장이 봉투 위로, 벼락치기 구간은 인출만 오르고 저장은 처집니다</div>'
   +'<div class="todrow"><span class="todk">지금 처리 깊이</span><span class="todv">'+ed.label+' · <b class="tnum">'+Math.round(ed.depth*100)+'</b></span></div>';}
-function buildExtras(){buildTrend();buildSiStats();buildLog();buildHeat();buildToday();buildHourCurve();buildSubjToday();buildAlloc();buildMock();buildPctTrend();buildWhole();buildWeek();buildMonth();buildInner();buildTraits();buildCog();buildThink();buildMemory();
+function buildMyStats(){var el=$("mydata");if(!el)return;var now=new Date(),k,i;
+ var tot=0,days=0,best=0,bestD="";for(k in log){var sec=Number(log[k]||0);if(sec>0){tot+=sec;days++;if(sec>best){best=sec;bestD=k;}}}
+ var avg=days?Math.round(tot/days):0;
+ var streak=0,dd=new Date();for(i=0;i<400;i++){var key=ld(dd);if(Number(log[key]||0)>=600){streak++;dd.setDate(dd.getDate()-1);}else{if(i===0){dd.setDate(dd.getDate()-1);continue;}break;}}
+ var lv=CURRIC.map(function(s){return {n:s.subj,v:myLevel(s.key)};}),lvAvg=Math.round(lv.reduce(function(a,b){return a+b.v;},0)/lv.length);
+ var lvS=lv.slice().sort(function(a,b){return a.v-b.v;}),lo=lvS[0],hi=lvS[lvS.length-1];
+ var siCum=0,d2=new Date(Y0),cnt=0;while(d2<=now&&cnt<400){siCum+=fullDay(ld(d2))*3600;d2.setDate(d2.getDate()+1);cnt++;}
+ var siUdAvg=Math.round(CURRIC.reduce(function(a,s){return a+subjMastery(s).ov;},0)/CURRIC.length);
+ var myL=myMockLatest();
+ var siLast=(function(){var lp=null,j;for(j=MOCKEXAMS.length-1;j>=0;j--){if(parseDate(MOCKEXAMS[j].d)<=now){lp=MOCKEXAMS[j];break;}}return lp?examAvgPct(lp.d):examAvgPct(ld(now));})();
+ var cards='<div class="cmpsum">'
+  +'<div class="cmpcard"><div class="cmpcl">누적 순공</div><div class="cmpcv"><span class="me">'+hm(tot)+'</span><span class="si">'+hm(Math.round(siCum))+'</span></div></div>'
+  +'<div class="cmpcard"><div class="cmpcl">과목 평균 실력</div><div class="cmpcv"><span class="me">'+lvAvg+'</span><span class="si">'+siUdAvg+'</span></div></div>'
+  +'<div class="cmpcard"><div class="cmpcl">최근 모의 백분위</div><div class="cmpcv"><span class="me">'+(myL?myL.v:"–")+'</span><span class="si">'+siLast+'</span></div></div></div>';
+ var rows='<div class="todrow"><span class="todk">총 순공</span><span class="todv"><b class="tnum">'+hm(tot)+'</b> · '+days+'일 기록</span></div>'
+  +'<div class="todrow"><span class="todk">일평균 순공</span><span class="todv"><b class="tnum">'+hm(avg)+'</b></span></div>'
+  +'<div class="todrow"><span class="todk">최고 하루</span><span class="todv"><b class="tnum">'+hm(best)+'</b>'+(bestD?' · '+bestD.slice(5).replace("-","."):'')+'</span></div>'
+  +'<div class="todrow"><span class="todk">연속 기록</span><span class="todv"><b class="tnum">'+streak+'</b>일 (하루 10분+ 기준)</span></div>'
+  +'<div class="todrow"><span class="todk">과목 실력</span><span class="todv">평균 <b class="tnum">'+lvAvg+'</b> · 약점 <b style="color:var(--red)">'+lo.n+' '+lo.v+'</b> · 강점 <b>'+hi.n+' '+hi.v+'</b></span></div>';
+ el.innerHTML='<div style="font-size:11px;color:var(--ink3);letter-spacing:.5px;margin-bottom:6px">빨강 나 · 검정 시은</div>'+cards+'<div style="margin-top:8px">'+rows+'</div>'
+  +'<div style="margin-top:8px;font-size:11px;color:var(--ink3);line-height:1.5">과목 실력은 <b>과목별 실력 격차</b>에서, 모의 백분위는 <b>모의고사 성적 이력</b>에서 입력해요. 공부시간은 타이머로 자동 기록됩니다.</div>';}
+function buildMyProg(){var el=$("myprog");if(!el)return;var i,html="";
+ for(i=0;i<CURRIC.length;i++){var s=CURRIC[i],v=myProgOf(s.key);
+  html+='<div class="mlbar"><span class="bn">'+s.subj+'</span><span class="bt"><span class="bf" style="width:'+v+'%;background:var(--ink)"></span></span><span class="bv"><b class="myedit2 tnum" contenteditable data-k="'+s.key+'">'+v+'</b>%</span></div>';}
+ el.innerHTML=html+'<div class="exmynote" style="margin-top:8px">숫자를 눌러 직접 수정해요. 지금은 전부 0%로 시작합니다.</div>';
+ var ed=el.querySelectorAll(".myedit2");for(i=0;i<ed.length;i++){(function(b){b.onblur=function(){setMyProg(b.getAttribute("data-k"),b.textContent);};b.onkeydown=function(ev){if(ev.key==="Enter"){ev.preventDefault();b.blur();}};})(ed[i]);}}
+function buildMyMat(){var el=$("mymat");if(!el)return;var i,html="";
+ for(i=0;i<CURRIC.length;i++){var s=CURRIC[i],mats=myMatOf(s.key);
+  html+='<div class="smrow"><span class="smsubj">'+s.subj+'</span><span class="smcourse">'+(mats.length?mats.join(' <span class="smmod">·</span> '):'—')+'</span></div>';}
+ el.innerHTML=html+'<div class="exmynote" style="margin-top:8px">직접 기입한 교재·강의 목록입니다. 북스캔으로 단원·지문을 받는 대로 더 구체화돼요.</div>';}
+function buildMyUd(){var el=$("myud");if(!el)return;var i,html="";
+ for(i=0;i<CURRIC.length;i++){var s=CURRIC[i],v=myLevel(s.key);
+  html+='<div class="mlbar"><span class="bn">'+s.subj+'</span><span class="bt"><span class="bf" style="width:'+v+'%;background:var(--red)"></span></span><span class="bv">'+v+'/100</span></div>';}
+ el.innerHTML=html+'<div class="exmynote" style="margin-top:8px">체감 등급 기반 과목 단위 이해도예요. 과목별 실력 격차에서 값을 바꾸면 함께 바뀝니다.</div>';}
+function buildExtras(){buildMyStats();buildMyProg();buildMyMat();buildMyUd();buildSiMat();buildMyLog();buildTrend();buildSiStats();buildLog();buildHeat();buildToday();buildHourCurve();buildSubjToday();buildAlloc();buildMock();buildPctTrend();buildWhole();buildWeek();buildMonth();buildInner();buildTraits();buildCog();buildThink();buildMemory();
  var k=ld(new Date());if($("stmMorn")){$("stmMorn").textContent=morningStamina(k);$("stmFat").textContent=Math.round(dayFatigue(k));$("stmSleep").textContent=siDay(k).sleep.toFixed(1)+"h";}}
 function sceneForMin(m){
   if(m<330||m>=1260) return "night";   // 21:00~05:30 : 심야 클립 (취침 시간 포함)
@@ -1341,19 +1624,32 @@ let running=false, startTs=null, dk=ld(new Date()), saveCtr=0, lastDetail="", ty
 const base=()=>log[dk]||0;
 const save=()=>{try{localStorage.setItem("studylog",JSON.stringify(log));}catch(e){}};
 function $(id){return document.getElementById(id);}
-// ---- server sync (공부시간만 동기화) ----
+// ---- server sync (모든 기록: 공부시간·세션·과목실력·모의백분위) ----
+function syncBlob(){return {log:log,sessions:sessions,mystats:mystats,mymock:mymock,myprog:myProg,mymat:myMat,mystatsT:mystatsT||0,mymockT:mymockT||0};}
 async function loadServer(){ if(!syncKey)return;
   try{ const r=await fetch("/api/sync?key="+encodeURIComponent(syncKey)); const srv=await r.json();
-    if(srv&&typeof srv==="object"){for(const k in srv){log[k]=Math.max(Number(log[k]||0),Number(srv[k]||0));} save(); tick();}
+    if(srv&&typeof srv==="object"){
+      var legacy=(srv.log===undefined&&srv.sessions===undefined&&srv.mystats===undefined&&srv.mymock===undefined);
+      var sLog=legacy?srv:(srv.log||{}),k,i;
+      for(k in sLog){log[k]=Math.max(Number(log[k]||0),Number(sLog[k]||0));} save();
+      if(Array.isArray(srv.sessions)){var have={};for(i=0;i<sessions.length;i++)have[sessions[i].ts]=1;for(i=0;i<srv.sessions.length;i++){var ss=srv.sessions[i];if(ss&&ss.ts!=null&&!have[ss.ts]){sessions.push(ss);have[ss.ts]=1;}}sessions.sort(function(a,b){return (a.ts||0)-(b.ts||0);});saveSessions();}
+      if(srv.mystats&&Number(srv.mystatsT||0)>Number(mystatsT||0)){mystats=srv.mystats;mystatsT=Number(srv.mystatsT||0);try{localStorage.setItem("mystats",JSON.stringify(mystats));}catch(e){}}
+      if(srv.mymock&&Number(srv.mymockT||0)>Number(mymockT||0)){mymock=srv.mymock;mymockT=Number(srv.mymockT||0);saveMyMock();}
+      if(srv.myprog&&typeof srv.myprog==="object"){myProg=Object.assign({},srv.myprog,myProg);try{localStorage.setItem("myprog",JSON.stringify(myProg));}catch(e){}}
+      if(srv.mymat&&typeof srv.mymat==="object"){myMat=Object.assign({},srv.mymat,myMat);try{localStorage.setItem("mymaterials",JSON.stringify(myMat));}catch(e){}}
+      saveSyncMeta();
+      try{buildCompare();buildMock();buildPctTrend();if(typeof buildMyStats==="function")buildMyStats();if(typeof buildMyLog==="function")buildMyLog();if(typeof buildMyProg==="function")buildMyProg();if(typeof buildMyMat==="function")buildMyMat();if(typeof buildMyUd==="function")buildMyUd();}catch(e){}
+      tick();
+    }
     $("synced").textContent="● 동기화: "+syncKey;
   }catch(e){ $("synced").textContent="○ 동기화 연결 실패"; }
 }
 async function saveServer(){ if(!syncKey)return;
-  try{ await fetch("/api/sync?key="+encodeURIComponent(syncKey),{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(log)}); }catch(e){}
+  try{ await fetch("/api/sync?key="+encodeURIComponent(syncKey),{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(syncBlob())}); }catch(e){}
 }
-function setupSync(){ const k=window.prompt("동기화 키를 입력하세요.\n모든 기기에서 같은 키를 넣으면 공부시간이 자동으로 동기화됩니다.\n(비우면 동기화 끔)", syncKey||"");
+function setupSync(){ const k=window.prompt("동기화 키를 입력하세요.\n모든 기기에서 같은 키를 넣으면 모든 기록(공부시간·학습 세션·과목 실력·모의 성적)이 동기화됩니다.\n(비우면 동기화 끔)", syncKey||"");
   if(k===null)return; syncKey=k.trim(); localStorage.setItem("synckey",syncKey);
-  if(syncKey){ $("synced").textContent="● 동기화: "+syncKey; loadServer(); } else { $("synced").textContent="○ 동기화 꺼짐"; } }
+  if(syncKey){ $("synced").textContent="● 동기화: "+syncKey; loadServer().then(function(){saveServer();}); } else { $("synced").textContent="○ 동기화 꺼짐"; } }
 function playCur(){ if(window.curVid){var p=window.curVid.play(); if(p&&p.catch)p.catch(function(){});} }
 /* 히어로 영상 플레이어: 네이티브 loop의 되감기 멈칫을 피하려고, 재생 중 다음 클립을 미리 버퍼에 받아두고
    (paused, 0초 대기) 현재 클립이 끝나기 직전 0.7초 디졸브로 넘긴다 → seek 멈칫·검은 화면 없이 매끄럽게 연결. */
@@ -1469,9 +1765,8 @@ function tick(){
   renderMind();
 }
 function toggle(){
-  if(running){const el=startTs!=null?(Date.now()-startTs)/1000:0; log[dk]=(log[dk]||0)+el; startTs=null; running=false; saveCtr=0; save(); saveServer();}
-  else{startTs=Date.now(); running=true; saveCtr=0;}
-  tick();
+  if(running){stopStudy();}
+  else{openStartPicker();}
 }
 function resetDay(){if(!confirm("오늘 기록을 0으로 초기화할까요?"))return; log[dk]=0; startTs=running?Date.now():null; saveCtr=0; save(); saveServer(); tick();}
 function buildStatic(){
@@ -1501,8 +1796,14 @@ const PANEL_TIPS={
  heat:'<span class="tt">최근 30일 내 기록</span>칸이 진할수록 그날 오래 공부. 연속성·패턴을 한눈에 봅니다.',
  subjtoday:'<span class="tt">과목별 오늘</span>정답률·오답·자신감/불안·공략. 컨디션과 인지 상태에 따라 매일 달라집니다.',
  alloc:function(){try{var k=ld(new Date());var acc=(typeof allocAccuracy==="function")?allocAccuracy(k):null;return '<span class="tt">오늘의 공부 배분</span>약점·모의 임박·요일 시간표·성격·<b>자기 점검 정확도</b>로 5과목이 시간을 두고 경쟁합니다.'+(acc!=null?'<span class="tsep"></span>오늘 배분 정확도 <b>'+acc+'</b> — 낮으면 진짜 약점이 아닌 과목에 시간이 쏠립니다.':'');}catch(e){return '<span class="tt">오늘의 공부 배분</span>약점·모의임박·요일·성격으로 과목별 시간이 정해집니다.';}},
- mock:function(){try{var p=MOCKEXAMS.filter(function(e){return parseDate(e.d)<=new Date();});if(p.length>=2){var last=examAvgPct(p[p.length-1].d),prev=examAvgPct(p[p.length-2].d),d=last-prev;var t=d>0?('<em>+'+d+'</em> 상승'):d<0?('<em>'+d+'</em> 하락'):'유지';return '<span class="tt">모의고사 이력</span>백분위 = 국·수·탐 평균, 영어는 절대평가 등급.<span class="tsep"></span>최근 백분위 <b>'+last+'</b> ('+t+')';}return '<span class="tt">모의고사 이력</span>백분위 = 국·수·탐 평균, 영어는 절대평가 등급입니다.';}catch(e){return '<span class="tt">모의고사 이력</span>백분위 = 국·수·탐 평균입니다.';}},
- pcttrend:'<span class="tt">백분위 추이</span>모의고사별 백분위 흐름. <b>빨강</b>은 평가원 주관(6·9월 등) 시험입니다.',
+ mock:function(){try{var p=MOCKEXAMS.filter(function(e){return parseDate(e.d)<=new Date();});if(p.length>=2){var last=examAvgPct(p[p.length-1].d),prev=examAvgPct(p[p.length-2].d),d=last-prev;var t=d>0?('<em>+'+d+'</em> 상승'):d<0?('<em>'+d+'</em> 하락'):'유지';return '<span class="tt">모의고사 이력 · 실제 시험</span>3·5·7·10월 학평(교육청) + 6·9월 모평(평가원) + 수능 — 실제 출제 일정입니다. <b>함께 응시</b>로 시은과 동시 응시 모드에 들어가고, 끝나면 내 백분위를 입력해 추이로 비교돼요.<span class="tsep"></span>시은 최근 백분위 <b>'+last+'</b> ('+t+')';}return '<span class="tt">모의고사 이력 · 실제 시험</span>실제 출제된 학평·모평·수능. <b>함께 응시</b>로 시은과 같이 시험을 볼 수 있어요.';}catch(e){return '<span class="tt">모의고사 이력</span>실제 출제된 모의고사 일정입니다.';}},
+ pcttrend:'<span class="tt">백분위 추이 · 나 vs 시은</span>검정 막대는 시은의 모의별 백분위(국·수·탐 평균), <em>빨간 선</em>은 당신이 입력한 백분위입니다. <b>평가원</b>(6·9월 등)은 라벨이 빨강. 모의표에서 입력하면 즉시 선으로 그려져요.',
+ mydata:'<span class="tt">나의 데이터 · 요약/비교</span>당신의 <b>실제 데이터</b>만 모았습니다 — 공부시간(자동 기록)·과목 실력(입력)·모의 백분위(입력). 시은의 인지·체력·사고 같은 시뮬레이션 지표는 실존 인물엔 만들 수 없어 제외했습니다. 카드는 나(빨강) vs 시은(검정) 비교.',
+ simat:'<span class="tt">시은 학습 자료</span>진도 위치에 따라 시은이 <b>지금 듣는 강의·교재·강 수</b>를 보여줍니다. 강사·교재는 실제 인강 커리큘럼(이미지·김동욱·션티·백호·임정환 등) 기준이에요.',
+ myprog:'<span class="tt">내 진도 · 과목별</span>과목별 진도율(%)입니다. 숫자를 눌러 직접 수정해요. 지금은 전부 0%로 시작합니다.',
+ myud:'<span class="tt">내 이해도 · 과목별</span>체감 등급(국2·수4·영2·생명4·생윤5)을 0~100으로 환산한 과목 단위 이해도입니다. 과목별 실력 격차에서 값을 바꾸면 함께 바뀝니다.',
+ mymat:'<span class="tt">내 학습 자료</span>직접 기입한 교재·강의 목록입니다. 북스캔으로 단원·지문을 받는 대로 더 구체화됩니다.',
+ mylog:'<span class="tt">내 학습 기록</span><b>공부 시작</b> 시 고른 과목·교재와 시간, 종료 시 입력한 푼 문제·집중도가 세션으로 쌓입니다. 과목별 누적이 곧 당신의 실제 학습 데이터예요.',
  wholej:'<span class="tt">재수 전체 여정</span>2월 시작 → 11월 수능까지의 매크로 곡선. 큰 흐름과 슬럼프 구간이 보입니다.',
  weekp:'<span class="tt">이번 주 리듬</span>요일별 컨디션·집중의 주간 패턴입니다.',
  monthp:'<span class="tt">이달의 국면</span>월간 동기·번아웃 사이클상 지금 어느 국면인지 보여줍니다.',
@@ -1546,7 +1847,15 @@ const STAT_TIPS={
   var sid,se;for(sid in STAT_TIPS){se=document.getElementById(sid);if(!se||se._tipped)continue;se._tipped=1;se.setAttribute("data-tipkey","S:"+sid);se.classList.add("tiptarget");}
  };
 })();
-window.addEventListener("DOMContentLoaded",function(){SCHEDULE=scheduleFor(ld(new Date())); buildStatic(); buildProgress(); buildMastery(); buildCompare(); buildExams(); buildRadar(); buildExtras(); renderMind(); attachTips();
+function setView(v){var b=document.querySelector(".bento");if(b){b.classList.remove("view-si","view-me");b.classList.add("view-"+v);}var bs=document.querySelectorAll(".tabbtn"),i;for(i=0;i<bs.length;i++)bs[i].classList.toggle("on",bs[i].getAttribute("data-v")===v);try{window.scrollTo(0,0);}catch(e){}}
+function setupTabs(){
+ var MAP={hero:"si",pgwrap:"si",simat:"si",udwrap:"si",examwrap:"si",sistats:"si",
+  mev:"me",mydata:"me",radar:"me",cmpwrap:"me",trend7:"me",heat:"me",mylog:"me",mock:"me",pcttrend:"me",myprog:"me",myud:"me",mymat:"me",siH2:"me",wkMe:"me",
+  today:"cut",stl:"cut",subjtoday:"cut",alloc:"cut",wholej:"cut",weekp:"cut",monthp:"cut",tlog:"cut",
+  stmVal:"cut",nowFocus:"cut",hourcurve:"cut",inner:"cut",traits:"cut",cog:"cut",think:"cut",memory:"cut"};
+ for(var id in MAP){var c=document.getElementById(id);if(!c)continue;var p=c.closest(".panel");if(!p)continue;p.setAttribute("data-tab",MAP[id]);}
+ setView("si");}
+window.addEventListener("DOMContentLoaded",function(){SCHEDULE=scheduleFor(ld(new Date())); buildStatic(); buildProgress(); buildMastery(); buildCompare(); buildExams(); buildRadar(); buildExtras(); renderMind(); attachTips(); setupTabs();
   $("btn").onclick=toggle; $("reset").onclick=resetDay; $("sync").onclick=setupSync;
   ["vidA","vidB"].forEach(function(id){var v=$(id);
     v.addEventListener("playing",function(){$("playhint").style.display="none";});
@@ -1558,7 +1867,7 @@ window.addEventListener("DOMContentLoaded",function(){SCHEDULE=scheduleFor(ld(ne
   $("hero").addEventListener("click",function(){playCur(); $("playhint").style.display="none";});
   document.addEventListener("click",playCur,{once:true});
   $("synced").textContent=syncKey?("● 동기화: "+syncKey):"○ 동기화 꺼짐";
-  loadServer(); tick(); setInterval(tick,1000); setInterval(loadServer,60000);
+  loadServer().then(function(){saveServer();}); tick(); setInterval(tick,1000); setInterval(loadServer,60000);
   setTimeout(function(){ if(window.curVid&&window.curVid.paused)$("playhint").style.display="flex"; },1400);
 });
 
